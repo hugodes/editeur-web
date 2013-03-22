@@ -2,15 +2,17 @@
 #define LIGNE
 using namespace std;
 #include<vector>
-#include"buffer.h"
+#include"facteur.h"
 
-class Ligne : public buffer 
+class Ligne :
 {
 private:
-  vector<int> identUtil;
+  int identUtil;
+  vector<Facteur> text;
+  
 public:
 	Ligne();
-
+	~Ligne();
 };
 
 #endif
