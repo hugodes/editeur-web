@@ -1,7 +1,7 @@
 //Créateur: Hugo des Longchamps
 //Modificatins: Hugo des Longchamps
 #ifndef buffer_h
-#define buufer_h
+#define buffer_h
 
 #include <iostream>
 using namespace std;
