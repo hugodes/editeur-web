@@ -1,0 +1,3 @@
+Constructeur de DOM avec un char[] (chemin de fichier)
+Constructeur de Ligne avec un char[] (contenu de la ligne)
+
