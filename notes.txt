@@ -1,0 +1,4 @@
+Constructeur de DOM avec un char[] (chemin de fichier)
+Constructeur de Ligne avec un char[] (contenu de la ligne)
+surcharge de l'operateur << sur Ligne
+methode toString() sur Ligne

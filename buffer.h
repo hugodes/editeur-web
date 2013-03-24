@@ -12,19 +12,24 @@ class Buffer{
     private:
         DOM dom;
         list<Ligne> lignes;
+        //chemin vers le fichier de sauvegarde temp.
+        char chemFichTemp[1024]
     public:
         Buffer();
-        Buffer(File *);
+        Buffer(char cheminFichier[]);
         ~Buffer();
-        //Nouvelle ligne retourne true si l'ajout c'est bien déroulé
-        //retourne fasle sinon.
-        bool nouvelleLigne(int indentation, int position);
+        void ajouterLigne(Ligne l, int position);
         DOM getDom()const;
-        void setDom(const DOM &)
+        void setDom(const DOM &);
         list<Ligne> getLignes()const;
-        void setLignes(const list<ligne> &);
+        void setLignes(const list<Ligne> &);
+        void setLignes(char cheminFichier[]);
         void affiche(ostream &)const;
         void saisie(istream &);
+        //sauvegarde le buffer dans un fichier temporaire
+        void sauvTemp();
+        //met a jours le dom à partir du fichier temporaire
+        void majDOM();
 };
 
 ostream& operator<<(ostream &, const Buffer &);
