@@ -4,7 +4,7 @@ using namespace std;
 #include<vector>
 #include"facteur.h"
 
-class Ligne :
+class Ligne
 {
 private:
   int identUtil;
