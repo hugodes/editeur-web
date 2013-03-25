@@ -17,6 +17,6 @@ public:
 	~Ligne();
 	Ligne(vector<Facteur> );
 };
-
+//// CECI EST UN EXEMPLE SUR LA BRANCHE MODIFICATION
 #endif
 
