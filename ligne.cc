@@ -13,11 +13,11 @@ Ligne::Ligne(vector<Facteur> t)
     vector<Facteur>::iterator i;
 
     this.identUtil=0;
-    this.text=t;
+    this.text=t.text();
 
    for(i=t.begin(); i<t.end(); i++ )
    {
-        if ((*i)==('\t'))
+        if (((*i).text())==(\t'))
             this.idendtUtil++;
     }
 }
