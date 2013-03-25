@@ -6,11 +6,12 @@ using namespace std;
 class DOMText{
 
 private :
-    vector<string> noeudtext;
+    string text;
 
 public :
-         DOMText ();
-         ~DOMText() ;
+	DOMText ();
+	~DOMText();
+	DOMText(string);
 };
 
 
