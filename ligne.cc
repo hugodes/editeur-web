@@ -18,7 +18,7 @@ Ligne::Ligne(vector<Facteur> t)
    for(i=t.begin(); i<t.end(); i++ )
    {
         if ((*i)==('\t'))
-            this.iendtUtil++;
+            this.idendtUtil++;
     }
 }
 
