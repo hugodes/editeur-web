@@ -18,6 +18,6 @@ public:
 	Ligne(vector<Facteur>);
 	Ligne(char*);
 };
-//// CECI EST UN EXEMPLE SUR LA BRANCHE MODIFICATION
+
 #endif
 
