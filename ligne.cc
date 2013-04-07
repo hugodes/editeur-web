@@ -17,7 +17,7 @@ Ligne::Ligne(vector<Facteur> t)
     this->text=t.text(); 	//-------------------->text() est une méthode de la classe Facteur qui nous retourne une chaine de caractères
 
 		     
-//-----------------------> Calcule identation d'une ligne <-------------------------->
+//-----------------------> Calcule indentation d'une ligne <-------------------------->
     while ((this->text[i]) =='\t'){		  	
 		(this->identUtil)=(this->identUtil)+1;		
 		i++;
@@ -35,7 +35,7 @@ char f[100];
 string facteur;
  
 this->identUtil=0;
-//-----------------------> Calcule identation d'une ligne <-------------------------->
+//-----------------------> Calcule indentation d'une ligne <-------------------------->
 	while (*t[i] =='\t'){                               
 		(this->identUtil)=(this->identUtil)+1; 	   
 		v.push_back(*t[i]);			  
