@@ -16,7 +16,7 @@ public:
 	Ligne();
 	~Ligne();
 	Ligne(vector<Facteur>);
-	Ligne(char*);
+	Ligne(char*[]);
 };
 
 #endif
