@@ -46,7 +46,7 @@ this->identUtil=0;
 
 	while (t[i] != '\0')
 	{
-		memset (f, 0, sizeof (f));
+		memset (f, 0, sizeof (f));  // vider le tableau f
 		while ((*t[i]) !=' '){
 			strcat(f, (*t[i]));
 			i++;			
