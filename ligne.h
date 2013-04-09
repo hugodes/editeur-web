@@ -15,7 +15,8 @@ private:
 public:
 	Ligne();
 	~Ligne();
-	Ligne(vector<Facteur> );
+	Ligne(vector<Facteur>);
+	Ligne(char*[]);
 };
 
 #endif
