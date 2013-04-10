@@ -4,6 +4,8 @@
 #define buffer_h
 
 #include <iostream>
+#include <list>
+#include <iterator>
 using namespace std;
 #include "DOM.h"
 #include "Ligne.h"
@@ -13,7 +15,7 @@ class Buffer{
         DOM dom;
         list<Ligne> lignes;
         //chemin vers le fichier de sauvegarde temp.
-        char chemFichTemp[1024]
+        char *chemFichTemp;
     public:
         Buffer();
         Buffer(char cheminFichier[]);
