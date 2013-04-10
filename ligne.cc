@@ -14,12 +14,10 @@ Ligne::Ligne(vector<Facteur> t)
 
 	int i=0;
     this->identUtil=0;
-    this->text=t.text(); 	//-------------------->text() est une méthode de la classe Facteur qui nous retourne une chaine de caractères
-
-		     
+    this->text=t.getText();		     
 //-----------------------> Calcule indentation d'une ligne <-------------------------->
     while ((this->text[i]) =='\t'){		  	
-		(this->identUtil)=(this->identUtil)+1;		
+		(this->indentUtil)=(this->indentUtil)+1;		
 		i++;
 	}
     
@@ -34,10 +32,10 @@ int i=0;
 char f[100]; 
 string facteur;
  
-this->identUtil=0;
+this->indentUtil=0;
 //-----------------------> Calcule indentation d'une ligne <-------------------------->
 	while (*t[i] =='\t'){                               
-		(this->identUtil)=(this->identUtil)+1; 	   
+		(this->indentUtil)=(this->indentUtil)+1; 	   
 		v.push_back(*t[i]);			  
 		i++;					 	
 	}
@@ -58,5 +56,7 @@ this->identUtil=0;
 	}
 	
 }
-
+string toString (){
+	return (this->text);
+}
 
