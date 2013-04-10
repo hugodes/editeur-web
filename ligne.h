@@ -1,23 +1,25 @@
 // la classe ligne.h
 
-#ifndef LIGNE
-#define LIGNE
-using namespace std;
+#ifndef DEF_LIGNE
+#define DEF_LIGNE
 #include<vector>
 #include"facteur.h"
 
 class Ligne
 {
-private:
-  int identUtil;
-  vector<Facteur> text;
 
-public:
-	Ligne();
-	~Ligne();
-	Ligne(vector<Facteur>);
-	Ligne(char*[]);
+	private:
+  		int indentUtil;
+  		vector<Facteur> ligne;
+
+	public:
+		Ligne();
+		~Ligne();
+		Ligne(vector<Facteur>);
+		Ligne(char*);
+		string toString();
 };
+
 
 #endif
 

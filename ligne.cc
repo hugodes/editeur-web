@@ -4,41 +4,47 @@
 #include"facteur.h"
 #include<string>
 #include<vector>
+using namespace std;
 
-Ligne::Ligne() {}
+/* Constructeur par defaut de Ligne */
+Ligne::Ligne(){
+this->ligne="";
+this->indentUtil=0;
+}
 
+/* Destructeur de Ligne */
 Ligne::~Ligne() {}
 
-Ligne::Ligne(vector<Facteur> t)
-{
+/* Constructeur Parametré */
+Ligne::Ligne(vector<Facteur> t){
 
-	int i=0;
-    this->identUtil=0;
-    this->text=t.text(); 	//-------------------->text() est une méthode de la classe Facteur qui nous retourne une chaine de caractères
+vector<Facteur>::iterator i=t.begin();
 
-		     
-//-----------------------> Calcule indentation d'une ligne <-------------------------->
-    while ((this->text[i]) =='\t'){		  	
-		(this->identUtil)=(this->identUtil)+1;		
+    this->indentUtil=0;
+    this->ligne=t; 	
+   
+	while (((*i).getText()) =='\t')
+	{		  	
+		(this->indentUtil)++;		
 		i++;
 	}
     
 }
 
-Ligne::Ligne(char *t[]) {
-vector<Facteur> v;
-
-
-v=NULL;
-int i=0;
-char f[100]; 
-string facteur;
- 
-this->identUtil=0;
-//-----------------------> Calcule indentation d'une ligne <-------------------------->
-	while (*t[i] =='\t'){                               
-		(this->identUtil)=(this->identUtil)+1; 	   
-		v.push_back(*t[i]);			  
+/* Constructeur Parametré */
+Ligne::Ligne(char* t)
+{
+	
+	Facteur fact;
+	int i=0;
+	char f[100];  
+	this->indentUtil=0;
+//-----------------------> Calcule indentation d'une ligne <--------------------------//
+	while (t[i] =='\t')
+	{                               
+		(this->indentUtil)++;
+		fact.setText('\t'); 	   
+		ligne.push_back(fact);		  
 		i++;					 	
 	}
 //------------------------------------------------------------------------------------------------------>
@@ -46,17 +52,22 @@ this->identUtil=0;
 
 	while (t[i] != '\0')
 	{
-		memset (f, 0, sizeof (f));  // vider le tableau f
-		while ((*t[i]) !=' '){
-			strcat(f, (*t[i]));
+	memset (f, 0, sizeof (f));  // vider le tableau f
+
+		while ((t[i]) !=' ')
+				{
+			strcat(f, (t[i]));
 			i++;			
 				}
-				facteur = f;
-				v.push_back(facteur);
-				v.push_back(' ');
-		i++;
+	fact.setText(f);
+	this->ligne.push_back(fact);
+	fact.setText(' ');
+	this->ligne.push_back(fact);
+	i++
 	}
-	
 }
 
+string toString(){
+	return (this->ligne);
+}
 
