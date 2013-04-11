@@ -19,6 +19,7 @@ Ligne::~Ligne() {}
 /* Constructeur Parametré */
 Ligne::Ligne(vector<Facteur> t){
 
+<<<<<<< HEAD
 vector<Facteur>::iterator i=t.begin();
 
     this->indentUtil=0;
@@ -27,11 +28,20 @@ vector<Facteur>::iterator i=t.begin();
 	while (((*i).getText()) =='\t')
 	{		  	
 		(this->indentUtil)++;		
+=======
+	int i=0;
+    this->identUtil=0;
+    this->text=t.getText();		     
+//-----------------------> Calcule indentation d'une ligne <-------------------------->
+    while ((this->text[i]) =='\t'){		  	
+		(this->indentUtil)=(this->indentUtil)+1;		
+>>>>>>> b300e7acf7307b3912ebfbfc9eadfba16ba7511d
 		i++;
 	}
     
 }
 
+<<<<<<< HEAD
 /* Constructeur Parametré */
 Ligne::Ligne(char* t){
 	
@@ -48,6 +58,22 @@ Ligne::Ligne(char* t){
 		(this->indentUtil)++;
 		fact.setText('\t'); 	   
 		ligne.push_back(fact);		  
+=======
+Ligne::Ligne(char *t[]) {
+vector<Facteur> v;
+
+
+v=NULL;
+int i=0;
+char f[100]; 
+string facteur;
+ 
+this->indentUtil=0;
+//-----------------------> Calcule indentation d'une ligne <-------------------------->
+	while (*t[i] =='\t'){                               
+		(this->indentUtil)=(this->indentUtil)+1; 	   
+		v.push_back(*t[i]);			  
+>>>>>>> b300e7acf7307b3912ebfbfc9eadfba16ba7511d
 		i++;					 	
 	}
 
@@ -84,10 +110,15 @@ for (i=ligne.begin(); i<ligne.end(); i++){
 	}
 
 }
+<<<<<<< HEAD
  
 
 ostream& operator << (ostream & os, const Ligne &o){
 	o.affiche(os);
 	return os;
+=======
+string toString (){
+	return (this->text);
+>>>>>>> b300e7acf7307b3912ebfbfc9eadfba16ba7511d
 }
 
