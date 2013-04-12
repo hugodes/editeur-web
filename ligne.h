@@ -21,7 +21,7 @@ class Ligne
 		~Ligne();
 		Ligne(vector<Facteur>);
 		Ligne(char*);
-		string toString();
+		char* toString();
 		void affiche(ostream &)const;
 };
 
