@@ -10,15 +10,41 @@ using namespace std;
 #include "dom.h"
 #include "Ligne.h"
 
+/** Classe Buffer
+ *  Cette Classe représente le contenu visible dans l'éditeur
+ */
 class Buffer{
     private:
+
+        /** Attribut Dom
+         * Ceci est la représentation du fichier sous forme de DOM
+         */
         Dom dom;
+
+        /** Attribut Ligne
+         * Ceci est la liste des lignes du buffer
+         */
         list<Ligne> lignes;
-        //chemin vers le fichier de sauvegarde temp.
+
+        /**
+         *chemin vers le fichier de sauvegarde temp.
+         */
         char *chemFichTemp;
     public:
+
+        /**
+         * Constructeur par défaut
+         */
         Buffer();
+
+        /**
+         * Constructeur paramétré
+         */
         Buffer(char cheminFichier[]);
+
+        /**
+         * Destructeur
+         */
         ~Buffer();
         void ajouterLigne(Ligne l, int position);
         Dom getDom()const;

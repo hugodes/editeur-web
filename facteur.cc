@@ -11,6 +11,13 @@
 
 using namespace std;
 
+
+Facteur::Facteur(){
+    texte==NULL;
+    couleur==NULL;
+    texteFormate==NULL;
+}
+
 /**
 * @brief Constructeur de facteur 
 * @param text texte du facteur
