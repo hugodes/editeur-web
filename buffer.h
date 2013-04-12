@@ -7,12 +7,12 @@
 #include <list>
 #include <iterator>
 using namespace std;
-#include "DOM.h"
+#include "dom.h"
 #include "Ligne.h"
 
 class Buffer{
     private:
-        DOM dom;
+        Dom dom;
         list<Ligne> lignes;
         //chemin vers le fichier de sauvegarde temp.
         char *chemFichTemp;
@@ -21,8 +21,8 @@ class Buffer{
         Buffer(char cheminFichier[]);
         ~Buffer();
         void ajouterLigne(Ligne l, int position);
-        DOM getDom()const;
-        void setDom(const DOM &);
+        Dom getDom()const;
+        void setDom(const Dom &);
         list<Ligne> getLignes()const;
         void setLignes(const list<Ligne> &);
         void setLignes(char cheminFichier[]);
@@ -31,7 +31,7 @@ class Buffer{
         //sauvegarde le buffer dans un fichier temporaire
         void sauvTemp();
         //met a jours le dom à partir du fichier temporaire
-        void majDOM();
+        void majDom();
 };
 
 ostream& operator<<(ostream &, const Buffer &);

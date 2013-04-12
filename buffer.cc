@@ -25,14 +25,14 @@ void Buffer::ajouterLigne(Ligne l, int position){
     il+=(position-1);
     lignes.insert(il, l);
     sauvTemp();
-    majDOM();
+    majDom();
 }
 
-DOM Buffer::getDom()const{
+Dom Buffer::getDom()const{
     return dom;
 }
 
-void Buffer::setDom(const DOM &d){
+void Buffer::setDom(const Dom &d){
     dom = d;
 }
 
@@ -43,7 +43,7 @@ list<Ligne> Buffer::getLignes()const{
 void Buffer::setLignes(const list<Ligne> &l){
     lignes = l;
     sauvTemp();
-    majDOM();
+    majDom();
 }
 
 void Buffer::setLignes(char cheminFichier[]){
@@ -64,7 +64,7 @@ void Buffer::setLignes(char cheminFichier[]){
     }
     fclose(pFichier);
     sauvTemp();
-    majDOM();
+    majDom();
 }
 
 void Buffer::affiche(ostream & os)const{
@@ -79,7 +79,7 @@ void Buffer::saisie(istream &is){
     cout<<"Entrer un ligne qui serra ajoutée au buffer:\n";
     is.getline(buffer, 1024);
     sauvTemp();
-    majDOM();
+    majDom();
 }
 
 void Buffer::sauvTemp(){
@@ -92,8 +92,8 @@ void Buffer::sauvTemp(){
     fclose(pFichier);
 }
 
-void Buffer::majDOM(){
-    dom = DOM(chemFichTemp);
+void Buffer::majDom(){
+    dom = Dom(chemFichTemp);
 }
 
 ostream& operator<<(ostream &os, const Buffer &b){
