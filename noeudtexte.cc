@@ -1,19 +1,27 @@
-#ifndef domtext_h
-#define domtext_h
+/**
+ *  @author SAKINE HAMID
+ *   @file facteur.h 
+ */
 using namespace std;
-#include "DOMNode.h"
+/**@class <nom> [noeudtexte.cc] [./noeudtexte.cc]  */
+#include "noeud.h"
+#include "noeudtexte.h"
 
-
-DOMText :: DOMText() {
-
-}
-
-DOMText ::~DOMText() {
+/** @fn Constructeur de facteur  */
+noeudtexte :: noeudtexte() {
 
 }
+/** @fn Destructeur de facteur  */
+noeudtexte ::~noeudtexte() {
 
-DOMText::DOMText(string s){
+}
+/** @fn Definir le texte  */
+void noeudtexte::setText(string s){
 	text=s;
 }
+
+
+   
+    
 
 
