@@ -9,8 +9,8 @@ using namespace std;
 
 /* Constructeur par defaut de Ligne */
 Ligne::Ligne(){
-this->ligne=NULL;
-this->indentUtil=0;
+ligne=vector<Facteur>();
+indentUtil=0;
 }
 
 /* Destructeur de Ligne */
@@ -23,8 +23,9 @@ vector<Facteur>::iterator i=t.begin();
 
     this->indentUtil=0;
     this->ligne=t; 	
-   
-	while (((*i).getText()) =='\t')
+    char* tab="\t";	
+
+	while (strcmp (((*i).getTexte),tab)==0)
 	{		  	
 		(this->indentUtil)++;		
 		i++;
@@ -46,7 +47,7 @@ Ligne::Ligne(char* t){
 	while (t[i] =='\t')
 	{                               
 		(this->indentUtil)++;
-		fact.setText('\t'); 	   
+		fact.setTexte('\t'); 	   
 		ligne.push_back(fact);		  
 		i++;					 	
 	}
@@ -62,13 +63,13 @@ Ligne::Ligne(char* t){
 			strcat(f, (t[i]));
 			i++;			
 				}
-	fact.setText(f);
+	fact.setTexte(f);
 	this->ligne.push_back(fact);
-	fact.setText(espace);
+	fact.setTexte(espace);
 	this->ligne.push_back(fact);
 	i++
 	}
-fact.setText(f_ligne);
+fact.setTexte(f_ligne);
 this->ligne.push_back(fact);
 }
 
@@ -79,8 +80,8 @@ vector<Facteur> ligne::toString(){
 void ligne::affiche(ostream& os){
 vector<Facteur>::iterator i;
 
-for (i=ligne.begin(); i<ligne.end(); i++){
-	os<<(*i).getText();
+for (i=this->ligne.begin(); i<ligne.end(); i++){
+	os<<(*i).getTexte();
 	}
 
 }
