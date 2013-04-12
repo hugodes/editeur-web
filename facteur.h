@@ -18,8 +18,8 @@ class Facteur {
 		char* texteFormate;
 
 	public:
-		facteur(char* text); /** @fn Constructeur de facteur */
-		~facteur(); /** @fn Destructeur de facteur */
+		Facteur(char* text); /** @fn Constructeur de facteur */
+		~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
 		char* getTexte(); /** @fn Retourne le texte du facteur */
 		char* getTexteFormate(); /** @fn Retourne le texte du facteur formaté avec la couleur */
@@ -27,6 +27,6 @@ class Facteur {
 		void formate(); /** @fn Formate puis stock le texte */
 };
 
-ostream& operator<<(ostream &flux, Duree const& facteur); /** @fn Surcharge l'operateur << */
+ostream& operator<<(ostream &flux, const Facteur &f); /** @fn Surcharge l'operateur << */
 
 #endif
