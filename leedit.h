@@ -2,6 +2,7 @@
 #define LEEDIT_H
 
 #include <QMainWindow>
+#include <QtWebKitWidgets\QWebView>
 
 namespace Ui {
 class LeEdit;
@@ -19,6 +20,7 @@ public slots:
    void affichageDOM(bool visible);
    void affichageHIE(bool visible);
    void affichageAPE();
+   void affichageWID(int i);
 
 private:
     Ui::LeEdit *ui;
