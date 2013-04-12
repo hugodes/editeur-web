@@ -1,7 +1,7 @@
 #ifndef DEF_FACTEUR
 #define DEF_FACTEUR
 
-class facteur {
+class Facteur {
 
 	private:
 		char* texte;
@@ -9,8 +9,8 @@ class facteur {
 		char* texteFormate;
 
 	public:
-		facteur(char* text);
-		~facteur();
+		Facteur(char* text);
+		~Facteur();
 		void setTexte(char* text);
 		char* getTexte();
 		char* getTexteFormate();
