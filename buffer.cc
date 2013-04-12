@@ -83,7 +83,7 @@ void Buffer::sauvTemp(){
     pFichier = fopen(chemFichTemp, "w");
     list<Ligne>::iterator il;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        fputs(*il.toString(), pFichier);
+        fputs((*il).toString(), pFichier);
     }
     fclose(pFichier);
 }
