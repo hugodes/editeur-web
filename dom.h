@@ -20,6 +20,7 @@ class Dom{
   /* Constructeurs */ 
   Dom();
   Dom(Noeud&);
+  Dom(list<Ligne>);
   
   /* Destructeur */
   virtual ~Dom();
