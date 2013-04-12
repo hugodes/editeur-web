@@ -1,30 +1,37 @@
 //Créateur: Hugo des Longchamps
 //Modificatins: Hugo des Longchamps
 #ifndef buffer_h
-#define buufer_h
+#define buffer_h
 
 #include <iostream>
+#include <list>
+#include <iterator>
 using namespace std;
-#include "DOM.h"
+#include "dom.h"
 #include "Ligne.h"
 
 class Buffer{
     private:
-        DOM dom;
+        Dom dom;
         list<Ligne> lignes;
+        //chemin vers le fichier de sauvegarde temp.
+        char *chemFichTemp;
     public:
         Buffer();
-        Buffer(File *);
+        Buffer(char cheminFichier[]);
         ~Buffer();
-        //Nouvelle ligne retourne true si l'ajout c'est bien déroulé
-        //retourne fasle sinon.
-        bool nouvelleLigne(int indentation, int position);
-        DOM getDom()const;
-        void setDom(const DOM &)
+        void ajouterLigne(Ligne l, int position);
+        Dom getDom()const;
+        void setDom(const Dom &);
         list<Ligne> getLignes()const;
-        void setLignes(const list<ligne> &);
+        void setLignes(const list<Ligne> &);
+        void setLignes(char cheminFichier[]);
         void affiche(ostream &)const;
         void saisie(istream &);
+        //sauvegarde le buffer dans un fichier temporaire
+        void sauvTemp();
+        //met a jours le dom à partir du fichier temporaire
+        void majDom();
 };
 
 ostream& operator<<(ostream &, const Buffer &);
