@@ -18,7 +18,7 @@ class Dom{
 
   
   /* Constructeurs */ 
-  //  Dom();                Un DOM ne peut être vide
+  Dom();
   Dom(Noeud&);
   
   /* Destructeur */
