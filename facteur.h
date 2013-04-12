@@ -10,7 +10,7 @@
 /**
 * @class facteur facteur.h "./facteur.h"
 */
-class facteur {
+class Facteur {
 
 	private:
 		char* texte;

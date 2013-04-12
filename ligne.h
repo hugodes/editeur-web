@@ -1,23 +1,28 @@
-// la classe ligne.h
+//Créateur: Amazigh Haddadou 
 
-#ifndef LIGNE
-#define LIGNE
-using namespace std;
+#ifndef DEF_LIGNE
+#define DEF_LIGNE
 #include<vector>
 #include"facteur.h"
+#include<iostream>
 
 class Ligne
 {
-private:
-  int identUtil;
-  vector<Facteur> text;
 
-public:
-	Ligne();
-	~Ligne();
-	Ligne(vector<Facteur>);
-	Ligne(char*[]);
+	private:
+  		int indentUtil;
+  		vector<Facteur> ligne;
+
+	public:
+		Ligne();
+		~Ligne();
+		Ligne(vector<Facteur>);
+		Ligne(char*);
+		string toString();
+		void affiche(ostream&)const;
 };
+
+ostream& operator <<(ostream &, const Ligne &);
 
 #endif
 
