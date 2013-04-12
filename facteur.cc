@@ -1,5 +1,9 @@
-//Créateur: Nicolas Emeri
-//Modifications: Nicolas Emeri & Bryan Libourel
+/**
+* @file facteur.cc
+* @author Nicolas EMERI & Bryan LIBOUREL
+* @class facteur facteur.h "./facteur.h"
+* @details surcharge de l'operateur <<
+*/
 
 #include "facteur.h"
 #include <iostream>
@@ -7,51 +11,76 @@
 
 using namespace std;
 
-/* Constructeur de facteur */
-/*		text : texte du facteur */
-Facteur::Facteur(char* text) {
+/**
+* @brief Constructeur de facteur 
+* @param text texte du facteur
+*/
+facteur::facteur(char* text) {
 	strcpy(this->texte,text);
 	strcpy(this->couleur,"black");
 	this->formate();
 }
 
-/* Destructeur de facteur */
-Facteur::~Facteur() {
+/**
+* @brief Destructeur de facteur
+*/
+facteur::~facteur() {
     delete this->texte ;
     delete this->couleur ;
     delete this->texteFormate ;
 }
 
-/* Definir le texte */
-/*		text : texte du facteur */
-void Facteur::setTexte(char* text) {
+/**
+* @brief Definir le texte 
+* @param text texte du facteur
+*/
+void facteur::setTexte(char* text) {
     strcpy(this->texte, text);
     this->formate();
 }
 
-/* Definir la couleur */
-/*		color : couleur du facteur */
-void Facteur::setCouleur(char* color) {
+/**  
+* @brief Definir la couleur
+* @param color couleur du facteur 
+*/
+void facteur::setCouleur(char* color) {
     strcpy(this->couleur, color);
     this->formate();
 }
 
-/* Retourne le texte du facteur */
-char* Facteur::getTexte() {
+/**
+* @brief Retourne le texte du facteur 
+* @return retourne le texte du facteur
+*/
+char* facteur::getTexte() {
     return(this->texte);
 }
 
-/* Retourne le texte du facteur formaté avec la couleur */
-char* Facteur::getTexteFormate() {
+/**
+* @brief Retourne le texte du facteur formatÃ© avec la couleur 
+* @return retourne le texte du facteur formate
+*/
+char* facteur::getTexteFormate() {
 	return(this->texteFormate) ;
 }
 
-/* Formate puis stock le texte */
-void Facteur::formate() {
+/**
+* @brief Formate puis stock le texte 
+*/
+void facteur::formate() {
     this->texteFormate = new char [strlen(this->couleur)+strlen(this->texte)+27];
     strcpy(this->texteFormate, "<div style='color:");
 	strcat(this->texteFormate, this->couleur);
 	strcat(this->texteFormate, ";'>");
 	strcat(this->texteFormate, this->texte);
 	strcat(this->texteFormate, "</div>");
+}
+
+/**
+* @brief Surcharge l'operateur << 
+* @return le flux de sortie ostream
+*/
+ostream& operator<<( ostream &flux, Duree const& facteur ){
+    flux << this->texteFormate;
+    return flux;
 }
