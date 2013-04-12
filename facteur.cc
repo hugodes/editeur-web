@@ -9,14 +9,14 @@ using namespace std;
 
 /* Constructeur de facteur */
 /*		text : texte du facteur */
-facteur::facteur(char* text) {
+Facteur::Facteur(char* text) {
 	strcpy(this->texte,text);
 	strcpy(this->couleur,"black");
 	this->formate();
 }
 
 /* Destructeur de facteur */
-facteur::~facteur() {
+Facteur::~Facteur() {
     delete this->texte ;
     delete this->couleur ;
     delete this->texteFormate ;
@@ -24,30 +24,30 @@ facteur::~facteur() {
 
 /* Definir le texte */
 /*		text : texte du facteur */
-void facteur::setTexte(char* text) {
+void Facteur::setTexte(char* text) {
     strcpy(this->texte, text);
     this->formate();
 }
 
 /* Definir la couleur */
 /*		color : couleur du facteur */
-void facteur::setCouleur(char* color) {
+void Facteur::setCouleur(char* color) {
     strcpy(this->couleur, color);
     this->formate();
 }
 
 /* Retourne le texte du facteur */
-char* facteur::getTexte() {
+char* Facteur::getTexte() {
     return(this->texte);
 }
 
 /* Retourne le texte du facteur formaté avec la couleur */
-char* facteur::getTexteFormate() {
+char* Facteur::getTexteFormate() {
 	return(this->texteFormate) ;
 }
 
 /* Formate puis stock le texte */
-void facteur::formate() {
+void Facteur::formate() {
     this->texteFormate = new char [strlen(this->couleur)+strlen(this->texte)+27];
     strcpy(this->texteFormate, "<div style='color:");
 	strcat(this->texteFormate, this->couleur);
