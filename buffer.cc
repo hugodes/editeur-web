@@ -9,7 +9,7 @@ Buffer::Buffer(){
 
 Buffer::Buffer(char cheminFichier[]){
     lignes = list<Ligne>();
-    //dom = DOM(cheminFichier);
+    dom = Dom(lignes);
     setLignes(cheminFichier);
     char *s;
     strcpy(s, ".");
