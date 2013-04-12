@@ -1,7 +1,7 @@
 /**
 * @file facteur.cc
 * @author Nicolas EMERI & Bryan LIBOUREL
-* @class facteur facteur.h "./facteur.h"
+* @class Facteur facteur.h "./facteur.h"
 * @details surcharge de l'operateur <<
 */
 
@@ -15,7 +15,7 @@ using namespace std;
 * @brief Constructeur de facteur 
 * @param text texte du facteur
 */
-facteur::facteur(char* text) {
+Facteur::Facteur(char* text) {
 	strcpy(this->texte,text);
 	strcpy(this->couleur,"black");
 	this->formate();
@@ -24,7 +24,7 @@ facteur::facteur(char* text) {
 /**
 * @brief Destructeur de facteur
 */
-facteur::~facteur() {
+Facteur::~Facteur() {
     delete this->texte ;
     delete this->couleur ;
     delete this->texteFormate ;
@@ -34,7 +34,7 @@ facteur::~facteur() {
 * @brief Definir le texte 
 * @param text texte du facteur
 */
-void facteur::setTexte(char* text) {
+void Facteur::setTexte(char* text) {
     strcpy(this->texte, text);
     this->formate();
 }
@@ -43,7 +43,7 @@ void facteur::setTexte(char* text) {
 * @brief Definir la couleur
 * @param color couleur du facteur 
 */
-void facteur::setCouleur(char* color) {
+void Facteur::setCouleur(char* color) {
     strcpy(this->couleur, color);
     this->formate();
 }
@@ -52,7 +52,7 @@ void facteur::setCouleur(char* color) {
 * @brief Retourne le texte du facteur 
 * @return retourne le texte du facteur
 */
-char* facteur::getTexte() {
+char* Facteur::getTexte() {
     return(this->texte);
 }
 
@@ -60,14 +60,14 @@ char* facteur::getTexte() {
 * @brief Retourne le texte du facteur formaté avec la couleur 
 * @return retourne le texte du facteur formate
 */
-char* facteur::getTexteFormate() {
+char* Facteur::getTexteFormate() {
 	return(this->texteFormate) ;
 }
 
 /**
 * @brief Formate puis stock le texte 
 */
-void facteur::formate() {
+void Facteur::formate() {
     this->texteFormate = new char [strlen(this->couleur)+strlen(this->texte)+27];
     strcpy(this->texteFormate, "<div style='color:");
 	strcat(this->texteFormate, this->couleur);
@@ -80,7 +80,7 @@ void facteur::formate() {
 * @brief Surcharge l'operateur << 
 * @return le flux de sortie ostream
 */
-ostream& operator<<( ostream &flux, Duree const& facteur ){
-    flux << this->texteFormate;
+ostream& operator<<(ostream &flux, const Facteur &f){
+    flux << f.getTexteFormate();
     return flux;
 }
