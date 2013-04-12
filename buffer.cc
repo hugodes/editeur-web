@@ -3,8 +3,6 @@
 #include "buffer.h"
 
 Buffer::Buffer(){
-    dom = NULL;
-    lignes = NULL;
     strcpy(chemFichTemp, ".nouveau_fichier.tmp");
 }
 
