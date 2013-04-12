@@ -2,10 +2,13 @@
 
 #ifndef DEF_LIGNE
 #define DEF_LIGNE
-#include<vector>
+#include <vector>
 #include"facteur.h"
-#include<iostream>
+#include<string>
+#include<cstring>
+using namespace std;
 
+#include <iterator>
 class Ligne
 {
 
@@ -19,10 +22,9 @@ class Ligne
 		Ligne(vector<Facteur>);
 		Ligne(char*);
 		string toString();
-		void affiche(ostream&)const;
+		void affiche(ostream &)const;
 };
 
-ostream& operator <<(ostream &, const Ligne &);
+ostream& operator<<(ostream &, const Ligne &);
 
 #endif
-
