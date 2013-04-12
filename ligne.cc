@@ -9,8 +9,8 @@ using namespace std;
 
 /* Constructeur par defaut de Ligne */
 Ligne::Ligne(){
-ligne=vector<Facteur>();
-indentUtil=0;
+this->ligne=vector<Facteur>();
+this->indentUtil=0;
 }
 
 /* Destructeur de Ligne */
@@ -41,13 +41,13 @@ Ligne::Ligne(char* t){
 	char f[100];
 	char espace=' ';
 	char f_ligne= '\0';  
-	
+	char* tab="\t";	
 	this->indentUtil=0;
 //-----------------------> Calcule indentation d'une ligne <--------------------------//
 	while (t[i] =='\t')
 	{                               
 		(this->indentUtil)++;
-		fact.setTexte('\t'); 	   
+		fact.setTexte(tab); 	   
 		ligne.push_back(fact);		  
 		i++;					 	
 	}
@@ -67,13 +67,23 @@ Ligne::Ligne(char* t){
 	this->ligne.push_back(fact);
 	fact.setTexte(espace);
 	this->ligne.push_back(fact);
-	i++
+	i++;
 	}
 fact.setTexte(f_ligne);
 this->ligne.push_back(fact);
 }
 
-vector<Facteur> ligne::toString(){
+char* ligne::toString(){
+	vector<Facteur>::iterator i;
+	char* l;
+
+	for(i=ligne.begin(); i<(ligne.size()); i++){
+	strcat(l, *i);	
+	i++;
+	}
+
+return l;	
+}
 	return (this->ligne);
 }
 
