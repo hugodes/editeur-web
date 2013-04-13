@@ -1,45 +1,106 @@
-\hypertarget{classBuffer}{\section{\-Référence de la classe \-Buffer}
-\label{classBuffer}\index{\-Buffer@{\-Buffer}}
+\hypertarget{classBuffer}{
+\section{Référence de la classe Buffer}
+\label{classBuffer}\index{Buffer@{Buffer}}
 }
-\subsection*{\-Fonctions membres publiques}
+
+
+{\ttfamily \#include $<$buffer.h$>$}
+
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}{{\bfseries \-Buffer} (char chemin\-Fichier\mbox{[}$\,$\mbox{]})}\label{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}
+\hyperlink{classBuffer_ae7ef2cd201190fde551dcb902627112b}{Buffer} ()
+\item 
+\hyperlink{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}{Buffer} (char cheminFichier\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}{$\sim$Buffer} ()
+\item 
+\hypertarget{classBuffer_aaa71afa6da49b147a7060900288e67d3}{
+void {\bfseries ajouterLigne} (\hyperlink{classLigne}{Ligne} l, int position)}
+\label{classBuffer_aaa71afa6da49b147a7060900288e67d3}
 
 \item 
-\hypertarget{classBuffer_aaa71afa6da49b147a7060900288e67d3}{void {\bfseries ajouter\-Ligne} (\hyperlink{classLigne}{\-Ligne} l, int position)}\label{classBuffer_aaa71afa6da49b147a7060900288e67d3}
+\hypertarget{classBuffer_ae609f810be14bc51b479583957e8d6c1}{
+\hyperlink{classDom}{Dom} {\bfseries getDom} () const }
+\label{classBuffer_ae609f810be14bc51b479583957e8d6c1}
 
 \item 
-\hypertarget{classBuffer_ae3c4df1d65179d391de936a324c48871}{\-D\-O\-M {\bfseries get\-Dom} () const }\label{classBuffer_ae3c4df1d65179d391de936a324c48871}
+\hypertarget{classBuffer_a42ebf900f193564fed59440c8ec4286f}{
+void {\bfseries setDom} (const \hyperlink{classDom}{Dom} \&)}
+\label{classBuffer_a42ebf900f193564fed59440c8ec4286f}
 
 \item 
-\hypertarget{classBuffer_ab0d9e2abf2c5a8390d567407cd1cf556}{void {\bfseries set\-Dom} (const \-D\-O\-M \&)}\label{classBuffer_ab0d9e2abf2c5a8390d567407cd1cf556}
+\hypertarget{classBuffer_af7f5a6f316e5659e462874998c87921d}{
+list$<$ \hyperlink{classLigne}{Ligne} $>$ {\bfseries getLignes} () const }
+\label{classBuffer_af7f5a6f316e5659e462874998c87921d}
 
 \item 
-\hypertarget{classBuffer_af7f5a6f316e5659e462874998c87921d}{list$<$ \hyperlink{classLigne}{\-Ligne} $>$ {\bfseries get\-Lignes} () const }\label{classBuffer_af7f5a6f316e5659e462874998c87921d}
+\hypertarget{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}{
+void {\bfseries setLignes} (const list$<$ \hyperlink{classLigne}{Ligne} $>$ \&)}
+\label{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}
 
 \item 
-\hypertarget{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}{void {\bfseries set\-Lignes} (const list$<$ \hyperlink{classLigne}{\-Ligne} $>$ \&)}\label{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}
+\hypertarget{classBuffer_a122fe744cef772a83c6228195474171d}{
+void {\bfseries setLignes} (char cheminFichier\mbox{[}$\,$\mbox{]})}
+\label{classBuffer_a122fe744cef772a83c6228195474171d}
 
 \item 
-\hypertarget{classBuffer_a122fe744cef772a83c6228195474171d}{void {\bfseries set\-Lignes} (char chemin\-Fichier\mbox{[}$\,$\mbox{]})}\label{classBuffer_a122fe744cef772a83c6228195474171d}
+\hypertarget{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}{
+void {\bfseries affiche} (ostream \&) const }
+\label{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}
 
 \item 
-\hypertarget{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}{void {\bfseries affiche} (ostream \&) const }\label{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}
+\hypertarget{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}{
+void {\bfseries saisie} (istream \&)}
+\label{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}
 
 \item 
-\hypertarget{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}{void {\bfseries saisie} (istream \&)}\label{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}
+\hypertarget{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}{
+void {\bfseries sauvTemp} ()}
+\label{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}
 
 \item 
-\hypertarget{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}{void {\bfseries sauv\-Temp} ()}\label{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}
-
-\item 
-\hypertarget{classBuffer_aeddaa4c55df7da9daa8541157fc4f096}{void {\bfseries maj\-D\-O\-M} ()}\label{classBuffer_aeddaa4c55df7da9daa8541157fc4f096}
+\hypertarget{classBuffer_af80b627f4d24823d0e7da5b9c15cbd46}{
+void {\bfseries majDom} ()}
+\label{classBuffer_af80b627f4d24823d0e7da5b9c15cbd46}
 
 \end{DoxyCompactItemize}
 
 
-\-La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
+\subsection{Description détaillée}
+Classe \hyperlink{classBuffer}{Buffer} Cette Classe représente le contenu visible dans l'éditeur 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classBuffer_ae7ef2cd201190fde551dcb902627112b}{
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\subsubsection[{Buffer}]{\setlength{\rightskip}{0pt plus 5cm}Buffer::Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_ae7ef2cd201190fde551dcb902627112b}
+Constructeur par défaut \hypertarget{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}{
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\subsubsection[{Buffer}]{\setlength{\rightskip}{0pt plus 5cm}Buffer::Buffer (
+\begin{DoxyParamCaption}
+\item[{char}]{ cheminFichier\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}
+Constructeur paramétré \hypertarget{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}{
+\index{Buffer@{Buffer}!$\sim$Buffer@{$\sim$Buffer}}
+\index{$\sim$Buffer@{$\sim$Buffer}!Buffer@{Buffer}}
+\subsubsection[{$\sim$Buffer}]{\setlength{\rightskip}{0pt plus 5cm}Buffer::$\sim$Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}
+Destructeur 
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{DoxyCompactItemize}
 \item 
-buffer.\-h\item 
-buffer.\-cc\end{DoxyCompactItemize}
+buffer.h\item 
+buffer.cc\end{DoxyCompactItemize}

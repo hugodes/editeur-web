@@ -1,15 +1,13 @@
 \documentclass[a4paper]{book}
 \usepackage{makeidx}
-\usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{float}
 \usepackage{listings}
 \usepackage{color}
-\usepackage{ifthen}
-\usepackage[table]{xcolor}
 \usepackage{textcomp}
 \usepackage{alltt}
+\usepackage{times}
 \usepackage{ifpdf}
 \ifpdf
 \usepackage[pdftex,
@@ -30,31 +28,21 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 
-\usepackage{mathptmx}
-\usepackage[scaled=.90]{helvet}
-\usepackage{courier}
-\usepackage{sectsty}
-\usepackage[titles]{tocloft}
 \usepackage{doxygen}
 \lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
 \makeindex
 \setcounter{tocdepth}{3}
 \renewcommand{\footrulewidth}{0.4pt}
-\renewcommand{\familydefault}{\sfdefault}
-\hfuzz=15pt
-\setlength{\emergencystretch}{15pt}
-\hbadness=750
-\tolerance=750
 \begin{document}
-\hypersetup{pageanchor=false,citecolor=blue}
+\hypersetup{pageanchor=false}
 \begin{titlepage}
 \vspace*{7cm}
 \begin{center}
-{\Large \-Editeur-\/\-Web }\\
+{\Large Editeur-\/Web }\\
 \vspace*{1cm}
-{\large \-Généré par Doxygen 1.7.6.1}\\
+{\large Généré par Doxygen 1.7.1}\\
 \vspace*{0.5cm}
-{\small Jeudi Avril 11 2013 10:34:30}\\
+{\small Sat Apr 13 2013 18:23:05}\\
 \end{center}
 \end{titlepage}
 \clearemptydoublepage
@@ -62,13 +50,24 @@
 \tableofcontents
 \clearemptydoublepage
 \pagenumbering{arabic}
-\hypersetup{pageanchor=true,citecolor=blue}
-\chapter{\-Index des classes}
+\hypersetup{pageanchor=true}
+\chapter{Index des classes}
 \input{annotated}
-\chapter{\-Documentation des classes}
+\chapter{Index des fichiers}
+\input{files}
+\chapter{Documentation des classes}
 \input{classBuffer}
+\input{classDom}
 \input{classfacteur}
+\input{classFacteur}
 \input{classLeEdit}
 \input{classLigne}
+\input{classNoeud}
+\input{classnoeudtexte}
+\input{classnom}
+\chapter{Documentation des fichiers}
+\input{facteur_8cc}
+\input{facteur_8h}
+\input{ligne_8cc}
 \printindex
 \end{document}
