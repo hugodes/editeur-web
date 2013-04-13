@@ -13,7 +13,7 @@
 using namespace std;
 
 /**
-* @class facteur facteur.h
+* @class Facteur
 */
 class Facteur {
 

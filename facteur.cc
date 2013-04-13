@@ -1,7 +1,7 @@
 /**
 * @file facteur.cc
 * @author Nicolas EMERI & Bryan LIBOUREL
-* @class Facteur facteur.h "./facteur.h"
+* @class Facteur
 * @details surcharge de l'operateur <<
 */
 
