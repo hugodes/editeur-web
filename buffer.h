@@ -4,11 +4,12 @@
 #define buffer_h
 
 #include <iostream>
+#include <cstdio>
 #include <list>
 #include <iterator>
 using namespace std;
 #include "dom.h"
-#include "Ligne.h"
+#include "ligne.h"
 
 /** Classe Buffer
  *  Cette Classe représente le contenu visible dans l'éditeur
