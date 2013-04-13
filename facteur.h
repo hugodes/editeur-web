@@ -6,6 +6,12 @@
 
 #ifndef DEF_FACTEUR
 #define DEF_FACTEUR
+
+#include <iostream>
+#include <string.h>
+
+using namespace std;
+
 /**
 * @class facteur facteur.h "./facteur.h"
 */
