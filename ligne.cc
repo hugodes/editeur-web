@@ -50,11 +50,14 @@ vector<Facteur>::iterator iter;
 * @brief Constructeur de ligne
 */
 
-Ligne::Ligne(const char* t){
+Ligne::Ligne(char* t){
 	
 	Facteur fact;
 	int i=0;
 	char f[100];
+	char caractere[2];
+		caractere[0]=' ';
+		caractere[1]='\0';
 
 	char* espace;
 	espace=new char[2];
@@ -70,6 +73,11 @@ Ligne::Ligne(const char* t){
 	
 	this->indentUtil=0;
 
+	if (t[i]=='\0'){
+		fact.setTexte(f_ligne);
+		this->ligne.push_back(fact);
+			}
+
 	while (t[i] =='\t')
 	{                               
 		(this->indentUtil)++;
@@ -83,20 +91,48 @@ Ligne::Ligne(const char* t){
 	while (t[i] !='\0')
 	{
 	memset (f, 0, sizeof (f));  
+	bool b=false;
+	bool fin_l=false;
 
-		while ((t[i]) !=' ')
-				{
-			strcat(f,const t[i]);
-			i++;			
-				}
-	fact.setTexte(f);
-	this->ligne.push_back(fact);
-	fact.setTexte(espace);
-	this->ligne.push_back(fact);
-	i++;
+		while (((t[i]) !=' ')&&(!fin_l))
+			{
+			b=true;
+			caractere[0]=t[i];
+			strcat(f, caractere);
+			i++;
+			if (t[i]=='\0'){
+				fin_l=true;
+				}				
+			}
+	  if (b){
+		if (fin_l){
+			fact.setTexte(f);
+	  		this->ligne.push_back(fact);
+	  		fact.setTexte(f_ligne);
+	  		this->ligne.push_back(fact);
+			}
+		else{
+			fact.setTexte(f);
+			this->ligne.push_back(fact);		
+			fact.setTexte(espace);
+			this->ligne.push_back(fact);
+		 	i++;
+			}		
+	}else {
+		if (fin_l){	
+		fact.setTexte(espace);
+		this->ligne.push_back(fact);
+		fact.setTexte(f_ligne);
+		this->ligne.push_back(f_ligne);
+	     }else
+		{
+		fact.setTexte(espace);
+		this->ligne.push_back(fact);
+		i++;
+		}
 	}
-fact.setTexte(f_ligne);
-this->ligne.push_back(fact);
+}
+
 }
 
 /**
