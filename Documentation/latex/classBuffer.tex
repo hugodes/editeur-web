@@ -1,45 +1,211 @@
-\hypertarget{classBuffer}{\section{\-Référence de la classe \-Buffer}
-\label{classBuffer}\index{\-Buffer@{\-Buffer}}
+\hypertarget{classBuffer}{
+\section{Référence de la classe Buffer}
+\label{classBuffer}\index{Buffer@{Buffer}}
 }
-\subsection*{\-Fonctions membres publiques}
+
+
+{\ttfamily \#include $<$buffer.h$>$}
+
+\subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}{{\bfseries \-Buffer} (char chemin\-Fichier\mbox{[}$\,$\mbox{]})}\label{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}
+\hypertarget{classBuffer_ae7ef2cd201190fde551dcb902627112b}{
+\hyperlink{classBuffer_ae7ef2cd201190fde551dcb902627112b}{Buffer} ()}
+\label{classBuffer_ae7ef2cd201190fde551dcb902627112b}
 
+\begin{DoxyCompactList}\small\item\em Constructeur par défaut. \item\end{DoxyCompactList}\item 
+\hyperlink{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}{Buffer} (char cheminFichier\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Constructeur paramétré. \item\end{DoxyCompactList}\item 
+\hypertarget{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}{
+\hyperlink{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}{$\sim$Buffer} ()}
+\label{classBuffer_a59b8743e4a5f731bdd0c4185c9ef263b}
+
+\begin{DoxyCompactList}\small\item\em Destructeur. \item\end{DoxyCompactList}\item 
+void \hyperlink{classBuffer_aaa71afa6da49b147a7060900288e67d3}{ajouterLigne} (\hyperlink{classLigne}{Ligne} l, int position)
+\begin{DoxyCompactList}\small\item\em Ajouter une ligne. \item\end{DoxyCompactList}\item 
+\hyperlink{classDom}{Dom} \hyperlink{classBuffer_ae609f810be14bc51b479583957e8d6c1}{getDom} () const 
+\begin{DoxyCompactList}\small\item\em Getter sur \hyperlink{classDom}{Dom}. \item\end{DoxyCompactList}\item 
+void \hyperlink{classBuffer_a42ebf900f193564fed59440c8ec4286f}{setDom} (const \hyperlink{classDom}{Dom} \&)
+\begin{DoxyCompactList}\small\item\em Setter sur \hyperlink{classDom}{Dom}. \item\end{DoxyCompactList}\item 
+list$<$ \hyperlink{classLigne}{Ligne} $>$ \hyperlink{classBuffer_af7f5a6f316e5659e462874998c87921d}{getLignes} () const 
+\begin{DoxyCompactList}\small\item\em Getter de lignes. \item\end{DoxyCompactList}\item 
+void \hyperlink{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}{setLignes} (const list$<$ \hyperlink{classLigne}{Ligne} $>$ \&)
+\begin{DoxyCompactList}\small\item\em Setter sur lignes. \item\end{DoxyCompactList}\item 
+void \hyperlink{classBuffer_a122fe744cef772a83c6228195474171d}{setLignes} (char cheminFichier\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Setter sur lignes. \item\end{DoxyCompactList}\item 
+void \hyperlink{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}{affiche} (ostream \&) const 
+\begin{DoxyCompactList}\small\item\em Affiche. \item\end{DoxyCompactList}\item 
+void \hyperlink{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}{saisie} (istream \&)
+\begin{DoxyCompactList}\small\item\em Saisie. \item\end{DoxyCompactList}\item 
+\hypertarget{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}{
+void \hyperlink{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}{sauvTemp} ()}
+\label{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}
+
+\begin{DoxyCompactList}\small\item\em Sauvegarde dans le fichier temporaire. \item\end{DoxyCompactList}\item 
+\hypertarget{classBuffer_af80b627f4d24823d0e7da5b9c15cbd46}{
+void \hyperlink{classBuffer_af80b627f4d24823d0e7da5b9c15cbd46}{majDom} ()}
+\label{classBuffer_af80b627f4d24823d0e7da5b9c15cbd46}
+
+\begin{DoxyCompactList}\small\item\em Mise à jour du \hyperlink{classDom}{Dom}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Surcharge des operateurs $<$$<$ \& $>$$>$
+
+Cette Classe représente le contenu visible dans l'éditeur 
+
+\subsection{Documentation des constructeurs et destructeur}
+\hypertarget{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}{
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!Buffer@{Buffer}}
+\subsubsection[{Buffer}]{\setlength{\rightskip}{0pt plus 5cm}Buffer::Buffer (
+\begin{DoxyParamCaption}
+\item[{char}]{ cheminFichier\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_a968f9c9b50fe02f7d76de200f78507b0}
+
+
+Constructeur paramétré. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em chemFichier,:}]Le chemin de fichier que l'on souhaite éditer \end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}{
+\index{Buffer@{Buffer}!affiche@{affiche}}
+\index{affiche@{affiche}!Buffer@{Buffer}}
+\subsubsection[{affiche}]{\setlength{\rightskip}{0pt plus 5cm}void Buffer::affiche (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{ os}
+\end{DoxyParamCaption}
+) const}}
+\label{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}
+
+
+Affiche. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em ostream,:}]flux de sortie \end{DoxyParams}
+\hypertarget{classBuffer_aaa71afa6da49b147a7060900288e67d3}{
+\index{Buffer@{Buffer}!ajouterLigne@{ajouterLigne}}
+\index{ajouterLigne@{ajouterLigne}!Buffer@{Buffer}}
+\subsubsection[{ajouterLigne}]{\setlength{\rightskip}{0pt plus 5cm}void Buffer::ajouterLigne (
+\begin{DoxyParamCaption}
+\item[{{\bf Ligne}}]{ l, }
+\item[{int}]{ position}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_aaa71afa6da49b147a7060900288e67d3}
+
+
+Ajouter une ligne. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em \hyperlink{classLigne}{Ligne},:}]\hyperlink{classLigne}{Ligne} a ajouter \item[{\em int,:}]position de l'ajout \end{DoxyParams}
+\hypertarget{classBuffer_ae609f810be14bc51b479583957e8d6c1}{
+\index{Buffer@{Buffer}!getDom@{getDom}}
+\index{getDom@{getDom}!Buffer@{Buffer}}
+\subsubsection[{getDom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dom} Buffer::getDom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classBuffer_ae609f810be14bc51b479583957e8d6c1}
+
+
+Getter sur \hyperlink{classDom}{Dom}. 
+
+\begin{DoxyReturn}{Renvoie}
+\hyperlink{classDom}{Dom}: le DOM du fichier 
+\end{DoxyReturn}
+\hypertarget{classBuffer_af7f5a6f316e5659e462874998c87921d}{
+\index{Buffer@{Buffer}!getLignes@{getLignes}}
+\index{getLignes@{getLignes}!Buffer@{Buffer}}
+\subsubsection[{getLignes}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf Ligne} $>$ Buffer::getLignes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classBuffer_af7f5a6f316e5659e462874998c87921d}
+
+
+Getter de lignes. 
+
+\begin{DoxyReturn}{Renvoie}
+list$<$Ligne$>$: liste des lignes du buffer 
+\end{DoxyReturn}
+\hypertarget{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}{
+\index{Buffer@{Buffer}!saisie@{saisie}}
+\index{saisie@{saisie}!Buffer@{Buffer}}
+\subsubsection[{saisie}]{\setlength{\rightskip}{0pt plus 5cm}void Buffer::saisie (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{ is}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}
+
+
+Saisie. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em istream,:}]flux d'entrée \end{DoxyParams}
+\hypertarget{classBuffer_a42ebf900f193564fed59440c8ec4286f}{
+\index{Buffer@{Buffer}!setDom@{setDom}}
+\index{setDom@{setDom}!Buffer@{Buffer}}
+\subsubsection[{setDom}]{\setlength{\rightskip}{0pt plus 5cm}void Buffer::setDom (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dom} \&}]{ d}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_a42ebf900f193564fed59440c8ec4286f}
+
+
+Setter sur \hyperlink{classDom}{Dom}. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em \hyperlink{classDom}{Dom},:}]remplacer le \hyperlink{classDom}{Dom} \end{DoxyParams}
+\hypertarget{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}{
+\index{Buffer@{Buffer}!setLignes@{setLignes}}
+\index{setLignes@{setLignes}!Buffer@{Buffer}}
+\subsubsection[{setLignes}]{\setlength{\rightskip}{0pt plus 5cm}void Buffer::setLignes (
+\begin{DoxyParamCaption}
+\item[{const list$<$ {\bf Ligne} $>$ \&}]{ l}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}
+
+
+Setter sur lignes. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em list$<$Ligne$>$,:}]remplacer les lignes \end{DoxyParams}
+\hypertarget{classBuffer_a122fe744cef772a83c6228195474171d}{
+\index{Buffer@{Buffer}!setLignes@{setLignes}}
+\index{setLignes@{setLignes}!Buffer@{Buffer}}
+\subsubsection[{setLignes}]{\setlength{\rightskip}{0pt plus 5cm}void Buffer::setLignes (
+\begin{DoxyParamCaption}
+\item[{char}]{ cheminFichier\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{classBuffer_a122fe744cef772a83c6228195474171d}
+
+
+Setter sur lignes. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em char\mbox{[}$\,$\mbox{]},:}]chemin du fichier pour mettre a jour les lignes \end{DoxyParams}
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants :\begin{DoxyCompactItemize}
 \item 
-\hypertarget{classBuffer_aaa71afa6da49b147a7060900288e67d3}{void {\bfseries ajouter\-Ligne} (\hyperlink{classLigne}{\-Ligne} l, int position)}\label{classBuffer_aaa71afa6da49b147a7060900288e67d3}
-
-\item 
-\hypertarget{classBuffer_ae3c4df1d65179d391de936a324c48871}{\-D\-O\-M {\bfseries get\-Dom} () const }\label{classBuffer_ae3c4df1d65179d391de936a324c48871}
-
-\item 
-\hypertarget{classBuffer_ab0d9e2abf2c5a8390d567407cd1cf556}{void {\bfseries set\-Dom} (const \-D\-O\-M \&)}\label{classBuffer_ab0d9e2abf2c5a8390d567407cd1cf556}
-
-\item 
-\hypertarget{classBuffer_af7f5a6f316e5659e462874998c87921d}{list$<$ \hyperlink{classLigne}{\-Ligne} $>$ {\bfseries get\-Lignes} () const }\label{classBuffer_af7f5a6f316e5659e462874998c87921d}
-
-\item 
-\hypertarget{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}{void {\bfseries set\-Lignes} (const list$<$ \hyperlink{classLigne}{\-Ligne} $>$ \&)}\label{classBuffer_a8d4cb25f19d9782d663d73ca460e1e37}
-
-\item 
-\hypertarget{classBuffer_a122fe744cef772a83c6228195474171d}{void {\bfseries set\-Lignes} (char chemin\-Fichier\mbox{[}$\,$\mbox{]})}\label{classBuffer_a122fe744cef772a83c6228195474171d}
-
-\item 
-\hypertarget{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}{void {\bfseries affiche} (ostream \&) const }\label{classBuffer_a89c9eac6ff51f0e9b2e8eaddd1c56bd0}
-
-\item 
-\hypertarget{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}{void {\bfseries saisie} (istream \&)}\label{classBuffer_a9dddb1a46c258c5db1ed04a101e0a5cd}
-
-\item 
-\hypertarget{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}{void {\bfseries sauv\-Temp} ()}\label{classBuffer_aa9f3fc3d9114811eba3029072eaf10fa}
-
-\item 
-\hypertarget{classBuffer_aeddaa4c55df7da9daa8541157fc4f096}{void {\bfseries maj\-D\-O\-M} ()}\label{classBuffer_aeddaa4c55df7da9daa8541157fc4f096}
-
-\end{DoxyCompactItemize}
-
-
-\-La documentation de cette classe a été générée à partir des fichiers suivants \-:\begin{DoxyCompactItemize}
-\item 
-buffer.\-h\item 
-buffer.\-cc\end{DoxyCompactItemize}
+buffer.h\item 
+\hyperlink{buffer_8cc}{buffer.cc}\end{DoxyCompactItemize}
