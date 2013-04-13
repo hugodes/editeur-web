@@ -1,12 +1,15 @@
 /**
 * @file facteur.cc
 * @author Nicolas EMERI & Bryan LIBOUREL
-* @class Facteur facteur.h "./facteur.h"
+* @class Facteur
 * @details surcharge de l'operateur <<
 */
 
 #include "facteur.h"
 
+/**
+* @brief Constructeur par défaut
+*/
 Facteur::Facteur(){
     texte=NULL;
     couleur=NULL;
