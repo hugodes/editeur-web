@@ -7,6 +7,9 @@
 
 #include "facteur.h"
 
+/**
+* @brief Constructeur par défaut
+*/
 Facteur::Facteur(){
     texte=NULL;
     couleur=NULL;

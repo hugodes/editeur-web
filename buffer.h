@@ -1,7 +1,7 @@
 /*
  * @file buffer.h
  * @author Hugo des Longchamps
- * @details surcharge de l'operateur <<
+ * @details surcharge des operateurs << & >>
  */
 #ifndef buffer_h
 #define buffer_h
