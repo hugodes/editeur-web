@@ -6,16 +6,11 @@
 */
 
 #include "facteur.h"
-#include <iostream>
-#include <string.h>
-
-using namespace std;
-
 
 Facteur::Facteur(){
-    texte==NULL;
-    couleur==NULL;
-    texteFormate==NULL;
+    texte=NULL;
+    couleur=NULL;
+    texteFormate=NULL;
 }
 
 /**
@@ -87,7 +82,8 @@ void Facteur::formate() {
 * @brief Surcharge l'operateur << 
 * @return le flux de sortie ostream
 */
-ostream& operator<<(ostream &flux, const Facteur &f){
-    flux << f.getTexteFormate();
+ostream& operator<<(ostream &flux, Facteur &f){
+    string t(f.getTexteFormate());
+    flux << t;
     return flux;
 }
