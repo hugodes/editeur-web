@@ -7,7 +7,7 @@
 #include<string>
 #include<cstring>
 using namespace std;
-
+#include<iostream>
 #include <iterator>
 class Ligne
 {
@@ -20,7 +20,7 @@ class Ligne
 		Ligne();
 		~Ligne();
 		Ligne(vector<Facteur>);
-		Ligne(char*);
+		Ligne(const char*);
 		char* toString();
 		void affiche(ostream &)const;
 };
