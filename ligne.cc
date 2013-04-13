@@ -1,4 +1,8 @@
-//Créateur: Amazigh Haddadou
+/**
+* @file ligne.cc
+* @author  Amazigh Haddadou
+* @classe Ligne ligne.h "./ligne.h"
+*/
 
 #include"ligne.h"
 #include"facteur.h"
@@ -6,17 +10,23 @@
 #include<vector>
 #include<iostream>
 using namespace std;
-
-/* Constructeur par defaut de Ligne */
+/**
+* @brief Constructeur par defaut de Ligne 
+*/
 Ligne::Ligne(){
 this->ligne=vector<Facteur>();
 this->indentUtil=0;
 }
-
-/* Destructeur de Ligne */
+/**
+* @brief Destructeur de Ligne 
+*/
 Ligne::~Ligne() {}
 
-/* Constructeur Parametré */
+/**
+* @brief Constructeur de ligne
+* @param t Vecteur de facteur
+*/
+
 Ligne::Ligne(vector<Facteur> t){
 
 vector<Facteur>::iterator iter;
@@ -36,7 +46,9 @@ vector<Facteur>::iterator iter;
     
 }
 
-/* Constructeur Parametré */
+/**
+* @brief Constructeur de ligne
+*/
 
 Ligne::Ligne(const char* t){
 	
@@ -50,14 +62,14 @@ Ligne::Ligne(const char* t){
 	
 	char* f_ligne;  
 	f_ligne=new char[3];
-	strcpy(f_ligne, " ");
+	strcpy(f_ligne, "\0");
 
 	char* tab;
 	tab=new char[3];
 	strcpy(tab, "\t");
 	
 	this->indentUtil=0;
-//-----------------------> Calcule indentation d'une ligne <--------------------------//
+
 	while (t[i] =='\t')
 	{                               
 		(this->indentUtil)++;
@@ -66,11 +78,11 @@ Ligne::Ligne(const char* t){
 		i++;					 	
 	}
 
-//------------------Extraire l'ensemble des facteurs qui forment une ligne ----------------------------->
+
 
 	while (t[i] !='\0')
 	{
-	memset (f, 0, sizeof (f));  // vider le tableau f
+	memset (f, 0, sizeof (f));  
 
 		while ((t[i]) !=' ')
 				{
@@ -87,7 +99,10 @@ fact.setTexte(f_ligne);
 this->ligne.push_back(fact);
 }
 
-
+/**
+* @brief Retourne une ligne
+* @return Retourne une ligne
+*/
 char* Ligne::toString(){
 	vector<Facteur>::iterator iter;
 	char* l;
@@ -99,6 +114,9 @@ char* Ligne::toString(){
 return l;	
 }
 
+/**
+* @brief Retourne le d'une ligne
+*/
 
 void Ligne::affiche(ostream &os)const {
 vector<Facteur>::iterator iter;
@@ -108,8 +126,10 @@ for (int ii=0; ii<ligne.size(); ii++){
 	}
 
 }
- 
-
+/**
+* @brief Surcharge de l'operateur <<
+* @return Retourne le flux de sortie  
+*/
 ostream& operator << (ostream & os, const Ligne &o){
 	o.affiche(os);
 	return os;

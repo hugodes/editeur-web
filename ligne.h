@@ -1,7 +1,9 @@
-//Créateur: Amazigh Haddadou 
-
+/**
+*@author Amazigh Haddadou 
+*/
 #ifndef DEF_LIGNE
 #define DEF_LIGNE
+
 #include <vector>
 #include"facteur.h"
 #include<string>
@@ -9,6 +11,9 @@
 using namespace std;
 #include<iostream>
 #include <iterator>
+/**
+* @classe Facteur facteur.h
+*/
 class Ligne
 {
 
@@ -17,14 +22,14 @@ class Ligne
   		vector<Facteur> ligne;
 
 	public:
-		Ligne();
-		~Ligne();
-		Ligne(vector<Facteur>);
-		Ligne(const char*);
-		char* toString();
-		void affiche(ostream &)const;
+		Ligne();/** @fn Constructeur par defaut de ligne */
+		~Ligne(); /** @fn Destructeur de ligne */
+		Ligne(vector<Facteur>); /** @fn Constructeur de ligne */
+		Ligne(const char*); /** @fn Constructeur de ligne */
+		char* toString(); /** @fn Retourne une ligne */
+		void affiche(ostream &)const; /** @fn Retourne le text d'une ligne */
 };
 
-ostream& operator<<(ostream &, const Ligne &);
+ostream& operator<<(ostream &, const Ligne &); /** Surcharge de l'operateur << */
 
 #endif

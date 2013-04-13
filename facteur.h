@@ -6,7 +6,6 @@
 
 #ifndef DEF_FACTEUR
 #define DEF_FACTEUR
-
 /**
 * @class facteur facteur.h "./facteur.h"
 */
@@ -18,7 +17,6 @@ class Facteur {
 		char* texteFormate;
 
 	public:
-	    Facteur();
 		Facteur(char* text); /** @fn Constructeur de facteur */
 		~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
@@ -28,6 +26,6 @@ class Facteur {
 		void formate(); /** @fn Formate puis stock le texte */
 };
 
-ostream& operator<<(ostream &flux, const Facteur &f); /** @fn Surcharge l'operateur << */
+ostream& operator<<(ostream & flux, const Facteur &f); /** @fn Surcharge l'operateur << */
 
 #endif
