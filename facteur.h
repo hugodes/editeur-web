@@ -17,6 +17,7 @@ class Facteur {
 		char* texteFormate;
 
 	public:
+	    Facteur(); /** @fn Constructeur par defaut */
 		Facteur(char* text); /** @fn Constructeur de facteur */
 		~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
