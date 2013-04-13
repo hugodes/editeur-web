@@ -13,9 +13,9 @@ using namespace std;
 
 
 Facteur::Facteur(){
-    texte==NULL;
-    couleur==NULL;
-    texteFormate==NULL;
+    texte=NULL;
+    couleur=NULL;
+    texteFormate=NULL;
 }
 
 /**
