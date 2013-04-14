@@ -21,9 +21,23 @@ Facteur::Facteur(){
 * @param text texte du facteur
 */
 Facteur::Facteur(char* text) {
+	texte = new char[sizeof(text)];
 	strcpy(this->texte,text);
+	couleur = new char[256];
 	strcpy(this->couleur,"black");
 	this->formate();
+}
+
+/**
+ * @brief Constructeur par copie de Facteur
+ * @param Facteur: un objet Facteur
+ */
+Facteur::Facteur(const Facteur& f){
+    this->texte=new char[sizeof(f.texte)];
+    strcpy(this->texte, f.texte);
+    this->couleur=new char[sizeof(f.couleur)];
+    strcpy(this->couleur, f.couleur);
+    this->formate();
 }
 
 /**
@@ -85,8 +99,10 @@ void Facteur::formate() {
 * @brief Surcharge l'operateur << 
 * @return le flux de sortie ostream
 */
-ostream& operator<<(ostream &flux, Facteur &f){
-    string t(f.getTexteFormate());
+ostream& operator<<(ostream &flux, const Facteur &f){
+    //sur cette methode, f est const, il faut donc en faire une copie
+    Facteur copie_facteur(f);
+    string t(copie_facteur.getTexteFormate());
     flux << t;
     return flux;
 }

@@ -5,12 +5,12 @@
 #define DEF_LIGNE
 
 #include <vector>
-#include"facteur.h"
-#include<string>
-#include<cstring>
-using namespace std;
-#include<iostream>
+#include <string>
+#include <cstring>
 #include <iterator>
+#include <iostream>
+using namespace std;
+#include "facteur.h"
 /**
 * @classe Facteur facteur.h
 */
