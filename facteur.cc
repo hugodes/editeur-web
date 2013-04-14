@@ -71,8 +71,9 @@ void Facteur::setCouleur(char* color) {
 * @brief Retourne le texte du facteur 
 * @return retourne le texte du facteur
 */
-char* Facteur::getTexte() {
-    return(this->texte);
+char* Facteur::getTexte()const {
+    char *texte_renvoi = new char[sizeof(texte)];
+    return(texte_renvoi);
 }
 
 /**

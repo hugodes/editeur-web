@@ -18,8 +18,8 @@ class Ligne
 {
 
 	private:
-  		int indentUtil;
-  		vector<Facteur> ligne;
+		int indentUtil;
+		vector<Facteur> ligne;
 
 	public:
 		Ligne();/** @fn Constructeur par defaut de ligne */
