@@ -102,7 +102,6 @@ void Facteur::formate() {
 ostream& operator<<(ostream &flux, const Facteur &f){
     //sur cette methode, f est const, il faut donc en faire une copie
     Facteur copie_facteur(f);
-	cout<<"Je suis la"<<endl;
     string t(copie_facteur.getTexteFormate());
     flux << t;
     return flux;

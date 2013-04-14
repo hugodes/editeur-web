@@ -8,12 +8,13 @@ using namespace std;
 
 int main(){
     //ecrire vos tests ici
+    //Creation d'une chaine C
     string str("UnMmot");
     char *cstr = new char[str.length()+1];
     strcpy(cstr, str.c_str());
-    cout<<"Je suis dans le main"<<endl;
+    //Construction paramétrée de Facteur
     Facteur f(cstr);
-    cout<<"Voici ce qu'affiche f"<<endl;
+    //Affichage de Facteur
     cout<<f<<endl;
     return 0;
 }
