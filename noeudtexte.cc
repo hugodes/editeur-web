@@ -21,6 +21,19 @@ void noeudtexte::setText(string s){
 }
 
 
+
+	
+
+
+
+
+
+
+
+
+
+
+
    
     
 
