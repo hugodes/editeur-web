@@ -5,11 +5,7 @@
 */
 
 #include"ligne.h"
-#include"facteur.h"
-#include<string>
-#include<vector>
-#include<iostream>
-using namespace std;
+
 /**
 * @brief Constructeur par defaut de Ligne 
 */

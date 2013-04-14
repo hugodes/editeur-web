@@ -4,8 +4,8 @@
 * @details surcharge de l'operateur <<
 */
 
-#ifndef DEF_FACTEUR
-#define DEF_FACTEUR
+#ifndef facteur_h
+#define facteur_h
 
 #include <iostream>
 #include <string.h>
@@ -25,6 +25,7 @@ class Facteur {
 	public:
 	    Facteur(); /** @fn Constructeur par defaut */
 		Facteur(char* text); /** @fn Constructeur de facteur */
+		Facteur(const Facteur&); /** @fn Constructeur par copie */
 		~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
 		char* getTexte(); /** @fn Retourne le texte du facteur */
