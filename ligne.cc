@@ -23,23 +23,22 @@ Ligne::~Ligne() {}
 * @param t Vecteur de facteur
 */
 
-Ligne::Ligne(vector<Facteur> t){
+Ligne::Ligne(vector<Facteur> v){
 
-vector<Facteur>::iterator iter;
-	
-	this->indentUtil=0;
-	this->ligne=t; 	
-	char* tab;
-	tab=new char[3];
-	strcpy(tab, "\t");	
-	int i=0;
+    this->indentUtil=0;
+    this->ligne=v;
+    char* tab;
+    tab=new char[2];
+    strcpy(tab, "\t");
+    int i=0;
 
-	while (strcmp ((iter[i].getTexte()),tab)==0)
-	{		  	
-		(this->indentUtil)++;		
-		i++;
-	}
-    
+    while (strcmp (v[i].getTexte(),tab)==0)
+    {
+        (this->indentUtil)++;
+        i++;
+    }
+    cout<<"Je suis ici"<<endl;
+
 }
 
 /**
