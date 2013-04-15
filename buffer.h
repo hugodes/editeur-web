@@ -1,66 +1,46 @@
-//Créateur: Hugo des Longchamps
-//Modificatins: Hugo des Longchamps
+/*
+ * @file buffer.h
+ * @author Hugo des Longchamps
+ * @details surcharge des operateurs << & >>
+ */
 #ifndef buffer_h
 #define buffer_h
 
 #include <iostream>
+#include <cstdio>
 #include <list>
 #include <iterator>
 using namespace std;
 #include "dom.h"
-#include "Ligne.h"
+#include "ligne.h"
 
-/** Classe Buffer
+/** @class Buffer
  *  Cette Classe représente le contenu visible dans l'éditeur
  */
 class Buffer{
     private:
-
-        /** Attribut Dom
-         * Ceci est la représentation du fichier sous forme de DOM
-         */
         Dom dom;
-
-        /** Attribut Ligne
-         * Ceci est la liste des lignes du buffer
-         */
         list<Ligne> lignes;
-
-        /**
-         *chemin vers le fichier de sauvegarde temp.
-         */
         char *chemFichTemp;
+
     public:
 
-        /**
-         * Constructeur par défaut
-         */
-        Buffer();
-
-        /**
-         * Constructeur paramétré
-         */
-        Buffer(char cheminFichier[]);
-
-        /**
-         * Destructeur
-         */
-        ~Buffer();
-        void ajouterLigne(Ligne l, int position);
-        Dom getDom()const;
-        void setDom(const Dom &);
-        list<Ligne> getLignes()const;
-        void setLignes(const list<Ligne> &);
-        void setLignes(char cheminFichier[]);
-        void affiche(ostream &)const;
-        void saisie(istream &);
-        //sauvegarde le buffer dans un fichier temporaire
-        void sauvTemp();
-        //met a jours le dom à partir du fichier temporaire
-        void majDom();
+        Buffer();/** @fn Constructeur par défaut */
+        Buffer(char cheminFichier[]);/** @fn Constructeur paramétré*/
+        ~Buffer();/** @fn Destructeur */
+        void ajouterLigne(Ligne l, int position);/** @fn Ajouter une ligne */
+        Dom getDom()const;/** @fn Getter du Dom */
+        void setDom(const Dom &);/** @fn Setter du Dom */
+        list<Ligne> getLignes()const;/** @fn Getter des lignes */
+        void setLignes(const list<Ligne> &);/** @fn Setter des lignes */
+        void setLignes(char cheminFichier[]);/** @fn Setter des lignes */
+        void affiche(ostream &)const;/** @fn Affichage */
+        void saisie(istream &);/** @fn Saisie */
+        void sauvTemp();/** @fn Sauvegarde dans le fichier temporaire*/
+        void majDom();/** @fn Mise a jour du Dom */
 };
 
-ostream& operator<<(ostream &, const Buffer &);
-istream& operator>>(istream &, Buffer &);
+ostream& operator<<(ostream &, const Buffer &);/** @fn Surcharge de l'operateur d'entrée */
+istream& operator>>(istream &, Buffer &);/** @fn Surcharge de l'operateur de sortie*/
 
 #endif

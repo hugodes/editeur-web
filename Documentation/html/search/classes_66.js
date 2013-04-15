@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['facteur',['facteur',['../classfacteur.html',1,'']]]
+  ['facteur',['Facteur',['../class_facteur.html',1,'']]]
 ];

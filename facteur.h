@@ -4,11 +4,16 @@
 * @details surcharge de l'operateur <<
 */
 
-#ifndef DEF_FACTEUR
-#define DEF_FACTEUR
+#ifndef facteur_h
+#define facteur_h
+
+#include <iostream>
+#include <string.h>
+
+using namespace std;
 
 /**
-* @class facteur facteur.h "./facteur.h"
+* @class Facteur
 */
 class Facteur {
 
@@ -18,16 +23,17 @@ class Facteur {
 		char* texteFormate;
 
 	public:
-	    Facteur();
+	    Facteur(); /** @fn Constructeur par defaut */
 		Facteur(char* text); /** @fn Constructeur de facteur */
+		Facteur(const Facteur&); /** @fn Constructeur par copie */
 		~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
-		char* getTexte(); /** @fn Retourne le texte du facteur */
+		char* getTexte()const; /** @fn Retourne le texte du facteur */
 		char* getTexteFormate(); /** @fn Retourne le texte du facteur formaté avec la couleur */
 		void setCouleur (char* color); /** @fn Definir la couleur */
 		void formate(); /** @fn Formate puis stock le texte */
 };
 
-//ostream& operator<<(ostream &flux, const Facteur &f); /** @fn Surcharge l'operateur << */
+ostream& operator<<(ostream & flux, const Facteur &f); /** @fn Surcharge l'operateur << */
 
 #endif
