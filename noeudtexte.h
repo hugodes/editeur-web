@@ -1,9 +1,14 @@
 #ifndef domtext_h
 #define domtext_h
+
+#include <string>
+
 using namespace std;
-#include "DOMNode.h"
-#include <vector>
-class DOMText{
+
+//#include <vector>
+
+class Noeud;
+class DOMText : public Noeud{
 
 private :
     string text;

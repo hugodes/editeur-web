@@ -9,7 +9,7 @@ using namespace std;
 
  /* Constructeurs */ 
 
-Dom::Dom():racine(NULL){}
+Dom::Dom():racine(){}
 
 Dom::Dom(Noeud &r):racine(r){}
   

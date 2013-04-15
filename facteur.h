@@ -28,6 +28,6 @@ class Facteur {
 		void formate(); /** @fn Formate puis stock le texte */
 };
 
-ostream& operator<<(ostream &flux, const Facteur &f); /** @fn Surcharge l'operateur << */
+//ostream& operator<<(ostream &flux, const Facteur &f); /** @fn Surcharge l'operateur << */
 
 #endif
