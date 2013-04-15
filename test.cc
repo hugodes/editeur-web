@@ -19,10 +19,21 @@ int main(){
     string str("UnMmot");
     char *cstr = new char[str.length()+1];
     strcpy(cstr, str.c_str());
-
     //Construction paramétrée de Facteur
     Facteur f1(cstr);
     delete cstr;
+    //Changer le texte du Facteur
+    str = ("UnMot");
+    char *cstr1 = new char[str.length()+1];
+    strcpy(cstr1, str.c_str());
+    f1.setTexte(cstr1);
+    delete cstr1;
+    //Changer la couleur du Facteur
+    str = ("#FFF000");
+    char *cstr2 = new char[str.length()+1];
+    strcpy(cstr2, str.c_str());
+    f1.setCouleur(cstr2);
+    delete cstr2;
     //Affichage de Facteur
     cout<<"Affichage d'un facteur:"<<endl;
     cout<<f1<<endl;
