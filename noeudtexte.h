@@ -2,12 +2,12 @@
 #define domtext_h
 
 #include <string>
-
+#include "noeud.h"
 using namespace std;
 
 //#include <vector>
 
-class Noeud;
+
 class DOMText : public Noeud{
 
 private :
