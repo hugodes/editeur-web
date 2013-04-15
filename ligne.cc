@@ -127,7 +127,9 @@ Ligne::Ligne(char* t){
 		}
 	}
 }
-
+delete espace;
+delete f_ligne;
+delete tab;
 }
 
 /**
