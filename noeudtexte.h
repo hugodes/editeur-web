@@ -8,24 +8,17 @@
 
 #include <iostream>
 #include <string>
-<<<<<<< HEAD
-#include "noeud.h"
-=======
->>>>>>> af78fbff3525a8bf91a61e640662993f049af00e
+
 using namespace std;
 
 #include "noeud.h"
 
-
-<<<<<<< HEAD
-
-=======
 /*
 
 *@class <nom> [noeudtexte.h] [./noeudtexte.h]  
 
 */
->>>>>>> af78fbff3525a8bf91a61e640662993f049af00e
+
 class DOMText : public Noeud{
 
 private :
