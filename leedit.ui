@@ -33,7 +33,7 @@
     <item>
      <widget class="QTabWidget" name="onglets">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="ongletCode">
        <property name="enabled">
@@ -60,7 +60,7 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QTextBrowser" name="apercu"/>
+           <widget class="QTextEdit" name="apercu"/>
           </item>
          </layout>
         </item>
@@ -69,18 +69,16 @@
      </widget>
     </item>
     <item>
-     <widget class="QTreeWidget" name="hierarchie">
+     <widget class="QTreeView" name="hierarchie">
       <property name="maximumSize">
        <size>
-        <width>200</width>
+        <width>400</width>
         <height>16777215</height>
        </size>
       </property>
-      <column>
-       <property name="text">
-        <string>Hierarchie</string>
-       </property>
-      </column>
+      <attribute name="headerVisible">
+       <bool>false</bool>
+      </attribute>
      </widget>
     </item>
    </layout>
@@ -293,22 +291,6 @@
     </hint>
     <hint type="destinationlabel">
      <x>88</x>
-     <y>183</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionHierarchie</sender>
-   <signal>triggered(bool)</signal>
-   <receiver>hierarchie</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>500</x>
      <y>183</y>
     </hint>
    </hints>

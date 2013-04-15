@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['leedit',['LeEdit',['../classLeEdit.html',1,'']]],
-  ['ligne',['Ligne',['../classLigne.html',1,'']]]
+  ['leedit',['LeEdit',['../class_le_edit.html',1,'']]],
+  ['ligne',['Ligne',['../class_ligne.html',1,'']]]
 ];

@@ -1,24 +1,43 @@
 /**
 * @file facteur.cc
 * @author Nicolas EMERI & Bryan LIBOUREL
-* @class Facteur facteur.h "./facteur.h"
+* @class Facteur
 * @details surcharge de l'operateur <<
 */
 
 #include "facteur.h"
-#include <iostream>
-#include <string.h>
 
-using namespace std;
+/**
+* @brief Constructeur par défaut
+*/
+Facteur::Facteur(){
+    texte=NULL;
+    couleur=NULL;
+    texteFormate=NULL;
+}
 
 /**
 * @brief Constructeur de facteur 
 * @param text texte du facteur
 */
 Facteur::Facteur(char* text) {
+	texte = new char[sizeof(text)];
 	strcpy(this->texte,text);
+	couleur = new char[256];
 	strcpy(this->couleur,"black");
 	this->formate();
+}
+
+/**
+ * @brief Constructeur par copie de Facteur
+ * @param Facteur: un objet Facteur
+ */
+Facteur::Facteur(const Facteur& f){
+    this->texte=new char[sizeof(f.texte)];
+    strcpy(this->texte, f.texte);
+    this->couleur=new char[sizeof(f.couleur)];
+    strcpy(this->couleur, f.couleur);
+    this->formate();
 }
 
 /**
@@ -52,8 +71,9 @@ void Facteur::setCouleur(char* color) {
 * @brief Retourne le texte du facteur 
 * @return retourne le texte du facteur
 */
-char* Facteur::getTexte() {
-    return(this->texte);
+char* Facteur::getTexte()const {
+    char *texte_renvoi = new char[sizeof(texte)];
+    return(texte_renvoi);
 }
 
 /**
@@ -81,6 +101,9 @@ void Facteur::formate() {
 * @return le flux de sortie ostream
 */
 ostream& operator<<(ostream &flux, const Facteur &f){
-    flux << f.getTexteFormate();
+    //sur cette methode, f est const, il faut donc en faire une copie
+    Facteur copie_facteur(f);
+    string t(copie_facteur.getTexteFormate());
+    flux << t;
     return flux;
 }

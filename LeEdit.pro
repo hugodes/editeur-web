@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2013-03-25T15:03:23
+# Fichier créé par bryan
 #
 #-------------------------------------------------
 
@@ -14,8 +14,20 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        leedit.cpp
+        leedit.cpp\
+        buffer.cc\
+        dom.cc\
+        facteur.cc\
+        ligne.cc\
+        noeud.cc\
+        noeudtexte.cc
 
-HEADERS  += leedit.h
+HEADERS  += leedit.h\
+        buffer.h\
+        dom.h\
+        facteur.h\
+        ligne.h\
+        noeud.h\
+        noeudtexte.h
 
 FORMS    += leedit.ui
