@@ -26,9 +26,9 @@ class Dom{
   virtual ~Dom();
 
   /* Méthodes pour modifier le DOM */
-  virtual bool ajoutNoeud(const Noeud&, const Noeud&);
+  virtual bool ajoutNoeud(Noeud, Noeud);
   // virtual bool supprimeNoeud(Noeud&);
-  virtual bool noeudPresent(const Noeud&);
+  virtual bool noeudPresent(const Noeud);
 
   /* Méthode d'affichage */
   virtual istream& saisie(istream&);
@@ -38,9 +38,9 @@ class Dom{
   virtual int nbNoeud() const;
 
   /* méthode d'information graphique */
-  virtual int retournerTabLigne(Noeud&);
-  virtual Noeud retournerPtrNode(Ligne&);
-  //  virtual int indentFormelle(Ligne&);
+  virtual int retournerTabLigne(Noeud);
+  virtual Noeud retournerPtrNode(Ligne);
+  //  virtual int indentFormelle(Ligne);
   
 };
 
