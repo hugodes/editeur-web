@@ -4,11 +4,25 @@
 #include <string>
 #include <list>
 #include "ligne.h"
-#include "facteur.h"
+//#include "noeudtexte.h"
 
 using namespace std;
 
 //typedef std::list<Objet> Obj_list;
+/*class Noeud;
+class DOMText : public Noeud{
+
+private :
+    string text;
+
+public :
+	DOMText ();
+	~DOMText();
+	DOMText(string);
+};
+*/
+
+
 
 class Noeud{
 
@@ -20,7 +34,7 @@ class Noeud{
   list<Noeud> descendant;
   Ligne* lignedeb;
   Ligne* lignefin;
-  Facteur* facteurDeb;
+   Facteur* facteurDeb;
   Facteur* facteurFin;
   
 
@@ -29,7 +43,7 @@ class Noeud{
   
   /* Constructeurs */ 
   Noeud();
-  Noeud(string, int, Noeud*, Ligne*, Ligne*, Facteur*, Facteur*);
+  Noeud(string, int, Noeud&, Ligne&, Ligne&, Facteur&, Facteur&);
   Noeud(const Noeud&);
   
   /* Destructeur */
@@ -38,20 +52,22 @@ class Noeud{
   /* Accesseurs */
   virtual string getNom() const;
   virtual void setNom(string);
+  virtual int getIndent() const;
+  virtual void setIndent(int);
   virtual Noeud getPere() const;
-  virtual void setPere(Noeud&);
-  virtual int getLigneDeb() const;
-  virtual void setLigneDeb(Ligne&);
-  virtual int getLigneFin() const;
-  virtual void setLigneFin(Ligne&);
-  virtual int getFacteurDeb() const;
-  virtual void setFacteurDeb(Facteur&);
-  virtual int getFacteurFin() const;
-  virtual void setFacteurFin(Facteur&);
+  virtual void setPere(Noeud);
+  virtual Ligne* getLigneDeb() const;
+  virtual void setLigneDeb(Ligne);
+  virtual Ligne* getLigneFin() const;
+  virtual void setLigneFin(Ligne);
+  virtual Facteur* getFacteurDeb() const;
+  virtual void setFacteurDeb(Facteur);
+  virtual Facteur* getFacteurFin() const;
+  virtual void setFacteurFin(Facteur);
 
   /* Méthodes pour modifier le noeud */
   virtual void ajoutAttribut(string);
-  virtual void ajoutfils(const Noeud&);
+  virtual void ajoutfils(Noeud);
   virtual bool presentfils(const Noeud&) const;    // vérifie si un noeud est présent dans la liste des fils du noeud courant
   virtual bool supprimeAttribut(string&);
 
@@ -70,6 +86,7 @@ class Noeud{
 
   /* Surcharge d'opérateur */
   virtual bool operator==(const Noeud&) const;
+  //  virtual Noeud& operator=(const Noeud&);
   
 };
 

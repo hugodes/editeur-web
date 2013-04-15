@@ -5,18 +5,20 @@
  */
 #ifndef domtext_h
 #define domtext_h
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include "noeud.h"
+
+
 /*
 
 *@class <nom> [noeudtexte.h] [./noeudtexte.h]  
 
 */
-using namespace std;
-#include "noeud.h"
-#include <string>
-#include <iostream>
-
-
-class noeudtexte{
+class DOMText : public Noeud{
 
 private :
     string text;
