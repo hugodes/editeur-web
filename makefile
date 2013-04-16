@@ -1,15 +1,34 @@
+CC=g++
+OBJECTS= facteur.o ligne.o buffer.o dom.o leedit.o main.o noeud.o noeudtexte.o test.o
+OBJECTSH= facteur.h ligne.h buffer.h dom.h noeud.h noeudtexte.h
 
-leedit	: facteur.o ligne.o buffer.o dom.o leedit.o main.o noeud.o noeudtexte.o
-	g++ -o leedit facteur.o ligne.o buffer.o dom.o leedit.o main.o noeud.o noeudtexte.o
 
-test : facteur.o test.o ligne.o
-	g++ -o test test.o facteur.o ligne.o
+leedit	: $(OBJECTS)
+	$(CC) $(OBJECTS) -o leedit
 
-test.o : test.cc
-	g++ -c test.cc
+test : $(OBJECTS)
+	$(CC) $(OBJETCS) -o test
+
+test.o : test.cc $(OBJECTSH)
+	$(CC) -c test.cc
 
 facteur.o : facteur.cc facteur.h
-	g++ -c facteur.cc
+	$(CC) -c facteur.cc
 
 ligne.o : ligne.cc ligne.h
-	g++ -c ligne.cc
+	$(CC) -c ligne.cc
+
+buffer.o : buffer.cc buffer.h
+	$(CC) -c buffer.cc
+
+dom.o : dom.cc dom.h 
+	$(CC) -c dom.cc
+
+noeud.o : noeud.cc noeud.h
+	$(CC) -c noeud.cc
+
+noeudtexte.o : noeudtexte.cc noeudtexte.h
+	$(CC) -c noeudtexte.cc	
+
+clean :
+	rm -f *~ *.o leedit test
