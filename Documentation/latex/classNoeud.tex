@@ -2,12 +2,18 @@
 \section{Référence de la classe Noeud}
 \label{classNoeud}\index{Noeud@{Noeud}}
 }
+Graphe d'héritage de Noeud:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNoeud}
+\end{center}
+\end{figure}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classNoeud_a199d747ffdace90b638e389d248dab5f}{
-{\bfseries Noeud} (string, int, \hyperlink{classNoeud}{Noeud} $\ast$, \hyperlink{classLigne}{Ligne} $\ast$, \hyperlink{classLigne}{Ligne} $\ast$, \hyperlink{classFacteur}{Facteur} $\ast$, \hyperlink{classFacteur}{Facteur} $\ast$)}
-\label{classNoeud_a199d747ffdace90b638e389d248dab5f}
+\hypertarget{classNoeud_a3d7033e8004fbdc8c15ac145ecb2dc95}{
+{\bfseries Noeud} (string, int, \hyperlink{classNoeud}{Noeud} \&, \hyperlink{classLigne}{Ligne} \&, \hyperlink{classLigne}{Ligne} \&, \hyperlink{classFacteur}{Facteur} \&, \hyperlink{classFacteur}{Facteur} \&)}
+\label{classNoeud_a3d7033e8004fbdc8c15ac145ecb2dc95}
 
 \item 
 \hypertarget{classNoeud_a6ef8adab9b819f46787eb30a8bae2e77}{
@@ -25,64 +31,74 @@ virtual void {\bfseries setNom} (string)}
 \label{classNoeud_a784ac2c752bbf779691495bd706c9dff}
 
 \item 
-\hypertarget{classNoeud_a9ebc25e8e9dcc74db5f2de96d135e937}{
-virtual \hyperlink{classNoeud}{Noeud} {\bfseries getPere} () const }
-\label{classNoeud_a9ebc25e8e9dcc74db5f2de96d135e937}
+\hypertarget{classNoeud_adf7f2d2851e61f9f6c52656b21b43045}{
+virtual int {\bfseries getIndent} () const }
+\label{classNoeud_adf7f2d2851e61f9f6c52656b21b43045}
 
 \item 
-\hypertarget{classNoeud_af918c7824da22b70229a8a8b39eaa416}{
-virtual void {\bfseries setPere} (\hyperlink{classNoeud}{Noeud} \&)}
-\label{classNoeud_af918c7824da22b70229a8a8b39eaa416}
+\hypertarget{classNoeud_a82adba23ed465a551c5e36de00798ad2}{
+virtual void {\bfseries setIndent} (int)}
+\label{classNoeud_a82adba23ed465a551c5e36de00798ad2}
+
+\item 
+\hypertarget{classNoeud_a6dc5943291e782b8831d2acf74f47e05}{
+virtual \hyperlink{classNoeud}{Noeud} {\bfseries getPere} () const }
+\label{classNoeud_a6dc5943291e782b8831d2acf74f47e05}
+
+\item 
+\hypertarget{classNoeud_a14a7046470a71434cbc3fac487fb251d}{
+virtual void {\bfseries setPere} (\hyperlink{classNoeud}{Noeud})}
+\label{classNoeud_a14a7046470a71434cbc3fac487fb251d}
 
 \item 
 \hypertarget{classNoeud_aa8695f78b8fab2cc333fdedec96d1fcd}{
-virtual int {\bfseries getLigneDeb} () const }
+virtual \hyperlink{classLigne}{Ligne} $\ast$ {\bfseries getLigneDeb} () const }
 \label{classNoeud_aa8695f78b8fab2cc333fdedec96d1fcd}
 
 \item 
-\hypertarget{classNoeud_ae5f55210bbb26e61a94359142da71529}{
-virtual void {\bfseries setLigneDeb} (\hyperlink{classLigne}{Ligne} \&)}
-\label{classNoeud_ae5f55210bbb26e61a94359142da71529}
+\hypertarget{classNoeud_a3d5ee2169f2464575b8ab07c61863d3b}{
+virtual void {\bfseries setLigneDeb} (\hyperlink{classLigne}{Ligne})}
+\label{classNoeud_a3d5ee2169f2464575b8ab07c61863d3b}
 
 \item 
 \hypertarget{classNoeud_aab6e8f8deacca928d2eb1750473371e2}{
-virtual int {\bfseries getLigneFin} () const }
+virtual \hyperlink{classLigne}{Ligne} $\ast$ {\bfseries getLigneFin} () const }
 \label{classNoeud_aab6e8f8deacca928d2eb1750473371e2}
 
 \item 
-\hypertarget{classNoeud_ab6a13086450c40dd3c3cf97623e221b3}{
-virtual void {\bfseries setLigneFin} (\hyperlink{classLigne}{Ligne} \&)}
-\label{classNoeud_ab6a13086450c40dd3c3cf97623e221b3}
+\hypertarget{classNoeud_af2bcfb224ea05a0a40f73f4a08dc9b57}{
+virtual void {\bfseries setLigneFin} (\hyperlink{classLigne}{Ligne})}
+\label{classNoeud_af2bcfb224ea05a0a40f73f4a08dc9b57}
 
 \item 
 \hypertarget{classNoeud_a1d1aa4242f85ec3d08c95356d12f3402}{
-virtual int {\bfseries getFacteurDeb} () const }
+virtual \hyperlink{classFacteur}{Facteur} $\ast$ {\bfseries getFacteurDeb} () const }
 \label{classNoeud_a1d1aa4242f85ec3d08c95356d12f3402}
 
 \item 
-\hypertarget{classNoeud_a151533b22d7cd256fe4fe82bd91a9cfc}{
-virtual void {\bfseries setFacteurDeb} (\hyperlink{classFacteur}{Facteur} \&)}
-\label{classNoeud_a151533b22d7cd256fe4fe82bd91a9cfc}
+\hypertarget{classNoeud_a5944312210c2fbc82cc5343cc99ee757}{
+virtual void {\bfseries setFacteurDeb} (\hyperlink{classFacteur}{Facteur})}
+\label{classNoeud_a5944312210c2fbc82cc5343cc99ee757}
 
 \item 
 \hypertarget{classNoeud_adfbbf10d9e0d33fb428d1bbaa6ede8e8}{
-virtual int {\bfseries getFacteurFin} () const }
+virtual \hyperlink{classFacteur}{Facteur} $\ast$ {\bfseries getFacteurFin} () const }
 \label{classNoeud_adfbbf10d9e0d33fb428d1bbaa6ede8e8}
 
 \item 
-\hypertarget{classNoeud_a54e787d47be1ae8fccbe5bd17d308180}{
-virtual void {\bfseries setFacteurFin} (\hyperlink{classFacteur}{Facteur} \&)}
-\label{classNoeud_a54e787d47be1ae8fccbe5bd17d308180}
+\hypertarget{classNoeud_a01a77dafeb34d9fb3c3634ced787c8fb}{
+virtual void {\bfseries setFacteurFin} (\hyperlink{classFacteur}{Facteur})}
+\label{classNoeud_a01a77dafeb34d9fb3c3634ced787c8fb}
 
 \item 
-\hypertarget{classNoeud_af0d6723b082b7ea621110089a5d96fc4}{
+\hypertarget{classNoeud_acf7f0a209baf5a30c3661facc160ba6a}{
 virtual void {\bfseries ajoutAttribut} (string)}
-\label{classNoeud_af0d6723b082b7ea621110089a5d96fc4}
+\label{classNoeud_acf7f0a209baf5a30c3661facc160ba6a}
 
 \item 
-\hypertarget{classNoeud_a34182dcdc815394c81dee110de8884c9}{
-virtual void {\bfseries ajoutfils} (const \hyperlink{classNoeud}{Noeud} \&)}
-\label{classNoeud_a34182dcdc815394c81dee110de8884c9}
+\hypertarget{classNoeud_a933bd62c5983aa65262fd17127a59e9d}{
+virtual void {\bfseries ajoutfils} (\hyperlink{classNoeud}{Noeud})}
+\label{classNoeud_a933bd62c5983aa65262fd17127a59e9d}
 
 \item 
 \hypertarget{classNoeud_a04519b75d0718f028532ae2286114f7b}{
@@ -100,9 +116,9 @@ virtual ostream \& {\bfseries affiche} (ostream \&) const }
 \label{classNoeud_a6780e6e2b0a251ba12cca49432043bd7}
 
 \item 
-\hypertarget{classNoeud_a84fbd72cb471bc239ba6f8333db40a28}{
+\hypertarget{classNoeud_a95995d7149eca40b82a5af09fd34e30e}{
 virtual int {\bfseries nbAttribut} () const }
-\label{classNoeud_a84fbd72cb471bc239ba6f8333db40a28}
+\label{classNoeud_a95995d7149eca40b82a5af09fd34e30e}
 
 \item 
 \hypertarget{classNoeud_a4e7c9b2370e3cb38eb17d76242ea61ef}{
