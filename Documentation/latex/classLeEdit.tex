@@ -2,40 +2,125 @@
 \section{Référence de la classe LeEdit}
 \label{classLeEdit}\index{LeEdit@{LeEdit}}
 }
+
+
+Classe gérant l'interface graphique.  
+
+
+
+
+{\ttfamily \#include $<$leedit.h$>$}
+
 \subsection*{Connecteurs publics}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classLeEdit_a093399eb39cfb60f825ecbc6ab5ae096}{
-void {\bfseries affichageDOM} (bool visible)}
-\label{classLeEdit_a093399eb39cfb60f825ecbc6ab5ae096}
-
-\item 
-\hypertarget{classLeEdit_ad4ae5c310f20d825dc582f8370f9069d}{
-void {\bfseries affichageHIE} (bool visible)}
-\label{classLeEdit_ad4ae5c310f20d825dc582f8370f9069d}
-
-\item 
+void \hyperlink{classLeEdit_a093399eb39cfb60f825ecbc6ab5ae096}{affichageDOM} (bool visible)
+\begin{DoxyCompactList}\small\item\em affichageDOM Affiche ou cache la fenêtre DOM \item\end{DoxyCompactList}\item 
+void \hyperlink{classLeEdit_ad4ae5c310f20d825dc582f8370f9069d}{affichageHIE} (bool visible)
+\begin{DoxyCompactList}\small\item\em affichageHIE Affiche ou cache la fenêtre hiérarchie \item\end{DoxyCompactList}\item 
 \hypertarget{classLeEdit_afa90a24cb83a1302a4ed9dd249e996b1}{
-void {\bfseries affichageAPE} ()}
+void \hyperlink{classLeEdit_afa90a24cb83a1302a4ed9dd249e996b1}{affichageAPE} ()}
 \label{classLeEdit_afa90a24cb83a1302a4ed9dd249e996b1}
 
-\item 
-\hypertarget{classLeEdit_a7d6a5fccc38fb0edde64aa3572e8b44d}{
-void {\bfseries affichageWID} (int i)}
-\label{classLeEdit_a7d6a5fccc38fb0edde64aa3572e8b44d}
+\begin{DoxyCompactList}\small\item\em affichageAPE Met en avant la vue aperçu \item\end{DoxyCompactList}\item 
+void \hyperlink{classLeEdit_a7d6a5fccc38fb0edde64aa3572e8b44d}{affichageWID} (int i)
+\begin{DoxyCompactList}\small\item\em affichageWID Exécute l'action donné pour l'élément i \item\end{DoxyCompactList}\item 
+\hypertarget{classLeEdit_aab57d7d9a34f01848508db7e5c89af81}{
+void \hyperlink{classLeEdit_aab57d7d9a34f01848508db7e5c89af81}{boiteOuvrir} ()}
+\label{classLeEdit_aab57d7d9a34f01848508db7e5c89af81}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em boiteOuvrir Ouvre la boite de dialogue \item\end{DoxyCompactList}\item 
+\hypertarget{classLeEdit_aeb4d16c6b7c5345c55fd21a99011d349}{
+void \hyperlink{classLeEdit_aeb4d16c6b7c5345c55fd21a99011d349}{modificationHIE} ()}
+\label{classLeEdit_aeb4d16c6b7c5345c55fd21a99011d349}
+
+\begin{DoxyCompactList}\small\item\em modificationHIE Modifie l'affichage de la vue hiérarchie \item\end{DoxyCompactList}\item 
+\hypertarget{classLeEdit_ab0b3d14448d26da8388e4feea4c5f9b8}{
+void \hyperlink{classLeEdit_ab0b3d14448d26da8388e4feea4c5f9b8}{nouveauFichier} ()}
+\label{classLeEdit_ab0b3d14448d26da8388e4feea4c5f9b8}
+
+\begin{DoxyCompactList}\small\item\em nouveauFichier Instancie un \hyperlink{classBuffer}{Buffer} pour un nouveau fichier \item\end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Fonctions membres publiques}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classLeEdit_a135617402621e814b450a731e96e02fc}{LeEdit} (QWidget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLeEdit}{LeEdit} Constructeur de la fenêtre graphique. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Classe gérant l'interface graphique. La classe permet l'intéraction entre l'utilisateur et le programme 
+
+\subsection{Documentation des constructeurs et destructeur}
 \hypertarget{classLeEdit_a135617402621e814b450a731e96e02fc}{
-{\bfseries LeEdit} (QWidget $\ast$parent=0)}
+\index{LeEdit@{LeEdit}!LeEdit@{LeEdit}}
+\index{LeEdit@{LeEdit}!LeEdit@{LeEdit}}
+\subsubsection[{LeEdit}]{\setlength{\rightskip}{0pt plus 5cm}LeEdit::LeEdit (
+\begin{DoxyParamCaption}
+\item[{QWidget $\ast$}]{ parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}explicit\mbox{]}}}}
 \label{classLeEdit_a135617402621e814b450a731e96e02fc}
 
-\end{DoxyCompactItemize}
+
+\hyperlink{classLeEdit}{LeEdit} Constructeur de la fenêtre graphique. 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em parent}]: Widget \end{DoxyParams}
+
+
+\subsection{Documentation des fonctions membres}
+\hypertarget{classLeEdit_a093399eb39cfb60f825ecbc6ab5ae096}{
+\index{LeEdit@{LeEdit}!affichageDOM@{affichageDOM}}
+\index{affichageDOM@{affichageDOM}!LeEdit@{LeEdit}}
+\subsubsection[{affichageDOM}]{\setlength{\rightskip}{0pt plus 5cm}void LeEdit::affichageDOM (
+\begin{DoxyParamCaption}
+\item[{bool}]{ visible}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{classLeEdit_a093399eb39cfb60f825ecbc6ab5ae096}
+
+
+affichageDOM Affiche ou cache la fenêtre DOM 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em visible}]: Booléen de visibilité \end{DoxyParams}
+\hypertarget{classLeEdit_ad4ae5c310f20d825dc582f8370f9069d}{
+\index{LeEdit@{LeEdit}!affichageHIE@{affichageHIE}}
+\index{affichageHIE@{affichageHIE}!LeEdit@{LeEdit}}
+\subsubsection[{affichageHIE}]{\setlength{\rightskip}{0pt plus 5cm}void LeEdit::affichageHIE (
+\begin{DoxyParamCaption}
+\item[{bool}]{ visible}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{classLeEdit_ad4ae5c310f20d825dc582f8370f9069d}
+
+
+affichageHIE Affiche ou cache la fenêtre hiérarchie 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em visible,:}]Booléen de visibilité \end{DoxyParams}
+\hypertarget{classLeEdit_a7d6a5fccc38fb0edde64aa3572e8b44d}{
+\index{LeEdit@{LeEdit}!affichageWID@{affichageWID}}
+\index{affichageWID@{affichageWID}!LeEdit@{LeEdit}}
+\subsubsection[{affichageWID}]{\setlength{\rightskip}{0pt plus 5cm}void LeEdit::affichageWID (
+\begin{DoxyParamCaption}
+\item[{int}]{ i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}slot\mbox{]}}}}
+\label{classLeEdit_a7d6a5fccc38fb0edde64aa3572e8b44d}
+
+
+affichageWID Exécute l'action donné pour l'élément i 
+
+
+\begin{DoxyParams}{Paramètres}
+\item[{\em i}]: numéro du widget \end{DoxyParams}
 
 
 La documentation de cette classe a été générée à partir des fichiers suivants :\begin{DoxyCompactItemize}
 \item 
-leedit.h\item 
-leedit.cpp\end{DoxyCompactItemize}
+\hyperlink{leedit_8h}{leedit.h}\item 
+\hyperlink{leedit_8cpp}{leedit.cpp}\end{DoxyCompactItemize}

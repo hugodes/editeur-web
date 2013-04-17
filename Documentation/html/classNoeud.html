@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li id="searchli">
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="classes.html"><span>Index&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
     </ul>
   </div>
@@ -52,50 +54,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <h1>Référence de la classe Noeud</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="Noeud" -->
+<!-- doxytag: class="Noeud" --><div class="dynheader">
+Graphe d'héritage de Noeud:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classNoeud.png" usemap="#Noeud_map" alt=""/>
+  <map id="Noeud_map" name="Noeud_map">
+<area href="classDOMText.html" alt="DOMText" shape="rect" coords="0,56,65,80"/>
+</map>
+</div>
+
 <p><a href="classNoeud-members.html">Liste de tous les membres</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a199d747ffdace90b638e389d248dab5f"></a><!-- doxytag: member="Noeud::Noeud" ref="a199d747ffdace90b638e389d248dab5f" args="(string, int, Noeud *, Ligne *, Ligne *, Facteur *, Facteur *)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>Noeud</b> (string, int, <a class="el" href="classNoeud.html">Noeud</a> *, <a class="el" href="classLigne.html">Ligne</a> *, <a class="el" href="classLigne.html">Ligne</a> *, <a class="el" href="classFacteur.html">Facteur</a> *, <a class="el" href="classFacteur.html">Facteur</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d7033e8004fbdc8c15ac145ecb2dc95"></a><!-- doxytag: member="Noeud::Noeud" ref="a3d7033e8004fbdc8c15ac145ecb2dc95" args="(string, int, Noeud &amp;, Ligne &amp;, Ligne &amp;, Facteur &amp;, Facteur &amp;)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><b>Noeud</b> (string, int, <a class="el" href="classNoeud.html">Noeud</a> &amp;, <a class="el" href="classLigne.html">Ligne</a> &amp;, <a class="el" href="classLigne.html">Ligne</a> &amp;, <a class="el" href="classFacteur.html">Facteur</a> &amp;, <a class="el" href="classFacteur.html">Facteur</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ef8adab9b819f46787eb30a8bae2e77"></a><!-- doxytag: member="Noeud::Noeud" ref="a6ef8adab9b819f46787eb30a8bae2e77" args="(const Noeud &amp;)" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>Noeud</b> (const <a class="el" href="classNoeud.html">Noeud</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac6efbbb2f6ce5260eb741de6ac4a4570"></a><!-- doxytag: member="Noeud::getNom" ref="ac6efbbb2f6ce5260eb741de6ac4a4570" args="() const " -->
 virtual string&nbsp;</td><td class="memItemRight" valign="bottom"><b>getNom</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a784ac2c752bbf779691495bd706c9dff"></a><!-- doxytag: member="Noeud::setNom" ref="a784ac2c752bbf779691495bd706c9dff" args="(string)" -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setNom</b> (string)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ebc25e8e9dcc74db5f2de96d135e937"></a><!-- doxytag: member="Noeud::getPere" ref="a9ebc25e8e9dcc74db5f2de96d135e937" args="() const " -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adf7f2d2851e61f9f6c52656b21b43045"></a><!-- doxytag: member="Noeud::getIndent" ref="adf7f2d2851e61f9f6c52656b21b43045" args="() const " -->
+virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getIndent</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82adba23ed465a551c5e36de00798ad2"></a><!-- doxytag: member="Noeud::setIndent" ref="a82adba23ed465a551c5e36de00798ad2" args="(int)" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setIndent</b> (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6dc5943291e782b8831d2acf74f47e05"></a><!-- doxytag: member="Noeud::getPere" ref="a6dc5943291e782b8831d2acf74f47e05" args="() const " -->
 virtual <a class="el" href="classNoeud.html">Noeud</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>getPere</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af918c7824da22b70229a8a8b39eaa416"></a><!-- doxytag: member="Noeud::setPere" ref="af918c7824da22b70229a8a8b39eaa416" args="(Noeud &amp;)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPere</b> (<a class="el" href="classNoeud.html">Noeud</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a14a7046470a71434cbc3fac487fb251d"></a><!-- doxytag: member="Noeud::setPere" ref="a14a7046470a71434cbc3fac487fb251d" args="(Noeud)" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setPere</b> (<a class="el" href="classNoeud.html">Noeud</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8695f78b8fab2cc333fdedec96d1fcd"></a><!-- doxytag: member="Noeud::getLigneDeb" ref="aa8695f78b8fab2cc333fdedec96d1fcd" args="() const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getLigneDeb</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5f55210bbb26e61a94359142da71529"></a><!-- doxytag: member="Noeud::setLigneDeb" ref="ae5f55210bbb26e61a94359142da71529" args="(Ligne &amp;)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setLigneDeb</b> (<a class="el" href="classLigne.html">Ligne</a> &amp;)</td></tr>
+virtual <a class="el" href="classLigne.html">Ligne</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>getLigneDeb</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d5ee2169f2464575b8ab07c61863d3b"></a><!-- doxytag: member="Noeud::setLigneDeb" ref="a3d5ee2169f2464575b8ab07c61863d3b" args="(Ligne)" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setLigneDeb</b> (<a class="el" href="classLigne.html">Ligne</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab6e8f8deacca928d2eb1750473371e2"></a><!-- doxytag: member="Noeud::getLigneFin" ref="aab6e8f8deacca928d2eb1750473371e2" args="() const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getLigneFin</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6a13086450c40dd3c3cf97623e221b3"></a><!-- doxytag: member="Noeud::setLigneFin" ref="ab6a13086450c40dd3c3cf97623e221b3" args="(Ligne &amp;)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setLigneFin</b> (<a class="el" href="classLigne.html">Ligne</a> &amp;)</td></tr>
+virtual <a class="el" href="classLigne.html">Ligne</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>getLigneFin</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2bcfb224ea05a0a40f73f4a08dc9b57"></a><!-- doxytag: member="Noeud::setLigneFin" ref="af2bcfb224ea05a0a40f73f4a08dc9b57" args="(Ligne)" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setLigneFin</b> (<a class="el" href="classLigne.html">Ligne</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d1aa4242f85ec3d08c95356d12f3402"></a><!-- doxytag: member="Noeud::getFacteurDeb" ref="a1d1aa4242f85ec3d08c95356d12f3402" args="() const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getFacteurDeb</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a151533b22d7cd256fe4fe82bd91a9cfc"></a><!-- doxytag: member="Noeud::setFacteurDeb" ref="a151533b22d7cd256fe4fe82bd91a9cfc" args="(Facteur &amp;)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setFacteurDeb</b> (<a class="el" href="classFacteur.html">Facteur</a> &amp;)</td></tr>
+virtual <a class="el" href="classFacteur.html">Facteur</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>getFacteurDeb</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5944312210c2fbc82cc5343cc99ee757"></a><!-- doxytag: member="Noeud::setFacteurDeb" ref="a5944312210c2fbc82cc5343cc99ee757" args="(Facteur)" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setFacteurDeb</b> (<a class="el" href="classFacteur.html">Facteur</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfbbf10d9e0d33fb428d1bbaa6ede8e8"></a><!-- doxytag: member="Noeud::getFacteurFin" ref="adfbbf10d9e0d33fb428d1bbaa6ede8e8" args="() const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>getFacteurFin</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54e787d47be1ae8fccbe5bd17d308180"></a><!-- doxytag: member="Noeud::setFacteurFin" ref="a54e787d47be1ae8fccbe5bd17d308180" args="(Facteur &amp;)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setFacteurFin</b> (<a class="el" href="classFacteur.html">Facteur</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0d6723b082b7ea621110089a5d96fc4"></a><!-- doxytag: member="Noeud::ajoutAttribut" ref="af0d6723b082b7ea621110089a5d96fc4" args="(string)" -->
+virtual <a class="el" href="classFacteur.html">Facteur</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>getFacteurFin</b> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a01a77dafeb34d9fb3c3634ced787c8fb"></a><!-- doxytag: member="Noeud::setFacteurFin" ref="a01a77dafeb34d9fb3c3634ced787c8fb" args="(Facteur)" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>setFacteurFin</b> (<a class="el" href="classFacteur.html">Facteur</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf7f0a209baf5a30c3661facc160ba6a"></a><!-- doxytag: member="Noeud::ajoutAttribut" ref="acf7f0a209baf5a30c3661facc160ba6a" args="(string)" -->
 virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ajoutAttribut</b> (string)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a34182dcdc815394c81dee110de8884c9"></a><!-- doxytag: member="Noeud::ajoutfils" ref="a34182dcdc815394c81dee110de8884c9" args="(const Noeud &amp;)" -->
-virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ajoutfils</b> (const <a class="el" href="classNoeud.html">Noeud</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a933bd62c5983aa65262fd17127a59e9d"></a><!-- doxytag: member="Noeud::ajoutfils" ref="a933bd62c5983aa65262fd17127a59e9d" args="(Noeud)" -->
+virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><b>ajoutfils</b> (<a class="el" href="classNoeud.html">Noeud</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a04519b75d0718f028532ae2286114f7b"></a><!-- doxytag: member="Noeud::presentfils" ref="a04519b75d0718f028532ae2286114f7b" args="(const Noeud &amp;) const " -->
 virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>presentfils</b> (const <a class="el" href="classNoeud.html">Noeud</a> &amp;) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a449e9a566a12cb8164963b3790fbad0a"></a><!-- doxytag: member="Noeud::supprimeAttribut" ref="a449e9a566a12cb8164963b3790fbad0a" args="(string &amp;)" -->
 virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>supprimeAttribut</b> (string &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6780e6e2b0a251ba12cca49432043bd7"></a><!-- doxytag: member="Noeud::affiche" ref="a6780e6e2b0a251ba12cca49432043bd7" args="(ostream &amp;) const " -->
 virtual ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>affiche</b> (ostream &amp;) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84fbd72cb471bc239ba6f8333db40a28"></a><!-- doxytag: member="Noeud::nbAttribut" ref="a84fbd72cb471bc239ba6f8333db40a28" args="() const " -->
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95995d7149eca40b82a5af09fd34e30e"></a><!-- doxytag: member="Noeud::nbAttribut" ref="a95995d7149eca40b82a5af09fd34e30e" args="() const " -->
 virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>nbAttribut</b> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e7c9b2370e3cb38eb17d76242ea61ef"></a><!-- doxytag: member="Noeud::nbFils" ref="a4e7c9b2370e3cb38eb17d76242ea61ef" args="() const " -->
 virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>nbFils</b> () const </td></tr>
@@ -118,7 +133,7 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>operator==</b
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -127,7 +142,7 @@ virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>operator==</b
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Sat Apr 13 2013 19:03:04 pour Editeur-Web par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Wed Apr 17 2013 21:51:21 pour Editeur-Web par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

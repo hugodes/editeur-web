@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li id="searchli">
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="classes.html"><span>Index&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
     </ul>
   </div>
@@ -61,20 +63,14 @@ Fonctions membres publiques</h2></td></tr>
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>Dom</b> (<a class="el" href="classNoeud.html">Noeud</a> &amp;)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae02da1237c5c884af49ea992417cfdcd"></a><!-- doxytag: member="Dom::Dom" ref="ae02da1237c5c884af49ea992417cfdcd" args="(list&lt; Ligne &gt;)" -->
 &nbsp;</td><td class="memItemRight" valign="bottom"><b>Dom</b> (list&lt; <a class="el" href="classLigne.html">Ligne</a> &gt;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae640a720c988454576287a5b6c083a6a"></a><!-- doxytag: member="Dom::ajoutNoeud" ref="ae640a720c988454576287a5b6c083a6a" args="(const Noeud &amp;, const Noeud &amp;)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>ajoutNoeud</b> (const <a class="el" href="classNoeud.html">Noeud</a> &amp;, const <a class="el" href="classNoeud.html">Noeud</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab700f17d298e9d403d1189e6cbd2e21e"></a><!-- doxytag: member="Dom::noeudPresent" ref="ab700f17d298e9d403d1189e6cbd2e21e" args="(const Noeud &amp;)" -->
-virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>noeudPresent</b> (const <a class="el" href="classNoeud.html">Noeud</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abae2486b2f93b2c45e3ff830219488b2"></a><!-- doxytag: member="Dom::saisie" ref="abae2486b2f93b2c45e3ff830219488b2" args="(istream &amp;)" -->
-virtual istream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>saisie</b> (istream &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a004727d04374bcd4db46903a96025e14"></a><!-- doxytag: member="Dom::ajoutNoeud" ref="a004727d04374bcd4db46903a96025e14" args="(Noeud, Noeud)" -->
+virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>ajoutNoeud</b> (<a class="el" href="classNoeud.html">Noeud</a>, <a class="el" href="classNoeud.html">Noeud</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a443bf9fccfec2503a42bde6ba9eb861a"></a><!-- doxytag: member="Dom::noeudPresent" ref="a443bf9fccfec2503a42bde6ba9eb861a" args="(const Noeud)" -->
+virtual bool&nbsp;</td><td class="memItemRight" valign="bottom"><b>noeudPresent</b> (const <a class="el" href="classNoeud.html">Noeud</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a692547ba6010fd70040e8b4ab2805349"></a><!-- doxytag: member="Dom::affiche" ref="a692547ba6010fd70040e8b4ab2805349" args="(ostream &amp;) const " -->
 virtual ostream &amp;&nbsp;</td><td class="memItemRight" valign="bottom"><b>affiche</b> (ostream &amp;) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab7755b82fa26674d7d31833a0a38887b"></a><!-- doxytag: member="Dom::nbNoeud" ref="ab7755b82fa26674d7d31833a0a38887b" args="() const " -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>nbNoeud</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a50701606026b355374e210ca659d9738"></a><!-- doxytag: member="Dom::retournerTabLigne" ref="a50701606026b355374e210ca659d9738" args="(Noeud &amp;)" -->
-virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>retournerTabLigne</b> (<a class="el" href="classNoeud.html">Noeud</a> &amp;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a227c734caf6f1d36a7cf5b21306b240b"></a><!-- doxytag: member="Dom::retournerPtrNode" ref="a227c734caf6f1d36a7cf5b21306b240b" args="(Ligne &amp;)" -->
-virtual <a class="el" href="classNoeud.html">Noeud</a>&nbsp;</td><td class="memItemRight" valign="bottom"><b>retournerPtrNode</b> (<a class="el" href="classLigne.html">Ligne</a> &amp;)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d6904c4a8d8a5fac4f8f07e1a7152d6"></a><!-- doxytag: member="Dom::retournerTabLigne" ref="a4d6904c4a8d8a5fac4f8f07e1a7152d6" args="(Noeud)" -->
+virtual int&nbsp;</td><td class="memItemRight" valign="bottom"><b>retournerTabLigne</b> (<a class="el" href="classNoeud.html">Noeud</a>)</td></tr>
 </table>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li><a class="el" href="dom_8h_source.html">dom.h</a></li>
@@ -86,7 +82,7 @@ virtual <a class="el" href="classNoeud.html">Noeud</a>&nbsp;</td><td class="memI
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,7 +91,7 @@ virtual <a class="el" href="classNoeud.html">Noeud</a>&nbsp;</td><td class="memI
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Sat Apr 13 2013 19:03:04 pour Editeur-Web par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Wed Apr 17 2013 21:51:21 pour Editeur-Web par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

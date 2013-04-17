@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li id="searchli">
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="classes.html"><span>Index&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
     </ul>
   </div>
@@ -54,26 +56,150 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="contents">
 <!-- doxytag: class="LeEdit" -->
+<p>Classe gérant l'interface graphique.  
+<a href="#_details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="leedit_8h_source.html">leedit.h</a>&gt;</code></p>
+
 <p><a href="classLeEdit-members.html">Liste de tous les membres</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-slots"></a>
 Connecteurs publics</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a093399eb39cfb60f825ecbc6ab5ae096"></a><!-- doxytag: member="LeEdit::affichageDOM" ref="a093399eb39cfb60f825ecbc6ab5ae096" args="(bool visible)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>affichageDOM</b> (bool visible)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad4ae5c310f20d825dc582f8370f9069d"></a><!-- doxytag: member="LeEdit::affichageHIE" ref="ad4ae5c310f20d825dc582f8370f9069d" args="(bool visible)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>affichageHIE</b> (bool visible)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#a093399eb39cfb60f825ecbc6ab5ae096">affichageDOM</a> (bool visible)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">affichageDOM Affiche ou cache la fenêtre DOM  <a href="#a093399eb39cfb60f825ecbc6ab5ae096"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#ad4ae5c310f20d825dc582f8370f9069d">affichageHIE</a> (bool visible)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">affichageHIE Affiche ou cache la fenêtre hiérarchie  <a href="#ad4ae5c310f20d825dc582f8370f9069d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa90a24cb83a1302a4ed9dd249e996b1"></a><!-- doxytag: member="LeEdit::affichageAPE" ref="afa90a24cb83a1302a4ed9dd249e996b1" args="()" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>affichageAPE</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d6a5fccc38fb0edde64aa3572e8b44d"></a><!-- doxytag: member="LeEdit::affichageWID" ref="a7d6a5fccc38fb0edde64aa3572e8b44d" args="(int i)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>affichageWID</b> (int i)</td></tr>
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#afa90a24cb83a1302a4ed9dd249e996b1">affichageAPE</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">affichageAPE Met en avant la vue aperçu <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#a7d6a5fccc38fb0edde64aa3572e8b44d">affichageWID</a> (int i)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">affichageWID Exécute l'action donné pour l'élément i  <a href="#a7d6a5fccc38fb0edde64aa3572e8b44d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aab57d7d9a34f01848508db7e5c89af81"></a><!-- doxytag: member="LeEdit::boiteOuvrir" ref="aab57d7d9a34f01848508db7e5c89af81" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#aab57d7d9a34f01848508db7e5c89af81">boiteOuvrir</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">boiteOuvrir Ouvre la boite de dialogue <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb4d16c6b7c5345c55fd21a99011d349"></a><!-- doxytag: member="LeEdit::modificationHIE" ref="aeb4d16c6b7c5345c55fd21a99011d349" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#aeb4d16c6b7c5345c55fd21a99011d349">modificationHIE</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">modificationHIE Modifie l'affichage de la vue hiérarchie <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0b3d14448d26da8388e4feea4c5f9b8"></a><!-- doxytag: member="LeEdit::nouveauFichier" ref="ab0b3d14448d26da8388e4feea4c5f9b8" args="()" -->
+void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#ab0b3d14448d26da8388e4feea4c5f9b8">nouveauFichier</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">nouveauFichier Instancie un <a class="el" href="classBuffer.html">Buffer</a> pour un nouveau fichier <br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a135617402621e814b450a731e96e02fc"></a><!-- doxytag: member="LeEdit::LeEdit" ref="a135617402621e814b450a731e96e02fc" args="(QWidget *parent=0)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>LeEdit</b> (QWidget *parent=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLeEdit.html#a135617402621e814b450a731e96e02fc">LeEdit</a> (QWidget *parent=0)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="classLeEdit.html" title="Classe gérant l&#39;interface graphique.">LeEdit</a> Constructeur de la fenêtre graphique.  <a href="#a135617402621e814b450a731e96e02fc"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Description détaillée</h2>
+<p>Classe gérant l'interface graphique. </p>
+<p>La classe permet l'intéraction entre l'utilisateur et le programme </p>
+<hr/><h2>Documentation des constructeurs et destructeur</h2>
+<a class="anchor" id="a135617402621e814b450a731e96e02fc"></a><!-- doxytag: member="LeEdit::LeEdit" ref="a135617402621e814b450a731e96e02fc" args="(QWidget *parent=0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LeEdit::LeEdit </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *&nbsp;</td>
+          <td class="paramname"> <em>parent</em> = <code>0</code></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [explicit]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p><a class="el" href="classLeEdit.html" title="Classe gérant l&#39;interface graphique.">LeEdit</a> Constructeur de la fenêtre graphique. </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>parent</em>&nbsp;</td><td>: Widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions membres</h2>
+<a class="anchor" id="a093399eb39cfb60f825ecbc6ab5ae096"></a><!-- doxytag: member="LeEdit::affichageDOM" ref="a093399eb39cfb60f825ecbc6ab5ae096" args="(bool visible)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LeEdit::affichageDOM </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>visible</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>affichageDOM Affiche ou cache la fenêtre DOM </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>visible</em>&nbsp;</td><td>: Booléen de visibilité </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ad4ae5c310f20d825dc582f8370f9069d"></a><!-- doxytag: member="LeEdit::affichageHIE" ref="ad4ae5c310f20d825dc582f8370f9069d" args="(bool visible)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LeEdit::affichageHIE </td>
+          <td>(</td>
+          <td class="paramtype">bool&nbsp;</td>
+          <td class="paramname"> <em>visible</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>affichageHIE Affiche ou cache la fenêtre hiérarchie </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>visible,:</em>&nbsp;</td><td>Booléen de visibilité </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7d6a5fccc38fb0edde64aa3572e8b44d"></a><!-- doxytag: member="LeEdit::affichageWID" ref="a7d6a5fccc38fb0edde64aa3572e8b44d" args="(int i)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LeEdit::affichageWID </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>i</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td><code> [slot]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>affichageWID Exécute l'action donné pour l'élément i </p>
+<dl><dt><b>Paramètres:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>i</em>&nbsp;</td><td>: numéro du widget </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>La documentation de cette classe a été générée à partir des fichiers suivants :<ul>
 <li><a class="el" href="leedit_8h_source.html">leedit.h</a></li>
-<li>leedit.cpp</li>
+<li><a class="el" href="leedit_8cpp.html">leedit.cpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
@@ -81,7 +207,7 @@ Fonctions membres publiques</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +216,7 @@ Fonctions membres publiques</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Sat Apr 13 2013 19:03:04 pour Editeur-Web par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Wed Apr 17 2013 21:51:21 pour Editeur-Web par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li id="searchli">
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="classes.html"><span>Index&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
     </ul>
   </div>
@@ -67,8 +69,8 @@ Fonctions membres publiques</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Destructeur de <a class="el" href="classLigne.html">Ligne</a>. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLigne.html#a7065d8ee1a96e034b1c6ccb2381ef767">Ligne</a> (vector&lt; <a class="el" href="classFacteur.html">Facteur</a> &gt;)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur de ligne.  <a href="#a7065d8ee1a96e034b1c6ccb2381ef767"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1ad090c82572852d6805c7d880ccbeb4"></a><!-- doxytag: member="Ligne::Ligne" ref="a1ad090c82572852d6805c7d880ccbeb4" args="(const char *)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLigne.html#a1ad090c82572852d6805c7d880ccbeb4">Ligne</a> (const char *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad04b7ec786a0a860d41c842570b4f1da"></a><!-- doxytag: member="Ligne::Ligne" ref="ad04b7ec786a0a860d41c842570b4f1da" args="(char *)" -->
+&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLigne.html#ad04b7ec786a0a860d41c842570b4f1da">Ligne</a> (char *)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Constructeur de ligne. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLigne.html#ac50b7665f6259fd0eb8f00dca6142bba">toString</a> ()</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Retourne une ligne.  <a href="#ac50b7665f6259fd0eb8f00dca6142bba"></a><br/></td></tr>
@@ -87,7 +89,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="memname">Ligne::Ligne </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="classFacteur.html">Facteur</a> &gt;&nbsp;</td>
-          <td class="paramname"> <em>t</em></td>
+          <td class="paramname"> <em>v</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -136,7 +138,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -145,7 +147,7 @@ void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Sat Apr 13 2013 19:03:04 pour Editeur-Web par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Wed Apr 17 2013 21:51:21 pour Editeur-Web par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
