@@ -49,10 +49,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="header">
   <div class="headertitle">
-<h1>Noeud Liste des membres</h1>  </div>
+<h1>DOMText Liste des membres</h1>  </div>
 </div>
 <div class="contents">
-Liste complète des membres de <a class="el" href="classNoeud.html">Noeud</a>, y compris les membres hérités :<table>
+Liste complète des membres de <a class="el" href="classDOMText.html">DOMText</a>, y compris les membres hérités :<table>
   <tr bgcolor="#f0f0f0"><td><b>affiche</b>(ostream &amp;) const  (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>ajoutAttribut</b>(string) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>ajoutfils</b>(Noeud) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
@@ -69,6 +69,7 @@ Liste complète des membres de <a class="el" href="classNoeud.html">Noeud</a>, y
   <tr bgcolor="#f0f0f0"><td><b>Noeud</b>() (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>Noeud</b>(string, int, Noeud &amp;, Ligne &amp;, Ligne &amp;, Facteur &amp;, Facteur &amp;) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>Noeud</b>(const Noeud &amp;) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>noeudtexte</b>() (défini dans <a class="el" href="classDOMText.html">DOMText</a>)</td><td><a class="el" href="classDOMText.html">DOMText</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>operator==</b>(const Noeud &amp;) const  (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>presentfils</b>(const Noeud &amp;) const  (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>retournerNodesFils</b>() (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
@@ -80,8 +81,10 @@ Liste complète des membres de <a class="el" href="classNoeud.html">Noeud</a>, y
   <tr bgcolor="#f0f0f0"><td><b>setLigneFin</b>(Ligne) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>setNom</b>(string) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>setPere</b>(Noeud) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>setText</b>(string) (défini dans <a class="el" href="classDOMText.html">DOMText</a>)</td><td><a class="el" href="classDOMText.html">DOMText</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>supprimeAttribut</b>(string &amp;) (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~Noeud</b>() (défini dans <a class="el" href="classNoeud.html">Noeud</a>)</td><td><a class="el" href="classNoeud.html">Noeud</a></td><td><code> [virtual]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>~noeudtexte</b>() (défini dans <a class="el" href="classDOMText.html">DOMText</a>)</td><td><a class="el" href="classDOMText.html">DOMText</a></td><td></td></tr>
 </table></div>
 <!--- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -97,7 +100,7 @@ Liste complète des membres de <a class="el" href="classNoeud.html">Noeud</a>, y
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Wed Apr 17 2013 21:54:38 pour Editeur-Web par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Wed Apr 17 2013 21:54:37 pour Editeur-Web par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
