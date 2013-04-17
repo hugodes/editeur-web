@@ -25,22 +25,83 @@ class Buffer{
 
     public:
 
-        Buffer();/** @fn Constructeur par défaut */
-        Buffer(char cheminFichier[]);/** @fn Constructeur paramétré*/
-        ~Buffer();/** @fn Destructeur */
-        void ajouterLigne(Ligne l, int position);/** @fn Ajouter une ligne */
-        Dom getDom()const;/** @fn Getter du Dom */
-        void setDom(const Dom &);/** @fn Setter du Dom */
-        list<Ligne> getLignes()const;/** @fn Getter des lignes */
-        void setLignes(const list<Ligne> &);/** @fn Setter des lignes */
-        void setLignes(char cheminFichier[]);/** @fn Setter des lignes */
-        void affiche(ostream &)const;/** @fn Affichage */
-        void saisie(istream &);/** @fn Saisie */
-        void sauvTemp();/** @fn Sauvegarde dans le fichier temporaire*/
-        void majDom();/** @fn Mise a jour du Dom */
+        /**
+         * @brief Constructeur par défaut
+         */
+        Buffer();
+        /**
+         * @brief Constructeur paramétré
+         * @param chemFichier: Le chemin de fichier que l'on souhaite éditer
+         */
+        Buffer(char cheminFichier[]);
+        /**
+         * @brief Destructeur
+         */
+        ~Buffer();
+        /**
+         * @brief Ajouter une ligne
+         * @param Ligne: Ligne a ajouter
+         * @param int: position de l'ajout
+         * */
+        void ajouterLigne(Ligne l, int position);
+        /**
+         * @brief Getter sur Dom
+         * @return Dom: le DOM du fichier
+         */
+        Dom getDom()const;
+        /**
+         * @brief Setter sur Dom
+         * @param Dom: remplacer le Dom
+         */
+        void setDom(const Dom &);
+        /**
+         * @brief Getter de lignes
+         * @return list<Ligne>: liste des lignes du buffer
+         */
+        list<Ligne> getLignes()const;
+        /**
+         * @brief Setter sur lignes
+         * @param list<Ligne>: remplacer les lignes
+         */
+        void setLignes(const list<Ligne> &);
+        /**
+        * @brief Setter sur lignes
+        * @param char[]: chemin du fichier pour mettre a jour les lignes
+        */
+        void setLignes(char cheminFichier[]);
+        /**
+         * @brief Affiche
+         * @param ostream: flux de sortie
+         */
+        void affiche(ostream &)const;
+        /**
+         * @brief Saisie
+         * @param istream: flux d'entrée
+         */
+        void saisie(istream &);
+        /**
+         * @brief Sauvegarde dans le fichier temporaire
+         */
+        void sauvTemp();
+        /**
+         * @brief Mise à jour du Dom
+         */
+        void majDom();
 };
 
-ostream& operator<<(ostream &, const Buffer &);/** @fn Surcharge de l'operateur d'entrée */
-istream& operator>>(istream &, Buffer &);/** @fn Surcharge de l'operateur de sortie*/
+/**
+ * @brief Surcharge de l'opérateur de sortie
+ * @param ostream: flux de sortie
+ * @param Buffer: un Buffer
+ * @return ostream: flux de sortie
+ */
+ostream& operator<<(ostream &, const Buffer &);
+/**
+ * @brief Surcharge de l'operateur d'entrée
+ * @param istream: flux d'entrée
+ * @param Buffer: un Buffer
+ * @return istream: flux d'entrée
+ */
+istream& operator>>(istream &, Buffer &);
 
 #endif
