@@ -31,15 +31,15 @@ class Dom{
   virtual bool noeudPresent(const Noeud);
 
   /* Méthode d'affichage */
-  virtual istream& saisie(istream&);
+  //virtual istream& saisie(istream&);
   virtual ostream& affiche(ostream&) const;
 
   /* Méthode de calcul */
-  virtual int nbNoeud() const;
+  //virtual int nbNoeud() const;
 
   /* méthode d'information graphique */
   virtual int retournerTabLigne(Noeud);
-  virtual Noeud retournerPtrNode(Ligne);
+  //virtual Noeud retournerPtrNode(Ligne);
   //  virtual int indentFormelle(Ligne);
   
 };
