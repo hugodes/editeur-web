@@ -37,7 +37,6 @@ Ligne::Ligne(vector<Facteur> v){
         (this->indentUtil)++;
         i++;
     }
-    cout<<"Je suis ici"<<endl;
 
 }
 

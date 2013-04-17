@@ -12,6 +12,7 @@ using namespace std;
 Dom::Dom():racine(){}
 
 Dom::Dom(Noeud &r):racine(r){}
+Dom::Dom(list<Ligne> l){}
   
   /* Destructeur */
   
