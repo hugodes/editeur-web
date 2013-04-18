@@ -3,31 +3,33 @@
  *  @author SAKINE HAMID
  *  @file facteur.h 
  */
-#ifndef domtext_h
-#define domtext_h
+#ifndef DOMText_h
+#define DOMText_h
+
+#include <iostream>
+#include <string>
+#include "noeud.h"
+
+using namespace std;
+
+
+
 /*
 
 *@class <nom> [noeudtexte.h] [./noeudtexte.h]  
 
 */
-using namespace std;
-#include "noeud.h"
-#include <string>
-#include <iostream>
 
-
-class noeudtexte{
+class DOMText {
 
 private :
     string text;
 
 public :
-	noeudtexte ();/** @fn Constructeur noeudtexte */
-	~noeudtexte();/** @fn Destructeur noeudtexte */
+	DOMText ();/** @fn Constructeur noeudtexte */
+	~DOMText() {};/** @fn Destructeur noeudtexte */
 	void setText(string);/** @fn Definir le texte */
 };
-
-
 
 
 
