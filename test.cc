@@ -83,7 +83,7 @@ int main(){
 
     //Affichage d'une ligne
     cout<<"Affichage d'une ligne"<<endl;
-    cout<<l1<<endl;
+//    cout<<l1<<endl;
 
      /*********************/
     /*  Test sur Noeud   */
@@ -187,7 +187,7 @@ int main(){
     //*****************
     //Tests sur Buffer
     //*****************
-
+/*
     //Constructeur par défaut
     Buffer b1;
 
@@ -202,17 +202,16 @@ int main(){
 
     //getDom
     b1.getDom();
-
+*/
     //setDom
     /*Ne marche pas pour l'instant
     b1.setDom(D);
     */
 
     //getLigne
-    b1.getLignes();
+//    b1.getLignes();
 
     //setLignes
-
 
 
 

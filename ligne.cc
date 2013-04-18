@@ -28,11 +28,14 @@ Ligne::Ligne(vector<Facteur> v){
     this->indentUtil=0;
     this->ligne=v;
     char* tab;
+    vector<Facteur>::iterator i=v.begin();
+
     tab=new char[2];
     strcpy(tab, "\t");
-    int i=0;
-
-    while (strcmp (v[i].getTexte(),tab)==0)
+    
+//test 
+	cout<<" la valeur de la premiere valeur du vecteur est "<<(*i).getTexte()<<endl;
+    while ((strcmp ((*i).getTexte(),tab)==0)&&(i<v.end()))
     {
         (this->indentUtil)++;
         i++;
