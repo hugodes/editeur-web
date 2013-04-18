@@ -1,6 +1,6 @@
 CC=g++
 OBJECTS= facteur.o ligne.o buffer.o dom.o leedit.o main.o noeud.o noeudtexte.o test.o
-OBJTEST= facteur.o ligne.o buffer.o dom.o noeud.o test.o
+OBJTEST= facteur.o ligne.o buffer.o dom.o noeud.o test.o noeudtexte.o
 
 
 

@@ -10,6 +10,7 @@ using namespace std;
 #include "facteur.h"
 #include "ligne.h"
 #include "dom.h"
+#include "noeudtexte.h"
 #include "buffer.h"
 
 int main(){
