@@ -82,20 +82,28 @@ int main(){
     Facteur f3(cstr);
     delete cstr;
 
+    str=" ";	
+    cstr= new char[str.length()+1];
+    strcpy(cstr, str.c_str());
+    
+    Facteur f4(cstr);
+    delete cstr;
+
     //Creation d'un vecteur de facteurs
     vector<Facteur> v1;
     v1.push_back(f2);   //tabulation
     v1.push_back(f2);	//tabulation
-    v1.push_back(f3);
+    v1.push_back(f3);  
+    v1.push_back(f4);   //espace
     v1.push_back(f1);
 
     //Construction d'une ligne
     Ligne l1(v1);
 
-    //Affichage d'une ligne
-    cout<<"Affichage d'une ligne ainsi l'indentation(s) "<<endl;
+    //Affichage d'une ligne 
+    cout<<"la ligne ainsi l'indentation(s) : \n";
     cout<<l1;
-	//l1.affiche(cout);
+
      /*********************/
     /*  Test sur Noeud   */
    /*********************/

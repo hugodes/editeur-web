@@ -159,9 +159,9 @@ void Ligne::affiche(ostream &os) {
 vector<Facteur>::iterator iter;
 
 for (iter=((this->ligne).begin()); iter<(this->ligne.end()); iter++){
-	os<<((*iter).getTexte())<<endl;
+	os<<((*iter).getTexte());
 	}
-	os<<"l'indentation de la ligne est "<<(this->indentUtil)<<endl;
+	os<<"\nl'indentation de la ligne est "<<(this->indentUtil)<<endl;
 
 }
 /**
