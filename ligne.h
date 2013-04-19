@@ -27,9 +27,9 @@ class Ligne
 		Ligne(vector<Facteur>); /** @fn Constructeur de ligne */
 		Ligne(char*); /** @fn Constructeur de ligne */
 		char* toString(); /** @fn Retourne une ligne */
-		void affiche(ostream &)const; /** @fn Retourne le text d'une ligne */
+		void affiche(ostream &); /** @fn Retourne le text d'une ligne */
 };
 
-ostream& operator<<(ostream &, const Ligne &); /** Surcharge de l'operateur << */
+ostream& operator<<(ostream &,Ligne &); /** Surcharge de l'operateur << */
 
 #endif

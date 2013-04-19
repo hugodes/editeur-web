@@ -65,25 +65,44 @@ int main(){
     //******************
 
     //Creation d'une deuxième chaîne C
-    str="UnDeuxièmeMot";
+    str="\t";
     cstr = new char[str.length()+1];
     strcpy(cstr, str.c_str());
-
+      	
     //Construction d'un deuxième facteur
     Facteur f2(cstr);
+    delete cstr;
+    
+    //Creation d'une troisieme chaîne 
+    str="DeuMot";
+    cstr= new char[str.length()+1];
+    strcpy(cstr, str.c_str());
+    
+    //Construction d'un troisième facteur
+    Facteur f3(cstr);
+    delete cstr;
+
+    str=" ";	
+    cstr= new char[str.length()+1];
+    strcpy(cstr, str.c_str());
+    
+    Facteur f4(cstr);
     delete cstr;
 
     //Creation d'un vecteur de facteurs
     vector<Facteur> v1;
+    v1.push_back(f2);   //tabulation
+    v1.push_back(f2);	//tabulation
+    v1.push_back(f3);  
+    v1.push_back(f4);   //espace
     v1.push_back(f1);
-    v1.push_back(f2);
 
     //Construction d'une ligne
     Ligne l1(v1);
 
-    //Affichage d'une ligne
-    cout<<"Affichage d'une ligne"<<endl;
-    cout<<l1<<endl;
+    //Affichage d'une ligne 
+    cout<<"la ligne ainsi l'indentation(s) : \n";
+    cout<<l1;
 
      /*********************/
     /*  Test sur Noeud   */
@@ -187,7 +206,7 @@ int main(){
     //*****************
     //Tests sur Buffer
     //*****************
-
+/*
     //Constructeur par défaut
     Buffer b1;
 
@@ -202,17 +221,16 @@ int main(){
 
     //getDom
     b1.getDom();
-
+*/
     //setDom
     /*Ne marche pas pour l'instant
     b1.setDom(D);
     */
 
     //getLigne
-    b1.getLignes();
+//    b1.getLignes();
 
     //setLignes
-
 
 
 
