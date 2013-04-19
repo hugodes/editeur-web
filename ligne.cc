@@ -32,9 +32,8 @@ Ligne::Ligne(vector<Facteur> v){
 
     tab=new char[2];
     strcpy(tab, "\t");
-    
-//test 
-	cout<<" la valeur de la premiere valeur du vecteur est "<<(*i).getTexte()<<endl;
+     
+	
     while ((strcmp ((*i).getTexte(),tab)==0)&&(i<v.end()))
     {
         (this->indentUtil)++;
@@ -138,34 +137,38 @@ delete tab;
 * @brief Retourne une ligne
 * @return Retourne une ligne
 */
-char* Ligne::toString(){
-	vector<Facteur>::iterator iter;
-	char* l;
+char* Ligne::toString(){     // méthode pas au complet ! 80%
+/*
+	vector<Facteur>::iterator iter=ligne.begin();
+	char *l;
+	l=new char[20];
+	strcpy(l," ");
 
-	for (int i=0; i<ligne.size(); i++){
-		strcat(l, iter[i].getTexte());
+	for (iter=(ligne.begin()); iter<ligne.end(); iter++){
+		strcat(l, ((*iter).getTexte()));
 	}
-
 return l;	
+*/
 }
 
 /**
 * @brief Retourne le d'une ligne
 */
 
-void Ligne::affiche(ostream &os)const {
+void Ligne::affiche(ostream &os) {
 vector<Facteur>::iterator iter;
 
-for (int ii=0; ii<ligne.size(); ii++){
-	os<<(iter[ii].getTexte());
+for (iter=((this->ligne).begin()); iter<(this->ligne.end()); iter++){
+	os<<((*iter).getTexte())<<endl;
 	}
+	os<<"l'indentation de la ligne est "<<(this->indentUtil)<<endl;
 
 }
 /**
 * @brief Surcharge de l'operateur <<
 * @return Retourne le flux de sortie  
 */
-ostream& operator << (ostream & os, const Ligne &o){
+ostream& operator << (ostream & os, Ligne &o){
 	o.affiche(os);
 	return os;
 }

@@ -65,26 +65,37 @@ int main(){
     //******************
 
     //Creation d'une deuxième chaîne C
-    str="UnDeuxièmeMot";
+    str="\t";
     cstr = new char[str.length()+1];
     strcpy(cstr, str.c_str());
-
+      	
     //Construction d'un deuxième facteur
     Facteur f2(cstr);
+    delete cstr;
+    
+    //Creation d'une troisieme chaîne 
+    str="DeuMot";
+    cstr= new char[str.length()+1];
+    strcpy(cstr, str.c_str());
+    
+    //Construction d'un troisième facteur
+    Facteur f3(cstr);
     delete cstr;
 
     //Creation d'un vecteur de facteurs
     vector<Facteur> v1;
+    v1.push_back(f2);   //tabulation
+    v1.push_back(f2);	//tabulation
+    v1.push_back(f3);
     v1.push_back(f1);
-    v1.push_back(f2);
 
     //Construction d'une ligne
     Ligne l1(v1);
 
     //Affichage d'une ligne
-    cout<<"Affichage d'une ligne"<<endl;
-//    cout<<l1<<endl;
-
+    cout<<"Affichage d'une ligne ainsi l'indentation(s) "<<endl;
+    cout<<l1;
+	//l1.affiche(cout);
      /*********************/
     /*  Test sur Noeud   */
    /*********************/
