@@ -38,6 +38,7 @@ int main(){
     delete cstr1;
 
     //Recuperer le texte du Facteur
+    cout<<"Affichage de facteur"<<endl<<"----------------------------------"<<endl;
     cout << "Le texte du facteur est: " << endl;
     cout << f11.getTexte() << endl ;
     
@@ -58,7 +59,7 @@ int main(){
     
     //Affichage de Facteur
     cout<<"Affichage d'un facteur:"<<endl;
-    cout<<f11<<endl;
+    cout<<f11<<endl<<endl<<endl;
 
     //******************
     //Tests sur Ligne
@@ -101,6 +102,7 @@ int main(){
     Ligne l1(v1);
 
     //Affichage d'une ligne 
+    cout<<"Affichage de Ligne"<<endl<<"------------------------------"<<endl;
     cout<<"la ligne ainsi l'indentation(s) : \n";
     cout<<l1;
 
