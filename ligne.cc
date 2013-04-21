@@ -137,7 +137,7 @@ delete tab;
 * @brief Retourne une ligne
 * @return Retourne une ligne
 */
-char* Ligne::toString(){ 
+char* Ligne::toCString(){ 
 
 	vector<Facteur>::iterator iter=ligne.begin();
 	char *l;
@@ -153,8 +153,36 @@ char* Ligne::toString(){
 	for (iter=(ligne.begin()); iter<ligne.end(); iter++){
 		strcat(l, ((*iter).getTexte()));
 	}
-return l;	
+return l;
+delete l;
+	
 }
+
+/**
+* @brief Retourne une ligne
+* @brief Retourne une ligne
+*/
+string Ligne::toString(){ 
+                
+        vector<Facteur>::iterator iter=ligne.begin();
+        char *l;
+        int taille_l=0;
+
+        for (iter=(ligne.begin()); iter<ligne.end(); iter++){
+        taille_l=taille_l+((*iter).taille());
+        }
+
+        l=new char[taille_l+1];
+        strcpy(l," ");
+
+        for (iter=(ligne.begin()); iter<ligne.end(); iter++){
+                strcat(l, ((*iter).getTexte()));
+        }
+string li(l);
+return li;  
+delete l;     
+}
+
 
 /**
 * @brief Retourne le d'une ligne
