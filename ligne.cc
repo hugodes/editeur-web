@@ -137,18 +137,24 @@ delete tab;
 * @brief Retourne une ligne
 * @return Retourne une ligne
 */
-char* Ligne::toString(){     // méthode pas au complet ! 80%
-/*
+char* Ligne::toString(){ 
+
 	vector<Facteur>::iterator iter=ligne.begin();
 	char *l;
-	l=new char[20];
+	int taille_f=0;
+
+	for (iter=(ligne.begin()); iter<ligne.end(); iter++){
+	taille_f=taille_f+((*iter).taille());
+	}
+
+        l=new char[taille_f+1];
 	strcpy(l," ");
 
 	for (iter=(ligne.begin()); iter<ligne.end(); iter++){
 		strcat(l, ((*iter).getTexte()));
 	}
 return l;	
-*/
+
 }
 
 /**
