@@ -120,10 +120,12 @@ int main(){
     cout<<b1<<endl;
 
     //Constructeur paramétré avec le chemin vers un fichier
-    string str3("cheminfichier");
+    string str3("testinput.txt");
     char *cstr3 = new char[str3.length()+1];
     strcpy(cstr3, str3.c_str());
     Buffer b2(cstr3);
+    cout<<"Affichage du deuxième buffer:"<<endl;
+    cout<<b2<<endl;
 
     //Ajout d'une ligne
 

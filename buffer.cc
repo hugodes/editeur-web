@@ -17,7 +17,6 @@ Buffer::Buffer(char cheminFichier[]){
     lignes = list<Ligne>();
     dom = Dom(lignes);
     setLignes(cheminFichier);
-    cout<<"J'en suis la"<<endl;
     char *s=new char[sizeof(char)*2];
     strcpy(s, ".");
     chemFichTemp = strcat(s, cheminFichier);
@@ -63,11 +62,13 @@ void Buffer::setLignes(char cheminFichier[]){
         cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
     }
     else{
+        Ligne nouvLigne;
         while (!feof(pFichier)){
             if (fgets(buffer, 1024, pFichier)==NULL){
                 break;
             }
-            Ligne nouvLigne = Ligne(buffer);
+    cout<<"J'en suis la"<<endl;
+            nouvLigne = Ligne(buffer);
             lignes.push_back(nouvLigne);
         }
         fclose(pFichier);
