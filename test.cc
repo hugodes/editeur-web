@@ -105,7 +105,6 @@ int main(){
     cout<<"Affichage de Ligne"<<endl<<"------------------------------"<<endl;
     cout<<"la ligne ainsi l'indentation(s) : \n";
     cout<<l1;
-
      /*********************/
     /*  Test sur Noeud   */
    /*********************/

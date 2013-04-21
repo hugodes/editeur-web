@@ -141,20 +141,19 @@ char* Ligne::toString(){
 
 	vector<Facteur>::iterator iter=ligne.begin();
 	char *l;
-	int taille_f=0;
+	int taille_l=0;
 
 	for (iter=(ligne.begin()); iter<ligne.end(); iter++){
-	taille_f=taille_f+((*iter).taille());
+	taille_l=taille_l+((*iter).taille());
 	}
 
-        l=new char[taille_f+1];
+        l=new char[taille_l+1];
 	strcpy(l," ");
 
 	for (iter=(ligne.begin()); iter<ligne.end(); iter++){
 		strcat(l, ((*iter).getTexte()));
 	}
 return l;	
-
 }
 
 /**
