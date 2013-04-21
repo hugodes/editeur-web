@@ -104,7 +104,41 @@ int main(){
     //Affichage d'une ligne 
     cout<<"Affichage de Ligne"<<endl<<"------------------------------"<<endl;
     cout<<"la ligne ainsi l'indentation(s) : \n";
-    cout<<l1;
+    cout<<l1<<endl<<endl<<endl;
+
+
+
+    //*****************
+    //Tests sur Buffer
+    //*****************
+
+    //Constructeur par défaut
+    Buffer b1;
+    //Affichage
+    cout<<"Affichage de Buffer"<<endl<<"------------------------------"<<endl;
+    cout<<"Affichage du premier buffer:"<<endl;
+    cout<<b1<<endl;
+
+    //Constructeur paramétré avec le chemin vers un fichier
+    string str3("cheminfichier");
+    char *cstr3 = new char[str3.length()+1];
+    strcpy(cstr3, str3.c_str());
+    Buffer b2(cstr3);
+
+    //Ajout d'une ligne
+
+    //getDom
+    //b1.getDom();
+
+    //setDom
+    /*Ne marche pas pour l'instant
+    b1.setDom(D);
+    */
+
+    //getLigne
+//    b1.getLignes();
+
+    //setLignes
 
      /*********************/
     /*  Test sur Noeud   */
@@ -205,34 +239,6 @@ int main(){
     cout << " et est indenté de " << N1.indent() << endl;
     fin du commentaire temporaire*/
 
-    //*****************
-    //Tests sur Buffer
-    //*****************
-/*
-    //Constructeur par défaut
-    Buffer b1;
-
-    //Constructeur paramétré avec le chemin vers un fichier
-    string str3("cheminfichier");
-    char *cstr3 = new char[str.length()+1];
-    strcpy(cstr, str.c_str());
-    Buffer b2(cstr);
-
-    //Ajout d'une ligne
-    b1.ajouterLigne(l1, 0);
-
-    //getDom
-    b1.getDom();
-*/
-    //setDom
-    /*Ne marche pas pour l'instant
-    b1.setDom(D);
-    */
-
-    //getLigne
-//    b1.getLignes();
-
-    //setLignes
 
 
 
