@@ -32,6 +32,7 @@ class Facteur {
 		char* getTexteFormate(); /** @fn Retourne le texte du facteur formaté avec la couleur */
 		void setCouleur (char* color); /** @fn Definir la couleur */
 		void formate(); /** @fn Formate puis stock le texte */
+		int taille()const; /** @fn Renvoi la taille de texte */
 };
 
 ostream& operator<<(ostream & flux, const Facteur &f); /** @fn Surcharge l'operateur << */
