@@ -26,7 +26,8 @@ class Ligne
 		~Ligne(); /** @fn Destructeur de ligne */
 		Ligne(vector<Facteur>); /** @fn Constructeur de ligne */
 		Ligne(char*); /** @fn Constructeur de ligne */
-		char* toString(); /** @fn Retourne une ligne */
+		char* toCString(); /** @fn Retourne une ligne */
+		string toString(); /** @fn Retourne une ligne */
 		void affiche(ostream &); /** @fn Retourne le text d'une ligne */
 };
 
