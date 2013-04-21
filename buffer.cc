@@ -68,6 +68,7 @@ void Buffer::setLignes(char cheminFichier[]){
                 break;
             }
     cout<<"J'en suis la"<<endl;
+    cout<<"Mon buffer : "<<string(buffer)<<endl;
             nouvLigne = Ligne(buffer);
             lignes.push_back(nouvLigne);
         }
