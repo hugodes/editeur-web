@@ -98,6 +98,24 @@ void Facteur::formate() {
 }
 
 /**
+* @brief Methode taille()
+* @return la taille de texte
+* retourne -1 si texte n'est pas initialisé
+*/
+int Facteur::taille()const{
+    if(texte==NULL){
+        return -1;
+    }
+    int taille=0;
+    int i=0;
+    while(texte[i]!='\0'){
+        taille++;
+        i++;
+    }
+    return taille;
+}
+
+/**
 * @brief Surcharge l'operateur << 
 * @return le flux de sortie ostream
 */
