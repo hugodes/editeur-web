@@ -154,7 +154,6 @@ char* Ligne::toCString(){
 		strcat(l, ((*iter).getTexte()));
 	}
 return l;
-delete l;
 	
 }
 
@@ -179,8 +178,9 @@ string Ligne::toString(){
                 strcat(l, ((*iter).getTexte()));
         }
 string li(l);
+delete l;
 return li;  
-delete l;     
+     
 }
 
 
