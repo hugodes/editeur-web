@@ -23,12 +23,14 @@ class Ligne
 
 	public:
 		Ligne();/** @fn Constructeur par defaut de ligne */
-		~Ligne(); /** @fn Destructeur de ligne */
 		Ligne(vector<Facteur>); /** @fn Constructeur de ligne */
-		Ligne(char*); /** @fn Constructeur de ligne */
+		Ligne(char*&); /** @fn Constructeur de ligne */
+		Ligne(const Ligne&);/** @fn Constructeur par copie */
+		~Ligne(); /** @fn Destructeur de ligne */
 		char* toCString(); /** @fn Retourne une ligne */
 		string toString(); /** @fn Retourne une ligne */
 		void affiche(ostream &); /** @fn Retourne le text d'une ligne */
+		Ligne& operator=(const Ligne&);/** @fn surcharge de l'opérateur = */
 };
 
 ostream& operator<<(ostream &,Ligne &); /** Surcharge de l'operateur << */
