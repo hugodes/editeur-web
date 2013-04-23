@@ -67,9 +67,9 @@ void Buffer::setLignes(char cheminFichier[]){
             if (fgets(buffer, 1024, pFichier)==NULL){
                 break;
             }
-    cout<<"J'en suis la"<<endl;
     cout<<"Mon buffer : "<<string(buffer)<<endl;
             nouvLigne = Ligne(buffer);
+    cout<<"J'en suis la"<<endl;
             lignes.push_back(nouvLigne);
         }
         fclose(pFichier);
@@ -98,7 +98,7 @@ void Buffer::sauvTemp(){
     pFichier = fopen(chemFichTemp, "w");
     list<Ligne>::iterator il;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        fputs((*il).toString(), pFichier);
+        fputs((*il).toCString(), pFichier);
     }
     fclose(pFichier);
 }
