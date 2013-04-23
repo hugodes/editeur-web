@@ -8,20 +8,23 @@
 
 Buffer::Buffer(){
     lignes = list<Ligne>();
-    strcpy(chemFichTemp, ".nouveau_fichier.tmp");
+    string s = ".nouveau_fichier.tmp";
+    chemFichTemp=new char[s.length()+1];
+    strcpy(chemFichTemp, s.c_str());
 }
 
 Buffer::Buffer(char cheminFichier[]){
     lignes = list<Ligne>();
     dom = Dom(lignes);
     setLignes(cheminFichier);
-    char *s;
+    char *s=new char[sizeof(char)*2];
     strcpy(s, ".");
     chemFichTemp = strcat(s, cheminFichier);
     chemFichTemp = strcat(cheminFichier, ".tmp");
 }
 
 Buffer::~Buffer(){
+    delete chemFichTemp;
 }
 
 void Buffer::ajouterLigne(Ligne l, int position){
@@ -55,16 +58,24 @@ void Buffer::setLignes(char cheminFichier[]){
     char buffer[1024];
 
     pFichier =  fopen(cheminFichier, "r");
-    while (!feof(pFichier)){
-        if (fgets(buffer, 1024, pFichier)==NULL){
-            break;
-        }
-        Ligne nouvLigne = Ligne(buffer);
-        lignes.push_back(nouvLigne);
+    if (!pFichier){
+        cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
     }
-    fclose(pFichier);
-    sauvTemp();
-    majDom();
+    else{
+        Ligne nouvLigne;
+        while (!feof(pFichier)){
+            if (fgets(buffer, 1024, pFichier)==NULL){
+                break;
+            }
+    cout<<"Mon buffer : "<<string(buffer)<<endl;
+            nouvLigne = Ligne(buffer);
+    cout<<"J'en suis la"<<endl;
+            lignes.push_back(nouvLigne);
+        }
+        fclose(pFichier);
+        sauvTemp();
+        majDom();
+    }
 }
 
 void Buffer::affiche(ostream & os)const{
@@ -87,7 +98,7 @@ void Buffer::sauvTemp(){
     pFichier = fopen(chemFichTemp, "w");
     list<Ligne>::iterator il;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        fputs((*il).toString(), pFichier);
+        fputs((*il).toCString(), pFichier);
     }
     fclose(pFichier);
 }

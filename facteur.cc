@@ -89,7 +89,7 @@ char* Facteur::getTexteFormate() {
 * @brief Formate puis stock le texte 
 */
 void Facteur::formate() {
-    this->texteFormate = new char [strlen(this->couleur)+strlen(this->texte)+27];
+    this->texteFormate = new char [strlen(this->couleur)+strlen(this->texte)+64];
     strcpy(this->texteFormate, "<span style='color:");
 	strcat(this->texteFormate, this->couleur);
 	strcat(this->texteFormate, ";'>");
