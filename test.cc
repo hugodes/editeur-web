@@ -101,10 +101,22 @@ int main(){
     //Construction d'une ligne
     Ligne l1(v1);
 
-    //Affichage d'une ligne 
-    cout<<"Affichage de Ligne"<<endl<<"------------------------------"<<endl;
-    cout<<"la ligne ainsi l'indentation(s) : \n";
-    cout<<l1<<endl<<endl<<endl;
+    //Affichage d'une ligne avec la méthode affiche 
+    cout<<"Affichage de Ligne en utilisant la surcharge de l'operateur << "<<endl<<"------------------------------"<<endl;
+    cout<<"la ligne ainsi l'indentation(s) :\n";
+    cout<<l1<<endl<<endl;
+   
+   //Affichage d'une ligne en utilisant la méthode toString
+    cout<<"Affichage de Ligne en utilisant la méthode toString qui nous renvoie une chaine de caractère"<<endl<<"----------------------------------"<<endl;
+    string ma_ligne;
+    ma_ligne=l1.toString();
+    cout<<"la ligne est : "<<endl<<ma_ligne<<endl<<endl;
+   
+   //Affichage d'une ligne en utilisant la méthode toCString
+    char* l;
+    l=l1.toCString();
+    cout<<"Affichage de Ligne en utilisant la méthode toCString qui nous renvoie un pointeur vers un caractère"<<endl<<"----------------------------------"<<endl;
+   cout<<"la ligne est : "<<endl<<l<<endl;
 
 
 
