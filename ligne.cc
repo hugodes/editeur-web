@@ -17,6 +17,20 @@ this->indentUtil=0;
 * @brief Destructeur de Ligne 
 */
 Ligne::~Ligne() {}
+/**
+ * @brief Constructeur par copie
+ */
+Ligne::Ligne(const Ligne& l){
+    indentUtil=l.indentUtil;
+    if(!(ligne.empty())){
+        ligne.clear();
+    }
+    indentUtil=l.indentUtil;
+    vector<Facteur>::iterator i=ligne.begin();
+    for(i;i<ligne.end();i++){
+        ligne.push_back(*i);
+    }
+}
 
 /**
 * @brief Constructeur de ligne
@@ -46,8 +60,7 @@ Ligne::Ligne(vector<Facteur> v){
 * @brief Constructeur de ligne
 */
 
-Ligne::Ligne(char* t){
-	
+Ligne::Ligne(char*& t){
 	Facteur fact;
 	int i=0;
 	char f[100];
@@ -66,6 +79,7 @@ Ligne::Ligne(char* t){
 	char* tab;
 	tab=new char[3];
 	strcpy(tab, "\t");
+	
 	
 	this->indentUtil=0;
 
@@ -197,6 +211,27 @@ for (iter=((this->ligne).begin()); iter<(this->ligne.end()); iter++){
 	os<<"\nl'indentation de la ligne est "<<(this->indentUtil)<<endl;
 
 }
+
+/**
+ * @brief Surcharge de l'operateur =
+ * @return L'instance de l'objet copié
+ */
+
+/*
+ * en travaux
+Ligne& Ligne::operator=(const Ligne& l){
+    indentUtil=l.indentUtil;
+
+    if(!(ligne.empty())){
+        ligne.clear();
+    vector<Facteur>::iterator i=((l.ligne).begin());
+    for(i;i<((l.ligne).end());i++){
+        ligne.push_back(*i);
+    }
+    return *this;
+}
+
+*/
 /**
 * @brief Surcharge de l'operateur <<
 * @return Retourne le flux de sortie  
