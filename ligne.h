@@ -30,7 +30,7 @@ class Ligne
 		char* toCString(); /** @fn Retourne une ligne */
 		string toString(); /** @fn Retourne une ligne */
 		void affiche(ostream &); /** @fn Retourne le text d'une ligne */
-		Ligne& operator=(const Ligne&);/** @fn surcharge de l'opérateur = */
+		//Ligne& operator=(const Ligne&);/** @fn surcharge de l'opérateur = */
 };
 
 ostream& operator<<(ostream &,Ligne &); /** Surcharge de l'operateur << */
