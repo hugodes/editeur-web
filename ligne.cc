@@ -117,7 +117,6 @@ Ligne::Ligne(char*& t){
 	  if (b){
 		if (fin_l){
 			fact= Facteur(f);
-	  		cout<<"j'en suis ici"<<endl;
 			//fact.setTexte(f);
 	  		ligne.push_back(fact);
 	  		fact.setTexte(f_ligne);
