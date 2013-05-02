@@ -65,8 +65,8 @@ Ligne::Ligne(char*& t){
 	int i=0;
 	char f[100];
 	char caractere[2];
-		caractere[0]=' ';
-		caractere[1]='\0';
+	caractere[0]=' ';
+	caractere[1]='\0';
 
 	char* espace;
 	espace=new char[2];
@@ -116,10 +116,12 @@ Ligne::Ligne(char*& t){
 			}
 	  if (b){
 		if (fin_l){
-			fact.setTexte(f);
-	  		this->ligne.push_back(fact);
+			fact= Facteur(f);
+	  		cout<<"j'en suis ici"<<endl;
+			//fact.setTexte(f);
+	  		ligne.push_back(fact);
 	  		fact.setTexte(f_ligne);
-	  		this->ligne.push_back(fact);
+	  		ligne.push_back(fact);
 			}
 		else{
 			fact.setTexte(f);
