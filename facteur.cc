@@ -131,7 +131,7 @@ Facteur& Facteur::operator=(const Facteur& f){
     if (texteFormate){
         delete texteFormate;
     }
-    couleur=new char[sizeof(f.texteFormate)];
+    texteFormate=new char[sizeof(f.texteFormate)];
     copieChar(texteFormate, f.texteFormate);
 }
 
@@ -142,7 +142,6 @@ Facteur& Facteur::operator=(const Facteur& f){
 */
 ostream& operator<<(ostream &flux, const Facteur &f){
     //sur cette methode, f est const, il faut donc en faire une copie
-    cout<<"J'en suis ici"<<endl;
     Facteur copie_facteur(f);
     string t(copie_facteur.getTexteFormate());
     flux << t;

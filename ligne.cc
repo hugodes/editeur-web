@@ -123,7 +123,8 @@ Ligne::Ligne(char*& t){
 	  		ligne.push_back(fact);
 			}
 		else{
-			fact.setTexte(f);
+			fact= Facteur(f);
+			//fact.setTexte(f);
 			this->ligne.push_back(fact);		
 			fact.setTexte(espace);
 			this->ligne.push_back(fact);
