@@ -91,7 +91,7 @@ Ligne::Ligne(char*& t){
 	while (t[i] =='\t')
 	{                               
 		(this->indentUtil)++;
-		fact.setTexte(tab); 	   
+		fact=Facteur(tab); 	   
 		ligne.push_back(fact);		  
 		i++;					 	
 	}
