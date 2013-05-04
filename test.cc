@@ -117,7 +117,7 @@ int main(){
     char* l;
     l=l1.toCString();
     cout<<"Affichage de Ligne en utilisant la méthode toCString qui nous renvoie un pointeur vers un caractère"<<endl;
-   cout<<"la ligne est : "<<endl<<l<<endl<<endl<<endl;
+    cout<<"la ligne est : "<<endl<<l<<endl<<endl<<endl;
 
 
 
@@ -140,7 +140,6 @@ int main(){
     cout<<"Affichage du deuxième buffer:"<<endl;
     cout<<b2<<endl;
 
-    //Ajout d'une ligne
 
     //getDom
     //b1.getDom();

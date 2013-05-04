@@ -204,11 +204,11 @@ return li;
 * @brief Retourne le d'une ligne
 */
 
-void Ligne::affiche(ostream &os) {
-vector<Facteur>::iterator iter;
+void Ligne::affiche(ostream &os) const{
+vector<Facteur>::const_iterator iter;
 
 for (iter=((this->ligne).begin()); iter<(this->ligne.end()); iter++){
-	os<<((*iter).getTexte());
+	os<<(string((*iter).getTexte()));
 	}
 	os<<"\nl'indentation de la ligne est "<<(this->indentUtil)<<endl;
 
@@ -238,7 +238,7 @@ Ligne& Ligne::operator=(const Ligne& l){
 * @brief Surcharge de l'operateur <<
 * @return Retourne le flux de sortie  
 */
-ostream& operator << (ostream & os, Ligne &o){
+ostream& operator << (ostream & os, const Ligne &o){
 	o.affiche(os);
 	return os;
 }
