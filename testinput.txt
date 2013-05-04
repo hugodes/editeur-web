@@ -1,2 +1,4 @@
 Ceci est un fichier de test pour qui simule
+
+	ceci est un fichier de test pour qui simule
 un fichier que l'on voudrais éditer
