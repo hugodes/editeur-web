@@ -67,7 +67,6 @@ void Buffer::setLignes(char cheminFichier[]){
             if (fgets(buffer, 1024, pFichier)==NULL){
                 break;
             }
-            cout<<"Mon buffer : "<<string(buffer)<<endl;
             lignes.push_back(Ligne(buffer));
         }
         fclose(pFichier);
@@ -77,10 +76,11 @@ void Buffer::setLignes(char cheminFichier[]){
 }
 
 void Buffer::affiche(ostream & os)const{
-    //list<Ligne>::iterator il;
-    //for (il=lignes.begin(); il!=lignes.end(); il++){
-    //    os<<*il;
-    //}
+    list<Ligne>::const_iterator il;
+    cout<<"taille de lignes: "<<lignes.size()<<endl;
+    for (il=lignes.begin(); il!=lignes.end(); il++){
+        os<<*il;
+    }
 }
 
 void Buffer::saisie(istream &is){

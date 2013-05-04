@@ -115,6 +115,27 @@ int Facteur::taille()const{
     return taille;
 }
 
+Facteur& Facteur::operator=(const Facteur& f){
+    if (texte){
+        delete texte;
+    }
+    texte=new char[sizeof(f.texte)];
+    copieChar(texte, f.texte);
+
+    if(couleur){
+        delete couleur;
+    }
+    couleur=new char[sizeof(f.couleur)];
+    copieChar(couleur, f.couleur);
+
+    if (texteFormate){
+        delete texteFormate;
+    }
+    texteFormate=new char[sizeof(f.texteFormate)];
+    copieChar(texteFormate, f.texteFormate);
+}
+
+
 /**
 * @brief Surcharge l'operateur << 
 * @return le flux de sortie ostream
@@ -125,4 +146,10 @@ ostream& operator<<(ostream &flux, const Facteur &f){
     string t(copie_facteur.getTexteFormate());
     flux << t;
     return flux;
+}
+void copieChar(char* c1, const char* c2){
+    int taille=sizeof(c2);
+    for (int i=0; i<taille; i++){
+        c1[i]=c2[i];
+    }
 }
