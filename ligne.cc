@@ -65,8 +65,8 @@ Ligne::Ligne(char*& t){
 	int i=0;
 	char f[100];
 	char caractere[2];
-		caractere[0]=' ';
-		caractere[1]='\0';
+	caractere[0]=' ';
+	caractere[1]='\0';
 
 	char* espace;
 	espace=new char[2];
@@ -116,13 +116,15 @@ Ligne::Ligne(char*& t){
 			}
 	  if (b){
 		if (fin_l){
-			fact.setTexte(f);
-	  		this->ligne.push_back(fact);
+			fact= Facteur(f);
+			//fact.setTexte(f);
+	  		ligne.push_back(fact);
 	  		fact.setTexte(f_ligne);
-	  		this->ligne.push_back(fact);
+	  		ligne.push_back(fact);
 			}
 		else{
-			fact.setTexte(f);
+			fact= Facteur(f);
+			//fact.setTexte(f);
 			this->ligne.push_back(fact);		
 			fact.setTexte(espace);
 			this->ligne.push_back(fact);
@@ -202,11 +204,11 @@ return li;
 * @brief Retourne le d'une ligne
 */
 
-void Ligne::affiche(ostream &os) {
-vector<Facteur>::iterator iter;
+void Ligne::affiche(ostream &os) const{
+vector<Facteur>::const_iterator iter;
 
 for (iter=((this->ligne).begin()); iter<(this->ligne.end()); iter++){
-	os<<((*iter).getTexte());
+	os<<(string((*iter).getTexte()));
 	}
 	os<<"\nl'indentation de la ligne est "<<(this->indentUtil)<<endl;
 
@@ -236,7 +238,7 @@ Ligne& Ligne::operator=(const Ligne& l){
 * @brief Surcharge de l'operateur <<
 * @return Retourne le flux de sortie  
 */
-ostream& operator << (ostream & os, Ligne &o){
+ostream& operator << (ostream & os, const Ligne &o){
 	o.affiche(os);
 	return os;
 }
