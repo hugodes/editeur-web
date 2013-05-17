@@ -64,15 +64,16 @@ void Buffer::setLignes(char cheminFichier[]){
     }
     else{
       yyin = pFichier;
+      int i;
       while((i = yylex()) != 0){
-	if(i!=ENDL){
-	  F(yytext, i);
-	  L.push_back(F);
-	}
-	else{
-	  lignes.push_back(L);
-	  L.clear();
-	}
+        if(i!=ENDL){
+          F(yytext, i);
+          L.push_back(F);
+        }
+        else{
+          lignes.push_back(L);
+          L.clear();
+        }
       }
     }
     fclose(pFichier);
@@ -83,9 +84,12 @@ void Buffer::setLignes(char cheminFichier[]){
 
 void Buffer::affiche(ostream & os)const{
     list<Ligne>::const_iterator il;
+    vector<Facteur>::const_iterator iv;
     cout<<"taille de lignes: "<<lignes.size()<<endl;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        os<<*il;
+        for(iv=(*il).begin(); iv!=(*il).end(); il++){
+            os<<(*iv).getTexteFormate();
+        }
     }
 }
 
@@ -100,9 +104,12 @@ void Buffer::saisie(istream &is){
 void Buffer::sauvTemp(){
     FILE * pFichier;
     pFichier = fopen(chemFichTemp, "w");
+    vector<Facteur>::const_iterator iv;
     list<Ligne>::iterator il;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        fputs((*il).toCString(), pFichier);
+        for(iv=(*il).begin(); iv!=(*il).end(); il++){
+            fputs((*iv).getTexte(), pFichier);
+        }
     }
     fclose(pFichier);
 }

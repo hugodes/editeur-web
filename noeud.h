@@ -3,10 +3,10 @@
 
 #include <string>
 #include <list>
-#include "ligne.h"
 //#include "noeudtexte.h"
 
 using namespace std;
+typedef vector<Facteur> Ligne;
 
 //typedef std::list<Objet> Obj_list;
 /*class Noeud;
@@ -34,7 +34,7 @@ class Noeud{
   list<Noeud> descendant;
   Ligne* lignedeb;
   Ligne* lignefin;
-   Facteur* facteurDeb;
+Facteur* facteurDeb;
   Facteur* facteurFin;
   
 
