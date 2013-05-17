@@ -10,13 +10,16 @@
 #include <cstdio>
 #include <list>
 #include <iterator>
+#include <vector>
 using namespace std;
+#include "facteur.h"
 #include "dom.h"
-#include "ligne.h"
+#include "lex.yy.c"
 
 /** @class Buffer
  *  Cette Classe représente le contenu visible dans l'éditeur
  */
+typedef vector<Facteur> Ligne;
 class Buffer{
     private:
         Dom dom;

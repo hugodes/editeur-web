@@ -3,7 +3,6 @@
 
 #include <string>
 #include <list>
-#include "ligne.h"
 #include "facteur.h"
 #include "noeud.h"
 
