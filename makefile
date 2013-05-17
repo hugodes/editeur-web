@@ -1,6 +1,6 @@
 CC=g++
-OBJECTS= facteur.o ligne.o buffer.o dom.o leedit.o main.o noeud.o noeudtexte.o test.o
-OBJTEST= facteur.o ligne.o buffer.o dom.o noeud.o test.o noeudtexte.o
+OBJECTS= facteur.o buffer.o dom.o leedit.o main.o noeud.o noeudtexte.o test.o
+OBJTEST= facteur.o buffer.o dom.o noeud.o test.o noeudtexte.o
 
 
 
@@ -10,14 +10,14 @@ leedit	: $(OBJECTS)
 test : $(OBJTEST)
 	$(CC) -o test $(OBJTEST)
 
+analyse :
+	flex analyse.lex
+
 test.o : test.cc
 	$(CC) -c test.cc
 
 facteur.o : facteur.cc facteur.h
 	$(CC) -c facteur.cc
-
-ligne.o : ligne.cc ligne.h
-	$(CC) -c ligne.cc
 
 buffer.o : buffer.cc buffer.h
 	$(CC) -c buffer.cc
