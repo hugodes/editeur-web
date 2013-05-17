@@ -65,15 +65,55 @@ void Buffer::setLignes(char cheminFichier[]){
     else{
       yyin = pFichier;
       int i;
+      int jeton;
       while((i = yylex()) != 0){
-        if(i!=ENDL){
-          F(yytext, i);
-          L.push_back(F);
-        }
-        else{
+	switch(i){
+	case ATTRIBUT :{
+	  if(jeton == 331){
+	    F(yytext, i);
+	    L.push_back(F);
+	    break;
+	  }
+	  else{
+	    F(yytext, STRING);
+	    L.push_back(F);
+	    jeton = i;
+	    break;
+	  }
+	}
+	
+	case SPACE :{
+	  if(jeton == 331){
+	    F(yytext, i);
+	    L.push_back(F);
+	    break;
+	  }
+	  else{
+	    F(yytext, i);
+	    L.push_back(F);
+	    jeton = i;
+	    break;
+	  }
+	}
+
+	case BALISEFERMANTE :{
+	  F(yytext, i);
+	  L.push_back(F);
+	  jeton = i;
+	  break;
+	  }
+
+	case ENDL : {
           lignes.push_back(L);
           L.clear();
         }
+
+	case default :{
+          F(yytext, i);
+          L.push_back(F);
+        }
+ 
+	}
       }
     }
     fclose(pFichier);

@@ -10,6 +10,9 @@
 #define STRING 326
 #define TAB 328
 #define ENDL 329
+#define SPACE 330
+#define BALISEOUVERTE 331
+#define BALISEFERMANTE 332
   //using namespace std
 %}
 
@@ -21,13 +24,21 @@
 
 [\n] {return ENDL;}
 
+[ ]+ {return SPACE;}
+
 ![dD][oO][cC][tT][yY][pP][eE] {/*yylval = "DOCTYPE";*/ return DOCTYPE; }
 
 \?[pP][hH][pP] {/*yylval = "php";*/ return PHP;}
 
-\<[a-zA-Z]+> {/*yylval = yytext[1];*/ return BALISE; }
+\<[ ]*[a-zA-Z]+[ ]*\> {/*yylval = yytext[1];*/ return BALISE; }
 
-\<\/[a-zA-Z]+\> {/*yylval = yytext[1];*/ return BALISE; }
+\<\/[ ]*[a-zA-Z]+[ ]*\> {/*yylval = yytext[1];*/ return BALISE; }
+
+\<[ ]*[a-zA-Z]+[ ]+ { return BALISEOUVERTE;}
+
+[a-zA-Z]+= { return ATTRIBUT;}
+
+\> { return BALISEFERMANTE;}
 
 if|else|for|while|return {/*yylval = yytext;*/ return KEY;}
 
