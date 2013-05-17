@@ -8,6 +8,8 @@
 #define FUNCTION 324
 #define CLASS 325
 #define STRING 326
+#define TAB 328
+#define ENDL 329
   //using namespace std
 %}
 
@@ -15,15 +17,17 @@
 
 %%
 
-[\t\n ] {}
+[\t] { return TAB;}
+
+[\n] {return ENDL;}
 
 ![dD][oO][cC][tT][yY][pP][eE] {/*yylval = "DOCTYPE";*/ return DOCTYPE; }
 
 \?[pP][hH][pP] {/*yylval = "php";*/ return PHP;}
 
-\<[a-zA-Z]+ {/*yylval = yytext[1];*/ return BALISE; }
+\<[a-zA-Z]+> {/*yylval = yytext[1];*/ return BALISE; }
 
-\<\/[a-zA-Z]+ {/*yylval = yytext[1];*/ return BALISE; }
+\<\/[a-zA-Z]+\> {/*yylval = yytext[1];*/ return BALISE; }
 
 if|else|for|while|return {/*yylval = yytext;*/ return KEY;}
 
@@ -36,7 +40,7 @@ if|else|for|while|return {/*yylval = yytext;*/ return KEY;}
 int main(){
   int i;
   // char* s = "<head>";
-  yyin="<head>";
+  // yyin="<head>";
   while((i=yylex())!=0){
     // cout << "Nous traitons le lexème : " << yytext << "\nle jeton correspondant est : " << i << endl;
     printf("Nous traitons le lexème : %s\nle jeton correspondant est : %d\n", yytext, i);
