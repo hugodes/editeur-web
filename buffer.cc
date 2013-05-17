@@ -55,25 +55,31 @@ void Buffer::setLignes(const list<Ligne> &l){
 
 void Buffer::setLignes(char cheminFichier[]){
     FILE * pFichier;
-    char *buffer=new char[sizeof(char)*1024];
-
-
+    //  char *buffer=new char[sizeof(char)*1024];
+    Ligne L;
+    Facteur F;
     pFichier =  fopen(cheminFichier, "r");
     if (!pFichier){
         cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
     }
     else{
-        while (!feof(pFichier)){
-            if (fgets(buffer, 1024, pFichier)==NULL){
-                break;
-            }
-            lignes.push_back(Ligne(buffer));
-        }
-        fclose(pFichier);
-        sauvTemp();
-        majDom();
+      yyin = pFichier;
+      while((i = yylex()) != 0){
+	if(i!=ENDL){
+	  F(yytext, i);
+	  L.push_back(F);
+	}
+	else{
+	  lignes.push_back(L);
+	  L.clear();
+	}
+      }
     }
+    fclose(pFichier);
+    sauvTemp();
+    majDom();
 }
+
 
 void Buffer::affiche(ostream & os)const{
     list<Ligne>::const_iterator il;
