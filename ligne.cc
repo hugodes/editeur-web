@@ -204,13 +204,15 @@ return li;
 * @brief Retourne le d'une ligne
 */
 
-void Ligne::affiche(ostream &os) const{
+ostream& Ligne::affiche(ostream &os) const{
 vector<Facteur>::const_iterator iter;
 
 for (iter=((this->ligne).begin()); iter<(this->ligne.end()); iter++){
 	os<<(string((*iter).getTexte()));
 	}
 	os<<"\nl'indentation de la ligne est "<<(this->indentUtil)<<endl;
+
+	return os;
 
 }
 

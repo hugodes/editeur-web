@@ -32,4 +32,4 @@ noeudtexte.o : noeudtexte.cc noeudtexte.h
 	$(CC) -c noeudtexte.cc
 
 clean :
-	rm -f *~ *.o leedit test
+	rm -f *~ *.o \#*# leedit test
