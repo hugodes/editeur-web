@@ -6,39 +6,27 @@
  */
 #include "buffer.h"
 
-/**
- * @brief Constructeur par défaut
- */
 Buffer::Buffer(){
     lignes = list<Ligne>();
-    strcpy(chemFichTemp, ".nouveau_fichier.tmp");
+    string s = ".nouveau_fichier.tmp";
+    chemFichTemp=new char[s.length()+1];
+    strcpy(chemFichTemp, s.c_str());
 }
 
-/**
- * @brief Constructeur paramétré
- * @param chemFichier: Le chemin de fichier que l'on souhaite éditer
- */
 Buffer::Buffer(char cheminFichier[]){
     lignes = list<Ligne>();
     dom = Dom(lignes);
     setLignes(cheminFichier);
-    char *s;
+    char *s=new char[sizeof(char)*2];
     strcpy(s, ".");
     chemFichTemp = strcat(s, cheminFichier);
     chemFichTemp = strcat(cheminFichier, ".tmp");
 }
 
-/**
- * @brief Destructeur
- */
 Buffer::~Buffer(){
+    delete chemFichTemp;
 }
 
-/**
- * @brief Ajouter une ligne
- * @param Ligne: Ligne a ajouter
- * @param int: position de l'ajout
- * */
 void Buffer::ajouterLigne(Ligne l, int position){
     list<Ligne>::iterator il = lignes.begin();
     advance(il,position-1);
@@ -47,76 +35,64 @@ void Buffer::ajouterLigne(Ligne l, int position){
     majDom();
 }
 
-/**
- * @brief Getter sur Dom
- * @return Dom: le DOM du fichier
- */
 Dom Buffer::getDom()const{
     return dom;
 }
 
-/**
- * @brief Setter sur Dom
- * @param Dom: remplacer le Dom
- */
 void Buffer::setDom(const Dom &d){
     dom = d;
 }
 
-/**
- * @brief Getter de lignes
- * @return list<Ligne>: liste des lignes du buffer
- */
 list<Ligne> Buffer::getLignes()const{
     return lignes;
 }
 
-/**
- * @brief Setter sur lignes
- * @param list<Ligne>: remplacer les lignes
- */
 void Buffer::setLignes(const list<Ligne> &l){
     lignes = l;
     sauvTemp();
     majDom();
 }
 
-/**
- * @brief Setter sur lignes
- * @param char[]: chemin du fichier pour mettre a jour les lignes
-*/
 void Buffer::setLignes(char cheminFichier[]){
     FILE * pFichier;
-    char buffer[1024];
-
+    //  char *buffer=new char[sizeof(char)*1024];
+    Ligne L;
+    Facteur F;
     pFichier =  fopen(cheminFichier, "r");
-    while (!feof(pFichier)){
-        if (fgets(buffer, 1024, pFichier)==NULL){
-            break;
+    if (!pFichier){
+        cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
+    }
+    else{
+      yyin = pFichier;
+      int i;
+      while((i = yylex()) != 0){
+        if(i!=ENDL){
+          F(yytext, i);
+          L.push_back(F);
         }
-        Ligne nouvLigne = Ligne(buffer);
-        lignes.push_back(nouvLigne);
+        else{
+          lignes.push_back(L);
+          L.clear();
+        }
+      }
     }
     fclose(pFichier);
     sauvTemp();
     majDom();
 }
 
-/**
- * @brief Affiche
- * @param ostream: flux de sortie
- */
+
 void Buffer::affiche(ostream & os)const{
-    //list<Ligne>::iterator il;
-    //for (il=lignes.begin(); il!=lignes.end(); il++){
-    //    os<<*il;
-    //}
+    list<Ligne>::const_iterator il;
+    vector<Facteur>::const_iterator iv;
+    cout<<"taille de lignes: "<<lignes.size()<<endl;
+    for (il=lignes.begin(); il!=lignes.end(); il++){
+        for(iv=(*il).begin(); iv!=(*il).end(); il++){
+            os<<(*iv).getTexteFormate();
+        }
+    }
 }
 
-/**
- * @brief Saisie
- * @param istream: flux d'entrée
- */
 void Buffer::saisie(istream &is){
     char buffer[1024];
     cout<<"Entrer un ligne qui serra ajoutée au buffer:\n";
@@ -125,43 +101,28 @@ void Buffer::saisie(istream &is){
     majDom();
 }
 
-/**
- * @brief Sauvegarde dans le fichier temporaire
- */
 void Buffer::sauvTemp(){
     FILE * pFichier;
     pFichier = fopen(chemFichTemp, "w");
+    vector<Facteur>::const_iterator iv;
     list<Ligne>::iterator il;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        fputs((*il).toString(), pFichier);
+        for(iv=(*il).begin(); iv!=(*il).end(); il++){
+            fputs((*iv).getTexte(), pFichier);
+        }
     }
     fclose(pFichier);
 }
 
-/**
- * @brief Mise à jour du Dom
- */
 void Buffer::majDom(){
     dom = Dom(lignes);
 }
 
-/**
- * @brief Surcharge de l'opérateur de sortie
- * @param ostream: flux de sortie
- * @param Buffer: un Buffer
- * @return ostream: flux de sortie
- */
 ostream& operator<<(ostream &os, const Buffer &b){
     b.affiche(os);
     return os;
 }
 
-/**
- * @brief Surcharge de l'operateur d'entrée
- * @param istream: flux d'entrée
- * @param Buffer: un Buffer
- * @return istream: flux d'entrée
- */
 istream& operator>>(istream &is, Buffer &b){
     b.saisie(is);
     return is;

@@ -1,9 +1,9 @@
 #include <iostream>
-#include <string>
-#include <list>
 #include <map>
+#include <typeinfo>
 
 #include "noeud.h"
+//#include "noeudtexte.h"
 
 using namespace std;
 
@@ -12,43 +12,36 @@ using namespace std;
 Noeud::Noeud(){
   nom= "noeud inconnu";
   indentation = 0;
-  pere = null;
-  lignedeb = null;
-  lignefin = null;
-  facteurdeb = null;
-  facteurfin = null;
+  pere = NULL;
+  lignedeb = NULL;
+  lignefin = NULL;
+  facteurDeb = NULL;
+  facteurFin = NULL;
 }
 
 Noeud::Noeud(string name, int ind, Noeud &father, Ligne &LD, Ligne &LF, Facteur &FD, Facteur &FF){
   nom= name;
   indentation = ind;
-  pere = father;
-  lignedeb = LD;
-  lignefin = LF;
-  facteurdeb = FD;
-  facteurfin = FF;
+  pere = &father;
+  lignedeb = &LD;
+  lignefin = &LF;
+  facteurDeb = &FD;
+  facteurFin = &FF;
 }
 
-Noeud::Noeud(const Noeud& Noeudcopie){
+Noeud::Noeud(const Noeud& noeudcopie){
   nom= noeudcopie.nom;
   indentation = noeudcopie.indentation;
-  pere = &noeudcopie.pere;
-  lignedeb = &noeudcopie.lignedeb;
-  lignefin = &noeudcopie.lignefin;
-  facteurdeb = &noeudcopie.facteurdeb;
-  facteurfin = &noeudcopie.facteurfin;
+  pere = noeudcopie.pere;
+  lignedeb = noeudcopie.lignedeb;
+  lignefin = noeudcopie.lignefin;
+  facteurDeb = noeudcopie.facteurDeb;
+  facteurFin = noeudcopie.facteurFin;
 }
-  
+		     
   /* Destructeur */
 
-Noeud::~Noeud(){
-  delete lignedeb;
-  delete lignefin;
-  delete facteurdeb;
-  delete facteurfin;
-  delete[] listeAttributs;
-  delete[] descendant;
-}
+Noeud::~Noeud(){}
 
   /* Accesseurs */
 
@@ -60,69 +53,81 @@ void Noeud::setNom(string _nom){
   nom = _nom;
 }
 
+Noeud Noeud::getPere() const{
+  return *pere;
+}
+
+void Noeud::setPere(Noeud N){
+  pere = &N;
+}
+
+int Noeud::getIndent() const{
+  return indentation;
+}
+
+void Noeud::setIndent(int i){
+  indentation = i;
+}
+
 Ligne* Noeud::getLigneDeb() const{
   return lignedeb;
 }
 
-void Noeud::setLigneDeb(Ligne& LD){
-  lignedeb = LD;
+void Noeud::setLigneDeb(Ligne LD){
+  lignedeb = &LD;
 }
 
 Ligne* Noeud::getLigneFin() const{
   return lignefin;
 }
 
-void Noeud::setLigneFin(Ligne& LF){
-  lignefin = LF;
+void Noeud::setLigneFin(Ligne LF){
+  lignefin = &LF;
 }
 
 Facteur* Noeud::getFacteurDeb() const{
-  return facteurdeb;
+  return facteurDeb;
 }
 
-void Noeud::setFacteurDeb(Facteur& FD){
-  facteurdeb = FD;
+void Noeud::setFacteurDeb(Facteur FD){
+  facteurDeb = &FD;
 }
 
 Facteur* Noeud::getFacteurFin() const{
-  return facteurfin;
+  return facteurFin;
 }
 
-void Noeud::setFacteurfin(Facteur& FF){
-  facteurfin = FF;
+void Noeud::setFacteurFin(Facteur FF){
+  facteurFin = &FF;
 }
 
   /* Méthodes pour modifier le noeud */
 
-void Noeud::ajoutAttribut(String att){
-  if(listeAttributs == null){
-    listeAttributs();
-  }
-  listeAttributs.push_back(&att);
+void Noeud::ajoutAttribut(string att){
+  listeAttributs.push_back(att);
 }
 
-void Noeud::ajoutfils(const Noeud &N){
-   if(descendant == null){
-    descendant();
-  }
-  descendant.push_back(&N);
-  N.pere = this;
-  N.indentation = indentation + 1;
+void Noeud::ajoutfils(Noeud N){
+  descendant.push_back(N);
+  N.setPere(*this);
+  N.setIndent(indentation + 1);
 }
 
 bool Noeud::presentfils(const Noeud& N) const{    // vérifie si un noeud est présent dans la liste des fils du noeud courant
-  if(descendant == null){
+  if(descendant.empty()){
     return false;
   }
   else{
-    for (Noeud::iterator it = descendant.begin() ; it != descendant.end(); ++it){
-      if(*it == N){
+    list<Noeud>::const_iterator it = descendant.begin();
+    while(it != descendant.end()){
+      if((*it) == N){
 	return true;
       }
+      it++;
     }
-    for (Noeud::iterator it = descendant.begin() ; it != descendant.end(); ++it){  
-      if(it.presentfils(N)){
-	return return true;
+    for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){  
+      if((*it).presentfils(N)){
+	return true;
       }
     }
   }
@@ -130,8 +135,8 @@ bool Noeud::presentfils(const Noeud& N) const{    // vérifie si un noeud est pr
 }
 
 bool Noeud::supprimeAttribut(string &att){
-   for (Noeud::iterator it = listeAttributs.begin() ; it != listeAtrributs.end(); ++it){
-     if(*it == att){
+   for (list<string>::iterator it = listeAttributs.begin() ; it != listeAttributs.end(); ++it){
+     if((*it) == att){
        listeAttributs.erase(it);
        return true;
      }
@@ -147,9 +152,9 @@ ostream& Noeud::affiche(ostream &os) const{
     os << '\t';
   }
   os << nom << endl;
-  if(descendant != null){
-    for (Noeud::iterator it = descendant.begin() ; it != descendant.end(); ++it){
-      it.affiche(&os);
+  if(!descendant.empty()){
+    for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){
+      (*it).affiche(os);
     }
   }
   return os;
@@ -157,15 +162,15 @@ ostream& Noeud::affiche(ostream &os) const{
 
   /* Méthode de calcul */
 
-int Noueud::nbAttribut() const{
-  if(listeAttribut == null){
+int Noeud::nbAttribut() const{
+  if(listeAttributs.empty()){
     return 0;
   }
-  return listeAttribut.size();
+  return listeAttributs.size();
 }
 
 int Noeud::nbFils() const{
-  if(descendant == null){
+  if(descendant.empty()){
     return 0;
   }
   return descendant.size();
@@ -182,23 +187,23 @@ list<Noeud> Noeud::retournerNodesFils(){
 }
 
 list<Noeud> Noeud::retournerTextFils(){
-  list textfils();
-  for (Noeud::iterator it = descendant.begin() ; it != descendant.end(); ++it){
-    if(typeid(it) == typeid(NoeudText)){
-      textfils.push_back(&it);
+  list<Noeud> textfils;
+  for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){
+    if(typeid(*it).name() == "DOMText"){
+       textfils.push_back(*it);
     }
   }
   return textfils;
-}
+  }
 
   /* Surcharge d'opérateur */
 
 bool Noeud::operator==(const Noeud &N) const{
   if(nom == N.nom && indentation == N.indentation && pere == N.pere && lignedeb == N.lignedeb && 
-     lignefin == N.lignefin && facteurdeb == N.facteurdeb && facteurfin == N.facteurfin){
+     lignefin == N.lignefin && facteurDeb == N.facteurDeb && facteurFin == N.facteurFin){
     if(descendant.size() == N.descendant.size()){
-      Noeud::iterator itN = N.descendant.begin();
-      for (Noeud::iterator it = descendant.begin() ; it != descendant.end(); ++it){
+      list<Noeud>::const_iterator itN = N.descendant.begin();
+      for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){
 	if(it == itN){
 	  ++itN;
 	}
@@ -206,20 +211,19 @@ bool Noeud::operator==(const Noeud &N) const{
       }
     }
     if(listeAttributs.size() == N.listeAttributs.size()){
-      itN = N.listeAttributs.begin();
-      for (it = listeAttributs.begin() ; it != listeAttributs.end(); ++it){
-	if(it == itN){
-	  ++itN;
+      list<string>::const_iterator itN1 = N.listeAttributs.begin();
+      for (list<string>::const_iterator it1 = listeAttributs.begin() ; it1 != listeAttributs.end(); ++it1){
+	if(it1 == itN1){
+	  ++itN1;
 	}
 	else return false;
       }
     }
-    return true;
+      return true;
   }
   return false;
 }
   
-};
 
 /* Surcharge de Flots */
 ostream& operator<< (ostream &os, const Noeud &node){

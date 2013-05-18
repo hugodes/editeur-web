@@ -81,7 +81,7 @@ char* Facteur::getTexte()const {
 * @brief Retourne le texte du facteur formaté avec la couleur 
 * @return retourne le texte du facteur formate
 */
-char* Facteur::getTexteFormate() {
+char* Facteur::getTexteFormate() const{
 	return(this->texteFormate) ;
 }
 
@@ -89,13 +89,52 @@ char* Facteur::getTexteFormate() {
 * @brief Formate puis stock le texte 
 */
 void Facteur::formate() {
-    this->texteFormate = new char [strlen(this->couleur)+strlen(this->texte)+27];
+    this->texteFormate = new char [strlen(this->couleur)+strlen(this->texte)+64];
     strcpy(this->texteFormate, "<span style='color:");
 	strcat(this->texteFormate, this->couleur);
 	strcat(this->texteFormate, ";'>");
 	strcat(this->texteFormate, this->texte);
 	strcat(this->texteFormate, "</span>");
 }
+
+/**
+* @brief Methode taille()
+* @return la taille de texte
+* retourne -1 si texte n'est pas initialisé
+*/
+int Facteur::taille()const{
+    if(texte==NULL){
+        return -1;
+    }
+    int taille=0;
+    int i=0;
+    while(texte[i]!='\0'){
+        taille++;
+        i++;
+    }
+    return taille;
+}
+
+Facteur& Facteur::operator=(const Facteur& f){
+    if (texte){
+        delete texte;
+    }
+    texte=new char[sizeof(f.texte)];
+    copieChar(texte, f.texte);
+
+    if(couleur){
+        delete couleur;
+    }
+    couleur=new char[sizeof(f.couleur)];
+    copieChar(couleur, f.couleur);
+
+    if (texteFormate){
+        delete texteFormate;
+    }
+    texteFormate=new char[sizeof(f.texteFormate)];
+    copieChar(texteFormate, f.texteFormate);
+}
+
 
 /**
 * @brief Surcharge l'operateur << 
@@ -107,4 +146,10 @@ ostream& operator<<(ostream &flux, const Facteur &f){
     string t(copie_facteur.getTexteFormate());
     flux << t;
     return flux;
+}
+void copieChar(char* c1, const char* c2){
+    int taille=sizeof(c2);
+    for (int i=0; i<taille; i++){
+        c1[i]=c2[i];
+    }
 }

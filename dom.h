@@ -3,7 +3,6 @@
 
 #include <string>
 #include <list>
-#include "ligne.h"
 #include "facteur.h"
 #include "noeud.h"
 
@@ -26,21 +25,21 @@ class Dom{
   virtual ~Dom();
 
   /* Méthodes pour modifier le DOM */
-  virtual bool ajoutNoeud(const Noeud&, const Noeud&);
+  virtual bool ajoutNoeud(Noeud, Noeud);
   // virtual bool supprimeNoeud(Noeud&);
-  virtual bool noeudPresent(const Noeud&);
+  virtual bool noeudPresent(const Noeud);
 
   /* Méthode d'affichage */
-  virtual istream& saisie(istream&);
+  //virtual istream& saisie(istream&);
   virtual ostream& affiche(ostream&) const;
 
   /* Méthode de calcul */
-  virtual int nbNoeud() const;
+  //virtual int nbNoeud() const;
 
   /* méthode d'information graphique */
-  virtual int retournerTabLigne(Noeud&);
-  virtual Noeud retournerPtrNode(Ligne&);
-  //  virtual int indentFormelle(Ligne&);
+  virtual int retournerTabLigne(Noeud);
+  //virtual Noeud retournerPtrNode(Ligne);
+  //  virtual int indentFormelle(Ligne);
   
 };
 

@@ -1,0 +1,7 @@
+Ceci est un fichier de test pour qui simule
+un fichier que l'on voudrais éditer
+<head>
+<!doctype>
+<?php
+if
+

@@ -1,27 +1,26 @@
 /**
  *  @author SAKINE HAMID
- *   @file facteur.h 
+ *   @file noeudtexte.h 
  */
+
+#include <string>
 using namespace std;
-/**@class <nom> [noeudtexte.cc] [./noeudtexte.cc]  */
 #include "noeud.h"
 #include "noeudtexte.h"
 
 /** @fn Constructeur de facteur  */
-noeudtexte :: noeudtexte() {
+NoeudTexte::NoeudTexte() {
 
 }
+/** @fn Constructeur de facteur  */
+NoeudTexte::NoeudTexte(string s) {
+    text=s;
+}
 /** @fn Destructeur de facteur  */
-noeudtexte ::~noeudtexte() {
+NoeudTexte::~NoeudTexte() {
 
 }
 /** @fn Definir le texte  */
-void noeudtexte::setText(string s){
-	text=s;
+void NoeudTexte::setText(string S){
+	text=S;
 }
-
-
-   
-    
-
-

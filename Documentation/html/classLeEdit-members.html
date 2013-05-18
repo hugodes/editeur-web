@@ -17,6 +17,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Page&nbsp;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&nbsp;de&nbsp;nommage</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li id="searchli">
@@ -41,6 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Liste&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="classes.html"><span>Index&nbsp;des&nbsp;classes</span></a></li>
+      <li><a href="hierarchy.html"><span>Hiérarchie&nbsp;des&nbsp;classes</span></a></li>
       <li><a href="functions.html"><span>Membres&nbsp;de&nbsp;classe</span></a></li>
     </ul>
   </div>
@@ -51,11 +53,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="contents">
 Liste complète des membres de <a class="el" href="classLeEdit.html">LeEdit</a>, y compris les membres hérités :<table>
-  <tr bgcolor="#f0f0f0"><td><b>affichageAPE</b>() (défini dans <a class="el" href="classLeEdit.html">LeEdit</a>)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>affichageDOM</b>(bool visible) (défini dans <a class="el" href="classLeEdit.html">LeEdit</a>)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>affichageHIE</b>(bool visible) (défini dans <a class="el" href="classLeEdit.html">LeEdit</a>)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>affichageWID</b>(int i) (défini dans <a class="el" href="classLeEdit.html">LeEdit</a>)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>LeEdit</b>(QWidget *parent=0) (défini dans <a class="el" href="classLeEdit.html">LeEdit</a>)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [explicit]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#afa90a24cb83a1302a4ed9dd249e996b1">affichageAPE</a>()</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#a093399eb39cfb60f825ecbc6ab5ae096">affichageDOM</a>(bool visible)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#ad4ae5c310f20d825dc582f8370f9069d">affichageHIE</a>(bool visible)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#a7d6a5fccc38fb0edde64aa3572e8b44d">affichageWID</a>(int i)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#aab57d7d9a34f01848508db7e5c89af81">boiteOuvrir</a>()</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#a135617402621e814b450a731e96e02fc">LeEdit</a>(QWidget *parent=0)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [explicit]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#aeb4d16c6b7c5345c55fd21a99011d349">modificationHIE</a>()</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="classLeEdit.html#ab0b3d14448d26da8388e4feea4c5f9b8">nouveauFichier</a>()</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td><code> [slot]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~LeEdit</b>() (défini dans <a class="el" href="classLeEdit.html">LeEdit</a>)</td><td><a class="el" href="classLeEdit.html">LeEdit</a></td><td></td></tr>
 </table></div>
 <!--- window showing the filter options -->
@@ -63,7 +68,7 @@ Liste complète des membres de <a class="el" href="classLeEdit.html">LeEdit</a>,
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Espaces de nommage</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Fonctions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -72,7 +77,7 @@ Liste complète des membres de <a class="el" href="classLeEdit.html">LeEdit</a>,
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Généré le Sat Apr 13 2013 19:03:04 pour Editeur-Web par&nbsp;
+<hr class="footer"/><address class="footer"><small>Généré le Wed Apr 17 2013 21:54:37 pour Editeur-Web par&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
