@@ -6,6 +6,15 @@
 */
 
 #include "facteur.h"
+#include <cstdio>
+#include <vector>
+#include <stdio.h>
+#include <string.h>
+#include <cstdlib>
+#include <istream>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 /**
 * @brief Constructeur par défaut
@@ -20,12 +29,46 @@ Facteur::Facteur(){
 * @brief Constructeur de facteur 
 * @param text texte du facteur
 */
-Facteur::Facteur(char* text) {
+Facteur::Facteur(char* text, int flag) {
 	texte = new char[sizeof(text)];
 	strcpy(this->texte,text);
-	couleur = new char[256];
-	strcpy(this->couleur,"black");
+    couleur = new char[256];
+
+    strcpy(this->couleur,chercherConfCouleur(flag));
 	this->formate();
+}
+
+
+/**
+* @brief Trouver la couleur dans le fichier de configuration
+* @param flag jeton pour retrouver la couleur
+* @return la couleur associé
+*/
+const char* Facteur::chercherConfCouleur(int flag){
+    ifstream fichier("../sans_titre/couleur.conf");
+    string ligne;
+    if(fichier) {
+        int j=0;
+        while(getline(fichier,ligne)) {
+            string nom;
+            string val;
+            string couleur;
+            istringstream iss (ligne);
+            iss >> nom >> val >> couleur ;
+            stringstream ss;
+            ss << flag;
+            if (val==ss.str()){
+                //cout << "La bonne couleur est " << couleur << endl ;
+                const char* resultat = couleur.c_str();
+                return resultat;
+            }
+        }
+        return "#F000000";
+    }
+    else {
+        cout << "Impossible d'ouvrir le fichier de configuration !" << endl;
+        return "#F000000";
+    }
 }
 
 /**
@@ -81,7 +124,7 @@ char* Facteur::getTexte()const {
 * @brief Retourne le texte du facteur formaté avec la couleur 
 * @return retourne le texte du facteur formate
 */
-char* Facteur::getTexteFormate() const{
+char* Facteur::getTexteFormate() {
 	return(this->texteFormate) ;
 }
 
@@ -115,6 +158,11 @@ int Facteur::taille()const{
     return taille;
 }
 
+/**
+* @brief Surcharge l'operateur =
+* @param f facteur a copier
+* @return la copie de f
+*/
 Facteur& Facteur::operator=(const Facteur& f){
     if (texte){
         delete texte;
