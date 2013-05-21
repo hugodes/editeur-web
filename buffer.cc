@@ -57,7 +57,6 @@ void Buffer::setLignes(char cheminFichier[]){
     FILE * pFichier;
     //  char *buffer=new char[sizeof(char)*1024];
     Ligne L;
-    Facteur F;
     pFichier =  fopen(cheminFichier, "r");
     if (!pFichier){
         cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
@@ -67,7 +66,7 @@ void Buffer::setLignes(char cheminFichier[]){
       int i;
       while((i = yylex()) != 0){
         if(i!=ENDL){
-          F(yytext, i);
+          Facteur F(yytext, i);
           L.push_back(F);
         }
         else{
