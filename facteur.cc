@@ -134,7 +134,7 @@ int Facteur::getJeton()const {
 * @brief Retourne le texte du facteur formaté avec la couleur 
 * @return retourne le texte du facteur formate
 */
-char* Facteur::getTexteFormate() {
+char* Facteur::getTexteFormate() const{
 	return(this->texteFormate) ;
 }
 
