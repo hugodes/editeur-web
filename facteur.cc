@@ -29,7 +29,7 @@ Facteur::Facteur(){
 * @brief Constructeur de facteur 
 * @param text texte du facteur
 */
-Facteur::Facteur(char* text, int flag) {
+Facteur::Facteur(char* &text, int &flag) {
 	texte = new char[sizeof(text)];
 	strcpy(this->texte,text);
     couleur = new char[256];
