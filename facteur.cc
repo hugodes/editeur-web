@@ -23,6 +23,7 @@ Facteur::Facteur(){
     texte=NULL;
     couleur=NULL;
     texteFormate=NULL;
+	jeton=0;
 }
 
 /**
@@ -33,7 +34,7 @@ Facteur::Facteur(char* text, int flag) {
 	texte = new char[sizeof(text)];
 	strcpy(this->texte,text);
     couleur = new char[256];
-
+	this->jeton=flag;
     strcpy(this->couleur,chercherConfCouleur(flag));
 	this->formate();
 }
@@ -63,6 +64,7 @@ const char* Facteur::chercherConfCouleur(int flag){
                 return resultat;
             }
         }
+		fichier.close();
         return "#F000000";
     }
     else {
@@ -118,6 +120,14 @@ char* Facteur::getTexte()const {
     //char *texte_renvoi = new char[sizeof(texte)];
     //return(texte_renvoi);
     return(this->texte) ;
+}
+
+/**
+* @brief Retourne le jeton du facteur 
+* @return retourne le jeton du facteur
+*/
+int Facteur::getJeton()const {
+    return(this->jeton) ;
 }
 
 /**
