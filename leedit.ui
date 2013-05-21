@@ -23,6 +23,9 @@
         <height>16777215</height>
        </size>
       </property>
+      <property name="rootIsDecorated">
+       <bool>true</bool>
+      </property>
       <column>
        <property name="text">
         <string>DOM</string>
@@ -44,11 +47,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QTextEdit" name="code"/>
-          </item>
-         </layout>
+         <layout class="QVBoxLayout" name="verticalLayout"/>
         </item>
        </layout>
       </widget>
@@ -58,11 +57,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QTextEdit" name="apercu"/>
-          </item>
-         </layout>
+         <layout class="QVBoxLayout" name="verticalLayout_2"/>
         </item>
        </layout>
       </widget>
@@ -75,6 +70,12 @@
         <width>400</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="indentation">
+       <number>10</number>
+      </property>
+      <property name="rootIsDecorated">
+       <bool>false</bool>
       </property>
       <attribute name="headerVisible">
        <bool>false</bool>
@@ -111,7 +112,9 @@
     <addaction name="actionCouper"/>
     <addaction name="separator"/>
     <addaction name="actionRechercher"/>
-    <addaction name="actionRemplacer"/>
+    <addaction name="separator"/>
+    <addaction name="actionEn_avant"/>
+    <addaction name="actionEn_arriere"/>
    </widget>
    <widget class="QMenu" name="menuAffichage">
     <property name="title">
@@ -126,12 +129,18 @@
      <string>Aide</string>
     </property>
     <addaction name="actionA_propos"/>
-    <addaction name="actionMise_a_jour"/>
-    <addaction name="actionPreference"/>
+   </widget>
+   <widget class="QMenu" name="menuConfiguration">
+    <property name="title">
+     <string>Configuration</string>
+    </property>
+    <addaction name="actionCouleur"/>
+    <addaction name="actionConfiguration"/>
    </widget>
    <addaction name="menuFichier"/>
    <addaction name="menuEditer"/>
    <addaction name="menuAffichage"/>
+   <addaction name="menuConfiguration"/>
    <addaction name="menuAide"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
@@ -227,73 +236,28 @@
     <string>Preference</string>
    </property>
   </action>
+  <action name="actionEn_avant">
+   <property name="text">
+    <string>En avant</string>
+   </property>
+  </action>
+  <action name="actionEn_arriere">
+   <property name="text">
+    <string>En arrière</string>
+   </property>
+  </action>
+  <action name="actionCouleur">
+   <property name="text">
+    <string>Modifier les couleurs</string>
+   </property>
+  </action>
+  <action name="actionConfiguration">
+   <property name="text">
+    <string>Préférence de l'application</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections>
-  <connection>
-   <sender>actionCopier</sender>
-   <signal>triggered()</signal>
-   <receiver>code</receiver>
-   <slot>copy()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>293</x>
-     <y>192</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionColler</sender>
-   <signal>triggered()</signal>
-   <receiver>code</receiver>
-   <slot>paste()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>293</x>
-     <y>192</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionCouper</sender>
-   <signal>triggered()</signal>
-   <receiver>code</receiver>
-   <slot>cut()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>293</x>
-     <y>192</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionDom</sender>
-   <signal>triggered(bool)</signal>
-   <receiver>dom</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>88</x>
-     <y>183</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
