@@ -11,12 +11,21 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
-#include <unistd.h>
 #include <iostream>
 #include <QFileSystemModel>
 #include <QMessageBox>
 #include <QDirmodel>
+#include <editeur.h>
+#include <affichageligne.h>
+#include <QWebView>
 #include <buffer.h>
+#include <QModelIndex>
+#include <apropos.h>
+#include <configurationgenerale.h>
+#include <confcouleur.h>
+
+class recherche;
+#include <recherche.h>
 
 /*! \namespace Ui
  *
@@ -84,11 +93,37 @@ public slots:
     * Instancie un Buffer pour un nouveau fichier
     */
    void nouveauFichier();
+   void enregistrerSous();
+   char* contenuFichier();
+   void enregistrer();
+   void sauvegarde(QString monfichier);
+   void changerLigne();
+   void afficherRecherche();
+   void rechercher(QString rech);
+   void remplacer(QString rech, QString remp);
+   void enleverRecherche();
+   void selection(QModelIndex q);
+   void ouvrir(QString f);
+   void afficherAPropos();
+   void afficherConf();
+   void afficherConfCouleur();
+   void indentationAuto();
+   void optionGenerale();
 
 private:
     Ui::LeEdit *ui; /*!< La classe elle même */
     QString cheminFichier; /*!< Chemin du fichier */
     Buffer * buff;
+    QDir chemin;
+    QString fichier;
+    editeur * edit;
+    affichageLigne *lignes;
+    QWebView *webview;
+    recherche *r;
+    aPropos *a;
+    configurationGenerale *c;
+    confCouleur *coul;
+    bool rechercheActive;
 };
 
 #endif // LEEDIT_H

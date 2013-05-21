@@ -4,8 +4,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setQuitOnLastWindowClosed(true);
     LeEdit w;
     w.show();
     
-    return a.exec();
+    exit(a.exec());
 }
