@@ -12,7 +12,59 @@ using namespace std;
 Dom::Dom():racine(){}
 
 Dom::Dom(Noeud &r):racine(r){}
-Dom::Dom(list<Ligne> l){}
+
+
+Dom::Dom(list<Ligne> l){
+  int prof = 0;
+  vector< pair<Facteur, int> > Arbre;
+  if(l.empty()){
+    cout << "Liste vide !!" <<endl;
+  }
+  else{
+     for (list<Ligne>::const_iterator it = l.begin() ; it != l.end(); ++it){  
+       if((*it).empty()){
+	 cout << "Ligne vide !" << endl;
+       }
+       else{
+	 for (vector<Facteur>::const_iterator it1 = (*it).begin() ; it1 != (*it).end(); ++it1){
+	   if((*it1).getJeton() == 320){
+	     Arbre.push_back(make_pair((*it1),prof));
+	     prof++;
+	   }
+	   else if((*it1).getJeton() == 331){
+	     string s=(*it1).getTexte();
+	     do{
+	       ++it1;
+	       s += (*it1).getTexte();
+	     }while((*it1).getJeton() != 332);
+
+	     Facteur F(s);
+	     Arbre.push_back(make_pair(F,prof));
+	     prof++;
+	   } 
+	   else if((*it1).getJeton() == 325){
+	     prof--;
+	   }
+	 }
+       }
+     }
+     
+     racine = new Noeud((*Arbre.begin()).first().getTexte(), 0, NULL, (*Arbre.begin()).first(), (*Arbre.begin()).first());
+     prof = 0;
+     int j = 0;
+     for(vector< pair<Facteur, int> >::const_iterator it = Arbre.begin()++ ; it != Arbre.end(); ++it){
+	 while((*it).second() > prof){
+	   if((*it).second() == prof + 1){
+	     Noeud N = new Noeud((*it).first().getTexte(), 0, racine, (*it).first(), (*it).first());
+	     racine.ajoutFils(N, Arbre, j);
+	   }
+	 }
+	 j++;
+       } 
+  }	  
+}	     
+  
+
   
   /* Destructeur */
   

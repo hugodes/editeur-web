@@ -13,18 +13,18 @@ Noeud::Noeud(){
   nom= "noeud inconnu";
   indentation = 0;
   pere = NULL;
-  lignedeb = NULL;
-  lignefin = NULL;
+  /*  lignedeb = NULL;
+      lignefin = NULL;*/
   facteurDeb = NULL;
   facteurFin = NULL;
 }
 
-Noeud::Noeud(string name, int ind, Noeud &father, Ligne &LD, Ligne &LF, Facteur &FD, Facteur &FF){
+Noeud::Noeud(string name, int ind, Noeud &father,/* Ligne &LD, Ligne &LF,*/ Facteur &FD, Facteur &FF){
   nom= name;
   indentation = ind;
   pere = &father;
-  lignedeb = &LD;
-  lignefin = &LF;
+  /*  lignedeb = &LD;
+      lignefin = &LF;*/
   facteurDeb = &FD;
   facteurFin = &FF;
 }
@@ -33,11 +33,12 @@ Noeud::Noeud(const Noeud& noeudcopie){
   nom= noeudcopie.nom;
   indentation = noeudcopie.indentation;
   pere = noeudcopie.pere;
-  lignedeb = noeudcopie.lignedeb;
-  lignefin = noeudcopie.lignefin;
+  /*  lignedeb = noeudcopie.lignedeb;
+      lignefin = noeudcopie.lignefin;*/
   facteurDeb = noeudcopie.facteurDeb;
   facteurFin = noeudcopie.facteurFin;
 }
+
 		     
   /* Destructeur */
 
@@ -113,7 +114,20 @@ void Noeud::ajoutfils(Noeud N){
   N.setIndent(indentation + 1);
 }
 
-bool Noeud::presentfils(const Noeud& N) const{    // vérifie si un noeud est présent dans la liste des fils du noeud courant
+void Noeud::ajoutFils(Noeud N, vector< pair<Facteur, int> > arbre, int j){
+  ajoutfils(N);
+  for(vector< pair<Facteur, int> >::const_iterator it = Arbre.begin()+j ; it != Arbre.end(); ++it){
+      while((*it).second() > prof){
+	if((*it).second() == prof + 1){
+	  Noeud N = new Noeud((*it).first().getTexte(), indentation+1, (*this), (*it).first(), (*it).first());
+	  racine.ajoutFils(N, Arbre, j);
+	}
+      }
+      j++;
+  }
+} 
+
+bool Noeud::presentfils(const Noeud& N) const{   
   if(descendant.empty()){
     return false;
   }

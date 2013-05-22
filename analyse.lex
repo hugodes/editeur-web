@@ -6,10 +6,15 @@
 #define PHP 322
 #define KEY 323
 #define FUNCTION 324
-#define CLASS 325
+#define BALISEFERMANTE 325
 #define STRING 326
 #define TAB 328
 #define ENDL 329
+#define SPACE 330
+#define BALISEOUVERTE 331
+#define BALISEFERMEE 332
+#define TEXT 333
+#define COMMENTAIRE 334
   //using namespace std
 %}
 
@@ -17,23 +22,35 @@
 
 %%
 
-[\t] { return TAB;}
+[\t]+ { return TAB;}
 
-[\n] {return ENDL;}
+[\n]+ {return ENDL;}
 
-![dD][oO][cC][tT][yY][pP][eE] {/*yylval = "DOCTYPE";*/ return DOCTYPE; }
+[ ]+ {return SPACE;}
 
-\?[pP][hH][pP] {/*yylval = "php";*/ return PHP;}
+\<!--[ -~]+--> {return COMMENTAIRE;}
 
-\<[a-zA-Z]+> {/*yylval = yytext[1];*/ return BALISE; }
+![dD][oO][cC][tT][yY][pP][eE] {return DOCTYPE;}
 
-\<\/[a-zA-Z]+\> {/*yylval = yytext[1];*/ return BALISE; }
+\?[pP][hH][pP] {return PHP;}
 
-if|else|for|while|return {/*yylval = yytext;*/ return KEY;}
+\<[ ]*[a-zA-Z]+[ ]*\> {return BALISE;}
 
-[a-zA-Z]+\( {/*yylval = yytext ;*/ return FUNCTION;}
+\<\/[ ]*[a-zA-Z]+[ ]*\> {return BALISEFERMANTE;}
 
-[\"\'][!-~]*[\"\'] {/*yylval = yytext ;*/ return STRING;}
+\<[ ]*[a-zA-Z]+[ ]+ { return BALISEOUVERTE;}
+
+[a-zA-Z]+=[\"\'][!-~]*[\"\'] { return ATTRIBUT;}
+
+\> { return BALISEFERMEE;}
+
+if|else|for|while|return {return KEY;}
+
+[a-zA-Z]+\( {return FUNCTION;}
+
+[\"\'][!-~]*[\"\'] {return STRING;}
+
+. {return TEXT;}
 
 %%
 
@@ -41,9 +58,11 @@ int main(){
   int i;
   // char* s = "<head>";
   // yyin="<head>";
+  //printf("%d",yylex());
+  
   while((i=yylex())!=0){
     // cout << "Nous traitons le lexème : " << yytext << "\nle jeton correspondant est : " << i << endl;
     printf("Nous traitons le lexème : %s\nle jeton correspondant est : %d\n", yytext, i);
-  }
+    }
   return 0;
 }
