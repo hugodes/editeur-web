@@ -53,16 +53,3 @@ if|else|for|while|return {return KEY;}
 . {return TEXT;}
 
 %%
-
-int main(){
-  int i;
-  // char* s = "<head>";
-  // yyin="<head>";
-  //printf("%d",yylex());
-  
-  while((i=yylex())!=0){
-    // cout << "Nous traitons le lexème : " << yytext << "\nle jeton correspondant est : " << i << endl;
-    printf("Nous traitons le lexème : %s\nle jeton correspondant est : %d\n", yytext, i);
-    }
-  return 0;
-}

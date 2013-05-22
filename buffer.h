@@ -14,7 +14,6 @@
 using namespace std;
 #include "facteur.h"
 #include "dom.h"
-#include "lex.yy.c"
 
 /** @class Buffer
  *  Cette Classe représente le contenu visible dans l'éditeur

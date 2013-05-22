@@ -37,8 +37,13 @@ Dom::Dom(list<Ligne> l){
 	       ++it1;
 	       s += (*it1).getTexte();
 	     }while((*it1).getJeton() != 332);
+	     
+	     char * stmp = new char[s.size() + 1];
+	     copy(s.begin(), s.end(), stmp);
+	     stmp[s.size()] = '\0';
+	     int balisejeton = 320;
 
-	     Facteur F(s);
+	     Facteur F(stmp, balisejeton);
 	     Arbre.push_back(make_pair(F,prof));
 	     prof++;
 	   } 
@@ -48,14 +53,20 @@ Dom::Dom(list<Ligne> l){
 	 }
        }
      }
-     
-     racine = new Noeud((*Arbre.begin()).first().getTexte(), 0, NULL, (*Arbre.begin()).first(), (*Arbre.begin()).first());
+
+     string nomNoeud = (*Arbre.begin()).first.getTexte();
+     Noeud pereRacine = Noeud();
+
+     Noeud R(nomNoeud, 0, pereRacine, (*Arbre.begin()).first, (*Arbre.begin()).first);
+     racine = R;
      prof = 0;
      int j = 0;
      for(vector< pair<Facteur, int> >::const_iterator it = Arbre.begin()++ ; it != Arbre.end(); ++it){
-	 while((*it).second() > prof){
-	   if((*it).second() == prof + 1){
-	     Noeud N = new Noeud((*it).first().getTexte(), 0, racine, (*it).first(), (*it).first());
+	 while((*it).second > prof){
+	   if((*it).second == prof + 1){
+	     string nomNoeud = (*it).first.getTexte();
+	     Facteur fact = (*it).first;
+	     Noeud N(nomNoeud, 0, racine, fact, fact);
 	     racine.ajoutFils(N, Arbre, j);
 	   }
 	 }

@@ -19,7 +19,7 @@ Noeud::Noeud(){
   facteurFin = NULL;
 }
 
-Noeud::Noeud(string name, int ind, Noeud &father,/* Ligne &LD, Ligne &LF,*/ Facteur &FD, Facteur &FF){
+Noeud::Noeud(string& name, int ind, Noeud &father, Facteur &FD,  Facteur &FF){
   nom= name;
   indentation = ind;
   pere = &father;
@@ -70,22 +70,6 @@ void Noeud::setIndent(int i){
   indentation = i;
 }
 
-Ligne* Noeud::getLigneDeb() const{
-  return lignedeb;
-}
-
-void Noeud::setLigneDeb(Ligne LD){
-  lignedeb = &LD;
-}
-
-Ligne* Noeud::getLigneFin() const{
-  return lignefin;
-}
-
-void Noeud::setLigneFin(Ligne LF){
-  lignefin = &LF;
-}
-
 Facteur* Noeud::getFacteurDeb() const{
   return facteurDeb;
 }
@@ -116,11 +100,14 @@ void Noeud::ajoutfils(Noeud N){
 
 void Noeud::ajoutFils(Noeud N, vector< pair<Facteur, int> > arbre, int j){
   ajoutfils(N);
-  for(vector< pair<Facteur, int> >::const_iterator it = Arbre.begin()+j ; it != Arbre.end(); ++it){
-      while((*it).second() > prof){
-	if((*it).second() == prof + 1){
-	  Noeud N = new Noeud((*it).first().getTexte(), indentation+1, (*this), (*it).first(), (*it).first());
-	  racine.ajoutFils(N, Arbre, j);
+  int prof = (*(arbre.begin()+j)).second;
+  for(vector< pair<Facteur, int> >::const_iterator it = arbre.begin()+j ; it != arbre.end(); ++it){
+      while((*it).second > prof){
+	if((*it).second == prof + 1){
+	  string nomNoeud = (*it).first.getTexte();
+	  Facteur fact = (*it).first;
+	  Noeud N(nomNoeud, indentation+1, (*this), fact, fact);
+	  (*this).ajoutFils(N, arbre, j);
 	}
       }
       j++;
@@ -213,8 +200,7 @@ list<Noeud> Noeud::retournerTextFils(){
   /* Surcharge d'opérateur */
 
 bool Noeud::operator==(const Noeud &N) const{
-  if(nom == N.nom && indentation == N.indentation && pere == N.pere && lignedeb == N.lignedeb && 
-     lignefin == N.lignefin && facteurDeb == N.facteurDeb && facteurFin == N.facteurFin){
+  if(nom == N.nom && indentation == N.indentation && pere == N.pere && facteurDeb == N.facteurDeb && facteurFin == N.facteurFin){
     if(descendant.size() == N.descendant.size()){
       list<Noeud>::const_iterator itN = N.descendant.begin();
       for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){
