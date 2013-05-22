@@ -2,18 +2,14 @@
  * @file test.cc
  * @author Hugo des Longchamps
  */
-#include <iostream>
-#include <cstring>
-#include <vector>
+
 using namespace std;
 
-#include "facteur.h"
-#include "ligne.h"
-#include "dom.h"
-#include "noeudtexte.h"
 #include "buffer.h"
+#include "facteur.h"
 
 int main(){
+   
     //*****************
     //Tests sur Facteur
     //*****************
@@ -24,7 +20,8 @@ int main(){
     strcpy(cstr, str.c_str());
    
     //Construction paramétrée de Facteur
-    Facteur f1(cstr);
+    int jeton = 333;
+    Facteur f1= new Facteur(cstr, jeton);
     delete cstr;
   
     //Construction par copie
@@ -66,59 +63,58 @@ int main(){
     //******************
 
     //Creation d'une deuxième chaîne C
-    str="\t";
+    /*    str="\t";
     cstr = new char[str.length()+1];
     strcpy(cstr, str.c_str());
-      	
+    */	
     //Construction d'un deuxième facteur
-    Facteur f2(cstr);
+    /* Facteur f2(cstr);
     delete cstr;
-    
+    */
     //Creation d'une troisieme chaîne 
-    str="DeuMot";
+    /* str="DeuMot";
     cstr= new char[str.length()+1];
     strcpy(cstr, str.c_str());
-    
+    */
     //Construction d'un troisième facteur
-    Facteur f3(cstr);
+    /* Facteur f3(cstr);
     delete cstr;
-
     str=" ";	
     cstr= new char[str.length()+1];
     strcpy(cstr, str.c_str());
     
     Facteur f4(cstr);
     delete cstr;
-
+    */
     //Creation d'un vecteur de facteurs
-    vector<Facteur> v1;
+    /*  vector<Facteur> v1;
     v1.push_back(f2);   //tabulation
     v1.push_back(f2);	//tabulation
     v1.push_back(f3);  
     v1.push_back(f4);   //espace
     v1.push_back(f1);
-
+    */
     //Construction d'une ligne
-    Ligne l1(v1);
+    // Ligne l1(v1);
 
     //Affichage d'une ligne avec la méthode affiche 
-    cout<<"Tests sur Ligne"<<endl<<"------------------------------"<<endl;
+    /* cout<<"Tests sur Ligne"<<endl<<"------------------------------"<<endl;
     cout<<"Affichage de Ligne en utilisant la surcharge de l'operateur << "<<endl;
     cout<<"la ligne ainsi l'indentation(s) :\n";
     cout<<l1<<endl<<endl;
-   
+    */
    //Affichage d'une ligne en utilisant la méthode toString
-    cout<<"Affichage de Ligne en utilisant la méthode toString qui nous renvoie une chaine de caractère"<<endl;
+   /* cout<<"Affichage de Ligne en utilisant la méthode toString qui nous renvoie une chaine de caractère"<<endl;
     string ma_ligne;
     ma_ligne=l1.toString();
     cout<<"la ligne est : "<<endl<<ma_ligne<<endl<<endl;
-   
+   */
    //Affichage d'une ligne en utilisant la méthode toCString
-    char* l;
+    /*  char* l;
     l=l1.toCString();
     cout<<"Affichage de Ligne en utilisant la méthode toCString qui nous renvoie un pointeur vers un caractère"<<endl;
     cout<<"la ligne est : "<<endl<<l<<endl<<endl<<endl;
-
+    */
 
 
     //*****************

@@ -5,6 +5,8 @@
 #include <list>
 #include <vector>
 
+#include "facteur.h"
+
 using namespace std;
 typedef vector<Facteur> Ligne;
 
@@ -17,8 +19,6 @@ class Noeud{
   list<string> listeAttributs;
   Noeud* pere;
   list<Noeud> descendant;
-  /*  Ligne* lignedeb;
-      Ligne* lignefin;*/
   Facteur* facteurDeb;
   Facteur* facteurFin;
   int Numligne;
@@ -29,7 +29,7 @@ class Noeud{
   
   /* Constructeurs */ 
   Noeud();
-  Noeud(string, int, Noeud&, Ligne&, Ligne&, Facteur&, Facteur&);
+  Noeud(string&, int, Noeud&, Facteur&, Facteur&);
   Noeud(const Noeud&);
   
   /* Destructeur */
@@ -42,10 +42,6 @@ class Noeud{
   virtual void setIndent(int);
   virtual Noeud getPere() const;
   virtual void setPere(Noeud);
-  virtual Ligne* getLigneDeb() const;
-  virtual void setLigneDeb(Ligne);
-  virtual Ligne* getLigneFin() const;
-  virtual void setLigneFin(Ligne);
   virtual Facteur* getFacteurDeb() const;
   virtual void setFacteurDeb(Facteur);
   virtual Facteur* getFacteurFin() const;
