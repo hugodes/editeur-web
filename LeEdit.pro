@@ -4,30 +4,51 @@
 #
 #-------------------------------------------------
 
+QT += webkitwidgets
 QT += gui core
-QT += webkit
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = LeEdit
 TEMPLATE = app
 
+# Voir c-unit
+
 
 SOURCES += main.cpp\
         leedit.cpp\
-        buffer.cc\
-        dom.cc\
-        facteur.cc\
-        ligne.cc\
-        noeud.cc\
-        noeudtexte.cc
+    editeur.cpp \
+    affichageligne.cpp \
+    noeudtexte.cc \
+    noeud.cc \
+    ligne.cc \
+    facteur.cc \
+    dom.cc \
+    buffer.cc \
+    recherche.cpp \
+    configurationgenerale.cpp \
+    apropos.cpp \
+    confcouleur.cpp
 
 HEADERS  += leedit.h\
-        buffer.h\
-        dom.h\
-        facteur.h\
-        ligne.h\
-        noeud.h\
-        noeudtexte.h
+    editeur.h \
+    affichageligne.h \
+    noeudtexte.h \
+    noeud.h \
+    ligne.h \
+    facteur.h \
+    dom.h \
+    buffer.h \
+    recherche.h \
+    configurationgenerale.h \
+    apropos.h \
+    confcouleur.h
 
-FORMS    += leedit.ui
+FORMS    += leedit.ui \
+            recherche.ui \
+    configurationgenerale.ui \
+    apropos.ui \
+    confcouleur.ui
+
+OTHER_FILES += \
+    couleur.conf

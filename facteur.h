@@ -21,10 +21,11 @@ class Facteur {
 		char* texte;
 		char* couleur;
 		char* texteFormate;
+		int jeton;
 
 	public:
 	    Facteur(); /** @fn Constructeur par defaut */
-		Facteur(char* text); /** @fn Constructeur de facteur */
+        Facteur(char*& text, int &flag); /** @fn Constructeur de facteur */
 		Facteur(const Facteur&); /** @fn Constructeur par copie */
 		~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
@@ -33,7 +34,9 @@ class Facteur {
 		void setCouleur (char* color); /** @fn Definir la couleur */
 		void formate(); /** @fn Formate puis stock le texte */
 		int taille()const; /** @fn Renvoi la taille de texte */
-		Facteur& operator=(const Facteur&);
+        const char* chercherConfCouleur(int flag); /** @fn Renvoi la couleur en fonction d'un jeton */
+        Facteur& operator=(const Facteur&); /** @fn Surcharge l'operateur = Renvoi la copie */
+		int getJeton(); /** @fn Retourne le jeton du facteur */
 };
 
 ostream& operator<<(ostream & flux, const Facteur &f); /** @fn Surcharge l'operateur << */

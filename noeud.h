@@ -3,25 +3,10 @@
 
 #include <string>
 #include <list>
-//#include "noeudtexte.h"
+#include <vector>
 
 using namespace std;
 typedef vector<Facteur> Ligne;
-
-//typedef std::list<Objet> Obj_list;
-/*class Noeud;
-class DOMText : public Noeud{
-
-private :
-    string text;
-
-public :
-	DOMText ();
-	~DOMText();
-	DOMText(string);
-};
-*/
-
 
 
 class Noeud{
@@ -32,10 +17,11 @@ class Noeud{
   list<string> listeAttributs;
   Noeud* pere;
   list<Noeud> descendant;
-  Ligne* lignedeb;
-  Ligne* lignefin;
-Facteur* facteurDeb;
+  /*  Ligne* lignedeb;
+      Ligne* lignefin;*/
+  Facteur* facteurDeb;
   Facteur* facteurFin;
+  int Numligne;
   
 
  public :
@@ -68,11 +54,12 @@ Facteur* facteurDeb;
   /* Méthodes pour modifier le noeud */
   virtual void ajoutAttribut(string);
   virtual void ajoutfils(Noeud);
+  virtual void ajoutFils(Noeud, vector< pair<Facteur, int> >, int);
   virtual bool presentfils(const Noeud&) const;    // vérifie si un noeud est présent dans la liste des fils du noeud courant
   virtual bool supprimeAttribut(string&);
 
   /* Méthode d'affichage */
-  // virtual istream& saisie(istream&);
+ 
   virtual ostream& affiche(ostream&) const;
 
   /* Méthode de calcul */
@@ -86,12 +73,11 @@ Facteur* facteurDeb;
 
   /* Surcharge d'opérateur */
   virtual bool operator==(const Noeud&) const;
-  //  virtual Noeud& operator=(const Noeud&);
   
 };
 
 /* Surcharge de Flots */
 ostream& operator<< (ostream&, const Noeud&);
-//istream& operator>> (istream&, Noeud&);
+
 
 #endif
