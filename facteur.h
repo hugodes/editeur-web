@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string.h>
+#include "lex.yy.c"
 
 using namespace std;
 
@@ -36,7 +37,7 @@ class Facteur {
 		int taille()const; /** @fn Renvoi la taille de texte */
         const char* chercherConfCouleur(int flag); /** @fn Renvoi la couleur en fonction d'un jeton */
         Facteur& operator=(const Facteur&); /** @fn Surcharge l'operateur = Renvoi la copie */
-		int getJeton(); /** @fn Retourne le jeton du facteur */
+		int getJeton()const; /** @fn Retourne le jeton du facteur */
 };
 
 ostream& operator<<(ostream & flux, const Facteur &f); /** @fn Surcharge l'operateur << */

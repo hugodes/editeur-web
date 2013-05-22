@@ -4,6 +4,7 @@
  * @class Buffer
  * @details Surcharge des operateurs << & >>
  */
+
 #include "buffer.h"
 
 Buffer::Buffer(){
@@ -65,59 +66,56 @@ void Buffer::setLignes(char cheminFichier[]){
       yyin = pFichier;
       int i;
       int jeton;
+      Facteur (*F);
       while((i = yylex()) != 0){
 	switch(i){
-	case ATTRIBUT :{
+	case ATTRIBUT :
 	  if(jeton == 331){
-	    F(yytext, i);
-	    L.push_back(F);
-	    break;
+	    F = new Facteur(yytext, i);
+	    L.push_back(*F);
 	  }
 	  else{
-	    F(yytext, STRING);
-	    L.push_back(F);
+	    int k = STRING;
+	    F = new Facteur(yytext, k);
+	    L.push_back(*F);
 	    jeton = i;
-	    break;
 	  }
-	}
+	  break;
 	
-	case SPACE :{
+	case SPACE :
 	  if(jeton == 331){
-	    F(yytext, i);
-	    L.push_back(F);
-	    break;
+	    F = new Facteur(yytext, i);
+	    L.push_back(*F);
 	  }
 	  else{
-	    F(yytext, i);
-	    L.push_back(F);
+	    F = new Facteur(yytext, i);
+	    L.push_back(*F);
 	    jeton = i;
-	    break;
 	  }
-	}
+	  break;
 
-	case BALISEFERMANTE :{
-	  F(yytext, i);
-	  L.push_back(F);
+	case BALISEFERMANTE :
+	  F = new Facteur(yytext, i);
+	  L.push_back(*F);
 	  jeton = i;
 	  break;
-	  }
+	  
 
-	case ENDL : {
-	  F(yytext, i);
-	  L.push_back(F);
+	case ENDL : 
+	  F = new Facteur(yytext, i);
+	  L.push_back(*F);
 	  lignes.push_back(L);
 	  L.clear();
 	  jeton = i;
-	}
-	
-	case default :{
-          F(yytext, i);
-          L.push_back(F);
+	  break;
+		
+	default :
+          F = new Facteur(yytext, i);
+          L.push_back(*F);
 	  jeton = i;
-	  
-        }
- 
+	  break;
 	}
+	delete F;
       }
     }
     fclose(pFichier);
