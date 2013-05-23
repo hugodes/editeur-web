@@ -6,7 +6,7 @@
 using namespace std;
 
 #include "buffer.h"
-#include "facteur.h"
+#include "facteur.cc"
 
 int main(){
    
@@ -24,7 +24,7 @@ int main(){
     int jeton = 333;
     Facteur f1(cstr, jeton);
     delete cstr;
- 
+    cout << f1 << endl;
     //Construction par copie
     // Facteur f11(f1);
     
