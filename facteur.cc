@@ -9,12 +9,12 @@
 #include <cstdio>
 #include <vector>
 #include <stdio.h>
-#include <string.h>
 #include <cstdlib>
 #include <istream>
-#include <iostream>
 #include <fstream>
 #include <sstream>
+
+using namespace std;
 
 /**
 * @brief Constructeur par défaut

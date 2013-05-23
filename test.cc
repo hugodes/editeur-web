@@ -13,51 +13,52 @@ int main(){
     //*****************
     //Tests sur Facteur
     //*****************
-
+  //cout << "test" << endl;
     //Creation d'une chaine C
-    string str("UnMmot");
-    char *cstr = new char[str.length()+1];
-    strcpy(cstr, str.c_str());
+  string str("UnMmot");  
+  char* cstr = new char[str.length()+1];
+  strcpy(cstr, str.c_str());
+  cout << cstr << endl;
    
     //Construction paramétrée de Facteur
     int jeton = 333;
-    Facteur f1= new Facteur(cstr, jeton);
+    Facteur f1(cstr, jeton);
     delete cstr;
-  
+ 
     //Construction par copie
-    Facteur f11(f1);
+    // Facteur f11(f1);
     
     //Changer le texte du Facteur
-    str = ("UnMot");
+    /*  str = ("UnMot");
     char *cstr1 = new char[str.length()+1];
     strcpy(cstr1, str.c_str());
     f11.setTexte(cstr1);
     delete cstr1;
-
+*/
     //Recuperer le texte du Facteur
-    cout<<"Affichage de facteur"<<endl<<"----------------------------------"<<endl;
+    /*    cout<<"Affichage de facteur"<<endl<<"----------------------------------"<<endl;
     cout << "Le texte du facteur est: " << endl;
     cout << f11.getTexte() << endl ;
-    
+    */
     //Changer la couleur du Facteur
-    str = ("#FFF000");
+    /*  str = ("#FFF000");
     char *cstr2 = new char[str.length()+1];
     strcpy(cstr2, str.c_str());
     f11.setCouleur(cstr2);
     delete cstr2;
-
+*/
     //Recuperer le texte formate du facteur
-    cout << "Le texte formate du facteur est: " << endl;
+    /*  cout << "Le texte formate du facteur est: " << endl;
     cout << f11.getTexteFormate() << endl;
-
+*/
     //Affichage de Facteur
-    cout<<"Affichage d'un facteur:"<<endl;
+    /*  cout<<"Affichage d'un facteur:"<<endl;
     cout<<f1<<endl;
-    
+    */
     //Affichage de Facteur
-    cout<<"Affichage d'un facteur:"<<endl;
+    /*  cout<<"Affichage d'un facteur:"<<endl;
     cout<<f11<<endl<<endl<<endl;
-
+*/
     //******************
     //Tests sur Ligne
     //******************
@@ -122,20 +123,20 @@ int main(){
     //*****************
 
     //Constructeur par défaut
-    Buffer b1;
+    /*  Buffer b1;
     //Affichage
     cout<<"Affichage de Buffer"<<endl<<"------------------------------"<<endl;
     cout<<"Affichage du premier buffer:"<<endl;
     cout<<b1<<endl;
-
+*/
     //Constructeur paramétré avec le chemin vers un fichier
-    string str3("testinput.txt");
+    /*    string str3("testinput.txt");
     char *cstr3 = new char[str3.length()+1];
     strcpy(cstr3, str3.c_str());
     Buffer b2(cstr3);
     cout<<"Affichage du deuxième buffer:"<<endl;
     cout<<b2<<endl;
-
+    */
 
     //getDom
     //b1.getDom();
