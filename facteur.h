@@ -26,7 +26,7 @@ class Facteur {
 
 	public:
 	    Facteur(); /** @fn Constructeur par defaut */
-	    Facteur(char*& text, int &flag); /** @fn Constructeur de facteur */
+	    Facteur(char* &text, int &flag); /** @fn Constructeur de facteur */
 		Facteur(const Facteur&); /** @fn Constructeur par copie */
 		virtual ~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
