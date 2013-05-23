@@ -6,6 +6,7 @@
  */
 
 #include "buffer.h"
+#include "lex.yy.c"
 
 Buffer::Buffer(){
     lignes = list<Ligne>();

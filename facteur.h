@@ -16,7 +16,7 @@
 #include <sstream>
 #include <iostream>
 #include <string.h>
-#include "lex.yy.c"
+
 
 using namespace std;
 
