@@ -22,7 +22,7 @@ int main(){
    
     //Construction paramétrée de Facteur
     int jeton = 333;
-    Facteur f1= new Facteur(cstr, jeton);
+    Facteur f1(cstr, jeton);
     delete cstr;
  
     //Construction par copie
