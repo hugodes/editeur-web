@@ -7,6 +7,13 @@
 #ifndef facteur_h
 #define facteur_h
 
+#include <cstdio>
+#include <vector>
+#include <stdio.h>
+#include <cstdlib>
+#include <istream>
+#include <fstream>
+#include <sstream>
 #include <iostream>
 #include <string.h>
 #include "lex.yy.c"

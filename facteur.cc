@@ -5,17 +5,8 @@
 * @details surcharge de l'operateur <<
 */
 
+
 #include "facteur.h"
-#include <cstdio>
-#include <vector>
-#include <stdio.h>
-#include <cstdlib>
-#include <istream>
-#include <fstream>
-#include <sstream>
-
-using namespace std;
-
 /**
 * @brief Constructeur par défaut
 */
