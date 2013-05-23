@@ -6,7 +6,7 @@
 using namespace std;
 
 #include "buffer.h"
-#include "facteur.cc"
+#include "facteur.h"
 
 int main(){
    

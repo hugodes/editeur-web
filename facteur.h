@@ -4,8 +4,8 @@
 * @details surcharge de l'operateur <<
 */
 
-#ifndef facteur_h
-#define facteur_h
+#ifndef FACTEUR_H
+#define FACTEUR_H
 
 #include <cstdio>
 #include <vector>
