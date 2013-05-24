@@ -6,7 +6,7 @@
 */
 
 
-#include "facteur.h"
+#include "../../headers/core/facteur.h"
 /**
 * @brief Constructeur par défaut
 */

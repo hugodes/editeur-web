@@ -2,7 +2,7 @@
 #include <string>
 #include <list>
 
-#include "dom.h"
+#include "../../headers/core/dom.h"
 
 using namespace std;
 
