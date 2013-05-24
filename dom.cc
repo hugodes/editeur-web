@@ -81,6 +81,7 @@ Dom::Dom(list<Ligne> l){
 	 cout << N.getNom() << endl;
 	 racine.ajoutfils(N);
 	 cout << N.getNom()<< " => " << N.getPere()  << endl;
+	 cout<<"C'est fini"<<endl;
 	 N.ajoutFils(Arbre, j);
        }
        else if((*it).getIndent()== 0){

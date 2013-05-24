@@ -55,8 +55,12 @@ void Noeud::setNom(string _nom){
 }
 
 Noeud Noeud::getPere() const{
-  return *pere;
-   cout << "pere"<< endl;
+    if(pere){
+          return *pere;
+    }
+    else{
+        cout<<"Pas de pere"<<endl;
+    }
 }
 
 void Noeud::setPere(Noeud* N){
