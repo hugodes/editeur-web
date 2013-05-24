@@ -3,7 +3,6 @@
 #include <typeinfo>
 
 #include "noeud.h"
-//#include "noeudtexte.h"
 
 using namespace std;
 
@@ -13,18 +12,21 @@ Noeud::Noeud(){
   nom= "noeud inconnu";
   indentation = 0;
   pere = NULL;
-  /*  lignedeb = NULL;
-      lignefin = NULL;*/
   facteurDeb = NULL;
   facteurFin = NULL;
+}
+
+Noeud::Noeud(string& name, int ind, Facteur &FD,  Facteur &FF){
+  nom= name;
+  indentation = ind;
+  facteurDeb = &FD;
+  facteurFin = &FF;
 }
 
 Noeud::Noeud(string& name, int ind, Noeud &father, Facteur &FD,  Facteur &FF){
   nom= name;
   indentation = ind;
-  pere = &father;
-  /*  lignedeb = &LD;
-      lignefin = &LF;*/
+  father.ajoutfils(*this);
   facteurDeb = &FD;
   facteurFin = &FF;
 }
@@ -33,8 +35,6 @@ Noeud::Noeud(const Noeud& noeudcopie){
   nom= noeudcopie.nom;
   indentation = noeudcopie.indentation;
   pere = noeudcopie.pere;
-  /*  lignedeb = noeudcopie.lignedeb;
-      lignefin = noeudcopie.lignefin;*/
   facteurDeb = noeudcopie.facteurDeb;
   facteurFin = noeudcopie.facteurFin;
 }
@@ -86,6 +86,7 @@ void Noeud::setFacteurFin(Facteur FF){
   facteurFin = &FF;
 }
 
+
   /* Méthodes pour modifier le noeud */
 
 void Noeud::ajoutAttribut(string att){
@@ -96,23 +97,24 @@ void Noeud::ajoutfils(Noeud N){
   descendant.push_back(N);
   N.setPere(*this);
   N.setIndent(indentation + 1);
+  cout<< (*this).nom << " pere de " << N.nom << endl;
 }
 
-void Noeud::ajoutFils(Noeud N, vector< pair<Facteur, int> > arbre, int j){
-  ajoutfils(N);
-  int prof = (*(arbre.begin()+j)).second;
-  for(vector< pair<Facteur, int> >::const_iterator it = arbre.begin()+j ; it != arbre.end(); ++it){
-      while((*it).second > prof){
-	if((*it).second == prof + 1){
-	  string nomNoeud = (*it).first.getTexte();
-	  Facteur fact = (*it).first;
-	  Noeud N(nomNoeud, indentation+1, (*this), fact, fact);
-	  (*this).ajoutFils(N, arbre, j);
-	}
+void Noeud::ajoutFils(vector< Noeud >& arbre, int& j){
+  for(vector<Noeud>::const_iterator it = arbre.begin()+j ; it != arbre.end(); ++it){
+    if((*it).getIndent() == indentation + 1){
+      Noeud N(*it);
+      ajoutfils(N);
+      N.ajoutFils(arbre, j);
+    }
+    else if((*it).getIndent()== indentation){
+      while(it != arbre.end()){
+	++it;
       }
-      j++;
-  }
-} 
+    }
+    j++;
+  } 
+}
 
 bool Noeud::presentfils(const Noeud& N) const{   
   if(descendant.empty()){

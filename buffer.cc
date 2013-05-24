@@ -73,12 +73,12 @@ void Buffer::setLignes(char cheminFichier[]){
 	case ATTRIBUT :
 	  if(jeton == 331){
 	    F = new Facteur(yytext, i);
-	    L.push_back(*F);
+	    L.push_back(F);
 	  }
 	  else{
 	    int k = STRING;
 	    F = new Facteur(yytext, k);
-	    L.push_back(*F);
+	    L.push_back(F);
 	    jeton = i;
 	  }
 	  break;
@@ -86,25 +86,25 @@ void Buffer::setLignes(char cheminFichier[]){
 	case SPACE :
 	  if(jeton == 331){
 	    F = new Facteur(yytext, i);
-	    L.push_back(*F);
+	    L.push_back(F);
 	  }
 	  else{
 	    F = new Facteur(yytext, i);
-	    L.push_back(*F);
+	    L.push_back(F);
 	    jeton = i;
 	  }
 	  break;
 
 	case BALISEFERMANTE :
 	  F = new Facteur(yytext, i);
-	  L.push_back(*F);
+	  L.push_back(F);
 	  jeton = i;
 	  break;
 	  
 
 	case ENDL : 
 	  F = new Facteur(yytext, i);
-	  L.push_back(*F);
+	  L.push_back(F);
 	  lignes.push_back(L);
 	  L.clear();
 	  jeton = i;
@@ -112,7 +112,7 @@ void Buffer::setLignes(char cheminFichier[]){
 		
 	default :
           F = new Facteur(yytext, i);
-          L.push_back(*F);
+          L.push_back(F);
 	  jeton = i;
 	  break;
 	}
@@ -127,11 +127,11 @@ void Buffer::setLignes(char cheminFichier[]){
 
 void Buffer::affiche(ostream & os)const{
     list<Ligne>::const_iterator il;
-    vector<Facteur>::const_iterator iv;
+    vector<Facteur*>::const_iterator iv;
     cout<<"taille de lignes: "<<lignes.size()<<endl;
     for (il=lignes.begin(); il!=lignes.end(); il++){
         for(iv=(*il).begin(); iv!=(*il).end(); il++){
-            os<<(*iv).getTexteFormate();
+            os<<(**iv).getTexteFormate();
         }
     }
 }
@@ -147,11 +147,11 @@ void Buffer::saisie(istream &is){
 void Buffer::sauvTemp(){
     FILE * pFichier;
     pFichier = fopen(chemFichTemp, "w");
-    vector<Facteur>::const_iterator iv;
+    vector<Facteur*>::const_iterator iv;
     list<Ligne>::iterator il;
     for (il=lignes.begin(); il!=lignes.end(); il++){
         for(iv=(*il).begin(); iv!=(*il).end(); il++){
-            fputs((*iv).getTexte(), pFichier);
+            fputs((**iv).getTexte(), pFichier);
         }
     }
     fclose(pFichier);

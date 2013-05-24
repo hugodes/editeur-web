@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include <map>
 
 #include "dom.h"
 
@@ -16,27 +15,34 @@ Dom::Dom(Noeud &r):racine(r){}
 
 Dom::Dom(list<Ligne> l){
   int prof = 0;
-  vector< pair<Facteur, int> > Arbre;
+  vector< Noeud > Arbre;
+  //  cout << "test" << endl;
   if(l.empty()){
     cout << "Liste vide !!" <<endl;
   }
   else{
-     for (list<Ligne>::const_iterator it = l.begin() ; it != l.end(); ++it){  
+    for (list<Ligne>::const_iterator it = l.begin() ; it != l.end(); ++it){  
        if((*it).empty()){
 	 cout << "Ligne vide !" << endl;
        }
        else{
-	 for (vector<Facteur>::const_iterator it1 = (*it).begin() ; it1 != (*it).end(); ++it1){
-	   if((*it1).getJeton() == 320){
-	     Arbre.push_back(make_pair((*it1),prof));
+	 for (vector<Facteur*>::const_iterator it1 = (*it).begin() ; it1 != (*it).end(); ++it1){
+	   //cout << (**it1).getTexte() << " => " << (**it1).getJeton() << endl;
+	   if((**it1).getJeton() == 320){
+	     //cout << (**it1).getTexte() << endl;
+	     string nomNoeud = (**it1).getTexte();
+	     Facteur fact = (**it1);
+	     Noeud N(nomNoeud, prof , fact, fact);
+	     Arbre.push_back(N);
 	     prof++;
 	   }
-	   else if((*it1).getJeton() == 331){
-	     string s=(*it1).getTexte();
+	   else if((**it1).getJeton() == 331){
+	     //cout << (**it1).getTexte() << endl;
+	     string s=(**it1).getTexte();
 	     do{
 	       ++it1;
-	       s += (*it1).getTexte();
-	     }while((*it1).getJeton() != 332);
+	       s += (**it1).getTexte();
+	     }while((**it1).getJeton() != 332);
 	     
 	     char * stmp = new char[s.size() + 1];
 	     copy(s.begin(), s.end(), stmp);
@@ -44,35 +50,47 @@ Dom::Dom(list<Ligne> l){
 	     int balisejeton = 320;
 
 	     Facteur F(stmp, balisejeton);
-	     Arbre.push_back(make_pair(F,prof));
+	     string nomNoeud = F.getTexte();	     
+	     Noeud N(nomNoeud, prof , F, F);
+	     Arbre.push_back(N);
 	     prof++;
 	   } 
-	   else if((*it1).getJeton() == 325){
+	   else if((**it1).getJeton() == 325){
 	     prof--;
 	   }
+	   //   else cout << "text" <<endl;
 	 }
        }
-     }
-
-     string nomNoeud = (*Arbre.begin()).first.getTexte();
-     Noeud pereRacine = Noeud();
-
-     Noeud R(nomNoeud, 0, pereRacine, (*Arbre.begin()).first, (*Arbre.begin()).first);
-     racine = R;
-     prof = 0;
-     int j = 0;
-     for(vector< pair<Facteur, int> >::const_iterator it = Arbre.begin()++ ; it != Arbre.end(); ++it){
-	 while((*it).second > prof){
-	   if((*it).second == prof + 1){
-	     string nomNoeud = (*it).first.getTexte();
-	     Facteur fact = (*it).first;
-	     Noeud N(nomNoeud, 0, racine, fact, fact);
-	     racine.ajoutFils(N, Arbre, j);
-	   }
+    }
+    //  cout << "fin list" << endl;
+    /*   for(vector<Noeud >::const_iterator it = Arbre.begin()++ ; it != Arbre.end(); ++it){
+      cout << (*it).getNom() << " => " << (*it).getIndent() << endl;
+      }
+    */
+    Noeud R(*Arbre.begin());
+    R.setPere(R);
+    racine = R;
+    int j=0;
+    /* cout << " racine : " << endl;
+       cout << racine << endl;*/
+     for(vector<Noeud>::const_iterator it = Arbre.begin()+1 ; it != Arbre.end(); ++it){
+     
+       cout << (*it).getNom() << endl;
+       if((*it).getIndent() == 1){
+	 Noeud N(*it);
+	 cout << N.getNom() << endl;
+	 racine.ajoutfils(N);
+	 cout << N.getNom()<< " => " << N.getPere() << endl;
+	 N.ajoutFils(Arbre, j);
+       }
+       else if((*it).getIndent()== 0){
+	 while(it != Arbre.end()){
+	   ++it;
 	 }
-	 j++;
-       } 
-  }	  
+       }
+       j++;
+     }
+  }
 }	     
   
 
