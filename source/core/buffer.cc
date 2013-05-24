@@ -16,6 +16,7 @@ Buffer::Buffer(){
 }
 
 Buffer::Buffer(char cheminFichier[]){
+    chemFichTemp=new char[256];
     strcpy(chemFichTemp, ".");
     strcat(chemFichTemp, cheminFichier);
     strcat(chemFichTemp, ".tmp");
@@ -59,7 +60,6 @@ void Buffer::setLignes(char cheminFichier[]){
     //  char *buffer=new char[sizeof(char)*1024];
     Ligne L;
     pFichier =  fopen(cheminFichier, "r");
-    cout<<"Chemin du fichier: "<<cheminFichier<<endl;
     if (!pFichier){
         cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
     }
@@ -67,9 +67,8 @@ void Buffer::setLignes(char cheminFichier[]){
       yyin = pFichier;
       int i;
       int jeton;
-      Facteur (*F);
+      Facteur *F;
       while((i = yylex()) != 0){
-      cout<<"Ahmed est un BG"<<endl;
 	switch(i){
 	case ATTRIBUT :
 	  if(jeton == 331){
@@ -121,7 +120,7 @@ void Buffer::setLignes(char cheminFichier[]){
       }
     }
     fclose(pFichier);
-    sauvTemp();
+    //sauvTemp();
     //majDom();
 }
 
@@ -131,7 +130,8 @@ void Buffer::affiche(ostream & os)const{
     vector<Facteur*>::const_iterator iv;
     cout<<"taille de lignes: "<<lignes.size()<<endl;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        for(iv=(*il).begin(); iv!=(*il).end(); il++){
+        for(iv=(*il).begin(); iv!=(*il).end(); iv++){
+            cout<<(**iv).getTexte()<<endl;
             os<<(**iv).getTexteFormate();
         }
     }
