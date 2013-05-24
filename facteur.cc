@@ -5,17 +5,8 @@
 * @details surcharge de l'operateur <<
 */
 
-#include "facteur.h"
-#include <cstdio>
-#include <vector>
-#include <stdio.h>
-#include <string.h>
-#include <cstdlib>
-#include <istream>
-#include <iostream>
-#include <fstream>
-#include <sstream>
 
+#include "facteur.h"
 /**
 * @brief Constructeur par défaut
 */
@@ -37,6 +28,8 @@ Facteur::Facteur(char* &text, int &flag) {
 	this->jeton=flag;
     strcpy(this->couleur,chercherConfCouleur(flag));
 	this->formate();
+
+	/* test */ //cout << texte << jeton << endl;
 }
 
 
@@ -46,7 +39,7 @@ Facteur::Facteur(char* &text, int &flag) {
 * @return la couleur associé
 */
 const char* Facteur::chercherConfCouleur(int flag){
-    ifstream fichier("../sans_titre/couleur.conf");
+    ifstream fichier("couleur.conf");
     string ligne;
     if(fichier) {
         int j=0;

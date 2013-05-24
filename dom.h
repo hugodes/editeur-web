@@ -1,6 +1,10 @@
 #ifndef DOM_H
 #define DOM_H
 
+#include <iostream>
+#include <string>
+#include <list>
+#include <map>
 #include <string>
 #include <list>
 #include "facteur.h"

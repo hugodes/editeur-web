@@ -13,51 +13,54 @@ int main(){
     //*****************
     //Tests sur Facteur
     //*****************
-
+  //cout << "test" << endl;
     //Creation d'une chaine C
-    string str("UnMmot");
-    char *cstr = new char[str.length()+1];
-    strcpy(cstr, str.c_str());
+  string str("<head>");  
+  char* cstr = new char[str.length()+1];
+  strcpy(cstr, str.c_str());
+  // cout << cstr << endl;
    
     //Construction paramétrée de Facteur
-    int jeton = 333;
-    Facteur f1= new Facteur(cstr, jeton);
+    int jeton = 320;
+    Facteur f1(cstr, jeton);
     delete cstr;
-  
+    //cout << f1 << endl;
     //Construction par copie
     Facteur f11(f1);
-    
+    //cout << "f11 : " << f11 << endl; 
     //Changer le texte du Facteur
-    str = ("UnMot");
+     str = ("UnMot");
     char *cstr1 = new char[str.length()+1];
     strcpy(cstr1, str.c_str());
     f11.setTexte(cstr1);
     delete cstr1;
+    //cout << " f11 : " << f11 << endl;
 
     //Recuperer le texte du Facteur
-    cout<<"Affichage de facteur"<<endl<<"----------------------------------"<<endl;
+    /*  cout<<"Affichage de facteur"<<endl<<"----------------------------------"<<endl;
     cout << "Le texte du facteur est: " << endl;
     cout << f11.getTexte() << endl ;
-    
+    */
     //Changer la couleur du Facteur
-    str = ("#FFF000");
+     str = ("#FFF000");
     char *cstr2 = new char[str.length()+1];
     strcpy(cstr2, str.c_str());
     f11.setCouleur(cstr2);
     delete cstr2;
-
-    //Recuperer le texte formate du facteur
-    cout << "Le texte formate du facteur est: " << endl;
-    cout << f11.getTexteFormate() << endl;
-
-    //Affichage de Facteur
-    cout<<"Affichage d'un facteur:"<<endl;
-    cout<<f1<<endl;
+    // cout << "f11 : " << f11 << endl;
     
+    //Recuperer le texte formate du facteur
+    /*cout << "Le texte formate du facteur est: " << endl;
+    cout << f11.getTexteFormate() << endl;
+    */
     //Affichage de Facteur
-    cout<<"Affichage d'un facteur:"<<endl;
+    /* cout<<"Affichage du facteur f1:"<<endl;
+    cout<<f1<<endl;
+   
+    //Affichage de Facteur
+    cout<<"Affichage d'un facteur f11:"<<endl;
     cout<<f11<<endl<<endl<<endl;
-
+    */
     //******************
     //Tests sur Ligne
     //******************
@@ -122,20 +125,20 @@ int main(){
     //*****************
 
     //Constructeur par défaut
-    Buffer b1;
+    /*  Buffer b1;
     //Affichage
     cout<<"Affichage de Buffer"<<endl<<"------------------------------"<<endl;
     cout<<"Affichage du premier buffer:"<<endl;
     cout<<b1<<endl;
-
+*/
     //Constructeur paramétré avec le chemin vers un fichier
-    string str3("testinput.txt");
+    /*    string str3("testinput.txt");
     char *cstr3 = new char[str3.length()+1];
     strcpy(cstr3, str3.c_str());
     Buffer b2(cstr3);
     cout<<"Affichage du deuxième buffer:"<<endl;
     cout<<b2<<endl;
-
+    */
 
     //getDom
     //b1.getDom();
@@ -157,44 +160,97 @@ int main(){
 
     /* Création de facteurs */
 
-    /* Mise en commentaire car les tests ne marchent pas
-    Facteur F0("hello");
-    Facteur F1("world");
-    Facteur F2("<html>");
-    Facteur F3("<body>");
-    Facteur F4("Ceci");
-    Facteur F5("est");
-    Facteur F6("mon");
-    Facteur F7("site");
-    Facteur F8("trop");
-    Facteur F9("genial");
-    fin du commentaire temporaire*/
+    /* Mise en commentaire car les tests ne marchent pas*/
+    string s = "hello";  
+    char* hello = new char[s.length()+1];
+    strcpy(hello, s.c_str());
+    s = "world";  
+    char* world = new char[s.length()+1];
+    strcpy(world, s.c_str());
+    s = "<html>";  
+    char* html = new char[s.length()+1];
+    strcpy(html, s.c_str());
+    s = "<body>";  
+    char* body = new char[s.length()+1];
+    strcpy(body, s.c_str());
+    s = "Ceci";  
+    char* ceci = new char[s.length()+1];
+    strcpy(ceci, s.c_str());
+    s = "est";  
+    char* est = new char[s.length()+1];
+    strcpy(est, s.c_str());
+    s = "mon";  
+    char* mon = new char[s.length()+1];
+    strcpy(mon, s.c_str());
+    s = "trop";  
+    char* trop = new char[s.length()+1];
+    strcpy(trop, s.c_str());
+    s = "site";  
+    char* site = new char[s.length()+1];
+    strcpy(site, s.c_str());
+    s = "genial";  
+    char* genial = new char[s.length()+1];
+    strcpy(genial, s.c_str());
+    s = "/body";  
+    char* b = new char[s.length()+1];
+    strcpy(b, s.c_str());
+    s = "/html";  
+    char* hf = new char[s.length()+1];
+    strcpy(hf, s.c_str());
+
+   
+    int Jt = 333;
+    int Jb = 320;
+    int Jbf = 325;
+    
+    Facteur F0(hello, Jt);
+    Facteur F1(world, Jt);
+    Facteur F2(html, Jb);
+    Facteur F3(body, Jb);
+    Facteur F4(ceci, Jt);
+    Facteur F5(est, Jt);
+    Facteur F6(mon, Jt);
+    Facteur F7(site, Jt);
+    Facteur F8(trop, Jt);
+    Facteur F9(genial, Jt);
+    Facteur F10(b, Jb);
+    Facteur F11(hf, Jbf);
+    // cout << F3.getJeton() << endl;
+    /*   fin du commentaire temporaire*/
 
     /* Vecteur de facteur */
 
-    /* Mise en commentaire car les tests ne marchent pas
-    vector<Facteur>V0;
-    vector<Facteur>V1;
-    vector<Facteur>V2;
-    vector<Facteur>V3;
-    vector<Facteur>V4;
-    fin du commentaire temporaire*/
+    /* Mise en commentaire car les tests ne marchent pas*:*/
+    vector<Facteur*>V0;
+    vector<Facteur*>V1;
+    vector<Facteur*>V2;
+    vector<Facteur*>V3;
+    vector<Facteur*>V4;
+    vector<Facteur*>V5;
+    vector<Facteur*>V6;
+    
+    /* fin du commentaire temporaire*/
 
     /* Initialisation des vecteurs de facteurs */
 
-    /* Mise en commentaire car les tests ne marchent pas
-    V0.push_back(F0);
-    V0.push_back(F1);
-    V1.push_back(F2);
-    V2.push_back(F3);
-    V3.push_back(F4);
-    V3.push_back(F5);
-    V4.push_back(F6);
-    V4.push_back(F7);
-    V4.push_back(F8);
-    V4.push_back(F9);
-    fin du commentaire temporaire*/
-
+    /* Mise en commentaire car les tests ne marchent pas*/
+    V0.push_back(&F0);
+    V0.push_back(&F1);
+    V1.push_back(&F2);
+    V2.push_back(&F3);
+    V3.push_back(&F4);
+    V3.push_back(&F5);
+    V4.push_back(&F6);
+    V4.push_back(&F7);
+    V4.push_back(&F8);
+    V4.push_back(&F9);
+    V5.push_back(&F10);
+    V6.push_back(&F11);
+    
+    /*    fin du commentaire temporaire*/
+     for (vector<Facteur*>::const_iterator it1 = V1.begin() ; it1 != V1.end(); ++it1){
+       // cout << (**it1).getJeton() << endl;
+     }
     /* Création de lignes */ 
     
     /* Mise en commentaire car les tests ne marchent pas
@@ -207,41 +263,72 @@ int main(){
 
     /* Création de Noeud */
 
-    /* Mise en commentaire car les tests ne marchent pas
-    Noeud N1();
-    Noeud N2("<p1>", 3, N1, L2, L2, F0, F1);
-    Noeud N3("<p2>", 3, N1, L3, L4, F4, F9);
-    Noeud N4("html", 0, N4, L0, L0, F2, F2);
+    /* Mise en commentaire car les tests ne marchent pas*/
+    Noeud *N1 = new Noeud();
+    string p1 = "<p1>";
+    string p2 = "<p2>";
+    string h = "html";
+    Noeud N2(p1, 3, *N1, F0, F1);
+    Noeud N3(p2, 3, *N1, F4, F9);
+    Noeud N4(h, 0, N4, F2, F2);
     Noeud N5();
-    fin du commentaire temporaire*/
+    /*    fin du commentaire temporaire*/
+    
+    //  cout << "premier N1 : " << N1 << endl;
 
     /* Initialisation de N1 */
 
-    /* Mise en commentaire car les tests ne marchent pas
-    N1.setNom("<body>");
-    N1.setIndent(1);
-    N1.setPere(N4);
-    N1.setLigneDeb(L1);
-    N1.setLigneFin(L1);
-    N1.setFacteurDeb(F3);
-    N1.setFacteurFin(F3);
-    fin du commentaire temporaire*/
+    /* Mise en commentaire car les tests ne marchent pas*/
+    (*N1).setNom("<body>");
+    (*N1).setIndent(1);
+    (*N1).setPere(N4);
+    (*N1).setFacteurDeb(F3);
+    (*N1).setFacteurFin(F3);
+    /*    fin du commentaire temporaire*/
 
+    /* Affichage des noeuds */
+    /*
+    cout << "N1: " << N1 << endl;
+    cout << "N2: " << N2 << endl;
+    cout << "N3: " << N3 << endl;
+    cout << "N4: " << N4 << endl;
+    cout << "N5: " << N5 << endl;
+    */
     /* Création d'un DOM */
 
-    /* Mise en commentaire car les tests ne marchent pas
-    Dom D(N4);
+    list<vector< Facteur*> > ligne;
+    
+    ligne.push_back(V1);
+    ligne.push_back(V0);
+    ligne.push_back(V2);
+    ligne.push_back(V3);
+    ligne.push_back(V4);
+    ligne.push_back(V5);
+    ligne.push_back(V6);
+    /*
+    cout << "ligne :" << endl;
+    for (list< vector<Facteur*> >::const_iterator it = ligne.begin() ; it != ligne.end(); ++it){
+      for (vector<Facteur*>::const_iterator it1 = (*it).begin() ; it1 != (*it).end(); ++it1){
+	cout << (**it1) << endl;
+      }
+      }*/
+    /* Mise en commentaire car les tests ne marchent pas*/
+     Dom D(ligne);
 
-    cout << D << endl;
-    fin du commentaire temporaire*/
+     /*for (list<Noeud>::const_iterator it = N4.retournerNodesFils().begin() ; it != N4.retournerNodesFils().end(); ++it){
+       cout << (*it) << endl;
+       }
+     */
+     // cout << D << endl;
+    /*    fin du commentaire temporaire*/
 
     /* Modification du DOM */
 
-    /* Mise en commentaire car les tests ne marchent pas
-    D.ajoutNoeud(N2, N5);
+    /* Mise en commentaire car les tests ne marchent pas*/
+    /* D.ajoutNoeud(N2, N5);
 
-    cout << D << endl;
-    fin du commentaire temporaire*/
+       cout << D << endl;*/
+    /*    fin du commentaire temporaire*/
     
     /* Calcul sur Noeud */
     
