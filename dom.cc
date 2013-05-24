@@ -71,6 +71,7 @@ Dom::Dom(list<Ligne> l){
     R.setPere(&R);
     racine = R;
     int j=0;
+    cout<< "Pere de R : " << R.getPere().getNom()<<endl;
     /* cout << " racine : " << endl;
        cout << racine << endl;*/
      for(vector<Noeud>::const_iterator it = Arbre.begin()+1 ; it != Arbre.end(); ++it){
@@ -80,7 +81,8 @@ Dom::Dom(list<Ligne> l){
 	 Noeud N(*it);
 	 cout << N.getNom() << endl;
 	 racine.ajoutfils(N);
-	 cout << N.getNom()<< " => " << N.getPere()  << endl;
+	 cout << N.getNom()<< " => " << N.getPere() << endl;
+	 cout << "c'est fini" << endl;
 	 N.ajoutFils(Arbre, j);
        }
        else if((*it).getIndent()== 0){
