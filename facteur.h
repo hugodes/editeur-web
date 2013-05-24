@@ -4,12 +4,19 @@
 * @details surcharge de l'operateur <<
 */
 
-#ifndef facteur_h
-#define facteur_h
+#ifndef FACTEUR_H
+#define FACTEUR_H
 
+#include <cstdio>
+#include <vector>
+#include <stdio.h>
+#include <cstdlib>
+#include <istream>
+#include <fstream>
+#include <sstream>
 #include <iostream>
 #include <string.h>
-#include "lex.yy.c"
+
 
 using namespace std;
 
@@ -26,9 +33,9 @@ class Facteur {
 
 	public:
 	    Facteur(); /** @fn Constructeur par defaut */
-        Facteur(char*& text, int &flag); /** @fn Constructeur de facteur */
+	    Facteur(char* &text, int &flag); /** @fn Constructeur de facteur */
 		Facteur(const Facteur&); /** @fn Constructeur par copie */
-		~Facteur(); /** @fn Destructeur de facteur */
+		virtual ~Facteur(); /** @fn Destructeur de facteur */
 		void setTexte(char* text); /** @fn Definir le texte  */
 		char* getTexte()const; /** @fn Retourne le texte du facteur */
 		char* getTexteFormate()const; /** @fn Retourne le texte du facteur formaté avec la couleur */

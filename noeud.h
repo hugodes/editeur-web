@@ -8,7 +8,7 @@
 #include "facteur.h"
 
 using namespace std;
-typedef vector<Facteur> Ligne;
+typedef vector<Facteur*> Ligne;
 
 
 class Noeud{
@@ -29,6 +29,7 @@ class Noeud{
   
   /* Constructeurs */ 
   Noeud();
+  Noeud(string&, int, Facteur&, Facteur&);
   Noeud(string&, int, Noeud&, Facteur&, Facteur&);
   Noeud(const Noeud&);
   
@@ -41,7 +42,7 @@ class Noeud{
   virtual int getIndent() const;
   virtual void setIndent(int);
   virtual Noeud getPere() const;
-  virtual void setPere(Noeud);
+  virtual void setPere(Noeud*);
   virtual Facteur* getFacteurDeb() const;
   virtual void setFacteurDeb(Facteur);
   virtual Facteur* getFacteurFin() const;
@@ -50,7 +51,7 @@ class Noeud{
   /* Méthodes pour modifier le noeud */
   virtual void ajoutAttribut(string);
   virtual void ajoutfils(Noeud);
-  virtual void ajoutFils(Noeud, vector< pair<Facteur, int> >, int);
+  virtual void ajoutFils(vector< Noeud >&, int&);
   virtual bool presentfils(const Noeud&) const;    // vérifie si un noeud est présent dans la liste des fils du noeud courant
   virtual bool supprimeAttribut(string&);
 
@@ -68,7 +69,7 @@ class Noeud{
   virtual list<Noeud> retournerTextFils();
 
   /* Surcharge d'opérateur */
-  virtual bool operator==(const Noeud&) const;
+  virtual bool operator==(const Noeud&) const; 
   
 };
 

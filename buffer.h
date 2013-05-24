@@ -18,7 +18,7 @@ using namespace std;
 /** @class Buffer
  *  Cette Classe représente le contenu visible dans l'éditeur
  */
-typedef vector<Facteur> Ligne;
+typedef vector<Facteur*> Ligne;
 class Buffer{
     private:
         Dom dom;
