@@ -56,10 +56,11 @@ void Noeud::setNom(string _nom){
 
 Noeud Noeud::getPere() const{
   return *pere;
+   cout << "pere"<< endl;
 }
 
-void Noeud::setPere(Noeud N){
-  pere = &N;
+void Noeud::setPere(Noeud* N){
+  pere = N;
 }
 
 int Noeud::getIndent() const{
@@ -95,7 +96,7 @@ void Noeud::ajoutAttribut(string att){
 
 void Noeud::ajoutfils(Noeud N){
   descendant.push_back(N);
-  N.setPere(*this);
+  N.setPere(this);
   N.setIndent(indentation + 1);
   cout<< (*this).nom << " pere de " << N.nom << endl;
 }

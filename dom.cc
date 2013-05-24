@@ -68,7 +68,7 @@ Dom::Dom(list<Ligne> l){
       }
     */
     Noeud R(*Arbre.begin());
-    R.setPere(R);
+    R.setPere(&R);
     racine = R;
     int j=0;
     /* cout << " racine : " << endl;
@@ -80,7 +80,7 @@ Dom::Dom(list<Ligne> l){
 	 Noeud N(*it);
 	 cout << N.getNom() << endl;
 	 racine.ajoutfils(N);
-	 cout << N.getNom()<< " => " << N.getPere() << endl;
+	 cout << N.getNom()<< " => " << N.getPere()  << endl;
 	 N.ajoutFils(Arbre, j);
        }
        else if((*it).getIndent()== 0){

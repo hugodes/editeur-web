@@ -42,7 +42,7 @@ class Noeud{
   virtual int getIndent() const;
   virtual void setIndent(int);
   virtual Noeud getPere() const;
-  virtual void setPere(Noeud);
+  virtual void setPere(Noeud*);
   virtual Facteur* getFacteurDeb() const;
   virtual void setFacteurDeb(Facteur);
   virtual Facteur* getFacteurFin() const;
