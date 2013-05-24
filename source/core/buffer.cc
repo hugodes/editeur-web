@@ -17,7 +17,7 @@ Buffer::Buffer(){
 
 Buffer::Buffer(char cheminFichier[]){
     chemFichTemp=new char[256];
-    strcpy(chemFichTemp, ".");
+    //strcpy(chemFichTemp, ".");
     strcat(chemFichTemp, cheminFichier);
     strcat(chemFichTemp, ".tmp");
     lignes = list<Ligne>();
@@ -57,7 +57,6 @@ void Buffer::setLignes(const list<Ligne> &l){
 
 void Buffer::setLignes(char cheminFichier[]){
     FILE * pFichier;
-    //  char *buffer=new char[sizeof(char)*1024];
     Ligne L;
     pFichier =  fopen(cheminFichier, "r");
     if (!pFichier){
@@ -116,11 +115,10 @@ void Buffer::setLignes(char cheminFichier[]){
                   jeton = i;
                   break;
             }
-	    //delete F;
       }
     }
     fclose(pFichier);
-    //sauvTemp();
+    sauvTemp();
     //majDom();
 }
 
@@ -145,16 +143,17 @@ void Buffer::saisie(istream &is){
 }
 
 void Buffer::sauvTemp(){
-    FILE * pFichier;
-    pFichier = fopen(chemFichTemp, "w");
+    ofstream fichierTemp;
+    fichierTemp.open(chemFichTemp);
+    cout<<chemFichTemp<<endl;
+    list<Ligne>::const_iterator il;
     vector<Facteur*>::const_iterator iv;
-    list<Ligne>::iterator il;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        for(iv=(*il).begin(); iv!=(*il).end(); il++){
-            fputs((**iv).getTexte(), pFichier);
+        for(iv=(*il).begin(); iv!=(*il).end(); iv++){
+            fichierTemp<<(**iv).getTexte();
         }
     }
-    fclose(pFichier);
+    fichierTemp.close();
 }
 
 void Buffer::majDom(){
