@@ -7,6 +7,7 @@
 #define buffer_h
 
 #include <iostream>
+#include <fstream>
 #include <cstdio>
 #include <list>
 #include <iterator>
