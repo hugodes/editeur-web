@@ -281,7 +281,7 @@ int main(){
     /* Mise en commentaire car les tests ne marchent pas*/
     (*N1).setNom("<body>");
     (*N1).setIndent(1);
-    (*N1).setPere(N4);
+    (*N1).setPere(&N4);
     (*N1).setFacteurDeb(F3);
     (*N1).setFacteurFin(F3);
     /*    fin du commentaire temporaire*/
@@ -313,7 +313,7 @@ int main(){
       }
       }*/
     /* Mise en commentaire car les tests ne marchent pas*/
-     Dom D(ligne);
+     //Dom D(ligne);
 
      /*for (list<Noeud>::const_iterator it = N4.retournerNodesFils().begin() ; it != N4.retournerNodesFils().end(); ++it){
        cout << (*it) << endl;
