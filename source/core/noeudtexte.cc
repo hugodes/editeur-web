@@ -5,8 +5,8 @@
 
 #include <string>
 using namespace std;
-#include "noeud.h"
-#include "noeudtexte.h"
+#include "../../headers/core/noeud.h"
+#include "../../headers/core/noeudtexte.h"
 
 /** @fn Constructeur de facteur  */
 NoeudTexte::NoeudTexte() {

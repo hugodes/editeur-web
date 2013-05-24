@@ -5,8 +5,8 @@
  * @details Surcharge des operateurs << & >>
  */
 
-#include "buffer.h"
-#include "lex.yy.c"
+#include "../../headers/core/buffer.h"
+#include "../../lex.yy.c"
 
 Buffer::Buffer(){
     lignes = list<Ligne>();
@@ -16,13 +16,13 @@ Buffer::Buffer(){
 }
 
 Buffer::Buffer(char cheminFichier[]){
-    lignes = list<Ligne>();
-    dom = Dom(lignes);
-    setLignes(cheminFichier);
-    char *s=new char[sizeof(char)*2];
+    char *s=new char[sizeof(char)*256];
     strcpy(s, ".");
     chemFichTemp = strcat(s, cheminFichier);
     chemFichTemp = strcat(cheminFichier, ".tmp");
+    lignes = list<Ligne>();
+    //dom = Dom(lignes);
+    setLignes(cheminFichier);
 }
 
 Buffer::~Buffer(){
@@ -69,6 +69,7 @@ void Buffer::setLignes(char cheminFichier[]){
       int jeton;
       Facteur (*F);
       while((i = yylex()) != 0){
+        cout<<"xxxxxxxxx"<<endl;
 	switch(i){
 	case ATTRIBUT :
 	  if(jeton == 331){
@@ -121,7 +122,7 @@ void Buffer::setLignes(char cheminFichier[]){
     }
     fclose(pFichier);
     sauvTemp();
-    majDom();
+    //majDom();
 }
 
 
