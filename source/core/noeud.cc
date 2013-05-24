@@ -105,7 +105,7 @@ void Noeud::ajoutfils(Noeud N){
   cout<< N.getPere().getNom() << " pere de " << N.getNom() << endl;
 }
 
-void Noeud::ajoutFils(vector< Noeud >& arbre){
+/*void Noeud::ajoutFils(vector< Noeud >& arbre){
   //  cout << "test ajout" << endl;
   // cout << "je suis là" << endl;
   /*  if(arbre.size() > 2){
@@ -144,9 +144,18 @@ void Noeud::ajoutFils(vector< Noeud >& arbre){
   */
 
   if(!arbre.empty()){
-     for(vector<Noeud>::const_iterator it = arbre.begin()+1 ; it != arbre.end(); it++){
+     for(vector<Noeud>::const_iterator it = arbre.begin() ; it != arbre.end(); it++){
         for(vector<Noeud>::const_iterator it1 = it ; it1 != arbre.end(); it1++){
-}
+	  if((*it1).getIndent() == indentation + 1){
+	    (*it).ajoutfils(*it1);
+	  }
+	  else if((*it1).getIndent() == indentation + 1){
+	    while(it1!=arbre.end()){
+	      it1++; 
+	    }
+	  }
+	  else 
+}*/
 
 bool Noeud::presentfils(const Noeud& N) const{   
   if(descendant.empty()){
