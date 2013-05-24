@@ -165,8 +165,28 @@ int main(){
     s = "/html";  
     char* hf = new char[s.length()+1];
     strcpy(hf, s.c_str());
+    s = "<head>";  
+    char* head = new char[s.length()+1];
+    strcpy(head, s.c_str());
+    s = "<p>";  
+    char* par = new char[s.length()+1];
+    strcpy(par, s.c_str());
+    s = "</head>";  
+    char* headf = new char[s.length()+1];
+    strcpy(headf, s.c_str());
+    s = "</p>";  
+    char* pf = new char[s.length()+1];
+    strcpy(pf, s.c_str());
+    s = "<p>";  
+    char* p = new char[s.length()+1];
+    strcpy(p, s.c_str());
+    s = "</p>";  
+    char* parf = new char[s.length()+1];
+    strcpy(parf, s.c_str());
+    s = "Boujour";  
+    char* boujour = new char[s.length()+1];
+    strcpy(boujour, s.c_str());
 
-   
     int Jt = 333;
     int Jb = 320;
     int Jbf = 325;
@@ -181,8 +201,16 @@ int main(){
     Facteur F7(site, Jt);
     Facteur F8(trop, Jt);
     Facteur F9(genial, Jt);
-    Facteur F10(b, Jb);
-    Facteur F11(hf, Jbf);
+    Facteur F10(b, Jbf);
+    Facteur F11(boujour, Jt);
+    Facteur F12(head, Jb);
+    Facteur F13(headf, Jbf);
+    Facteur F14(p, Jb);
+    Facteur F15(par, Jb);
+    Facteur F16(pf, Jbf);
+    Facteur F17(parf, Jbf);
+    Facteur F18(hf, Jbf);
+
     // cout << F3.getJeton() << endl;
     /*   fin du commentaire temporaire*/
 
@@ -196,6 +224,13 @@ int main(){
     vector<Facteur*>V4;
     vector<Facteur*>V5;
     vector<Facteur*>V6;
+    vector<Facteur*>V7;
+    vector<Facteur*>V8;
+    vector<Facteur*>V9;
+    vector<Facteur*>V10;
+    vector<Facteur*>V11;
+    vector<Facteur*>V12;
+    vector<Facteur*>V13;
     
     /* fin du commentaire temporaire*/
 
@@ -214,11 +249,15 @@ int main(){
     V4.push_back(&F9);
     V5.push_back(&F10);
     V6.push_back(&F11);
-    
-    /*    fin du commentaire temporaire*/
-     for (vector<Facteur*>::const_iterator it1 = V1.begin() ; it1 != V1.end(); ++it1){
-       // cout << (**it1).getJeton() << endl;
-     }
+    V7.push_back(&F12);
+    V11.push_back(&F13);
+    V8.push_back(&F14);
+    V10.push_back(&F16);
+    V9.push_back(&F15);
+    V12.push_back(&F17);
+    V13.push_back(&F18);
+
+ 
     /* Création de lignes */ 
     
     /* Mise en commentaire car les tests ne marchent pas
@@ -267,12 +306,21 @@ int main(){
     list<vector< Facteur*> > ligne;
     
     ligne.push_back(V1);
+    ligne.push_back(V7);
+    ligne.push_back(V8);
     ligne.push_back(V0);
+    ligne.push_back(V10);
+    ligne.push_back(V11);
     ligne.push_back(V2);
+    ligne.push_back(V9);
     ligne.push_back(V3);
     ligne.push_back(V4);
+    ligne.push_back(V12);
     ligne.push_back(V5);
-    ligne.push_back(V6);
+    ligne.push_back(V13);
+
+
+    
     /*
     cout << "ligne :" << endl;
     for (list< vector<Facteur*> >::const_iterator it = ligne.begin() ; it != ligne.end(); ++it){
@@ -281,7 +329,7 @@ int main(){
       }
       }*/
     /* Mise en commentaire car les tests ne marchent pas*/
-     //Dom D(ligne);
+     Dom D(ligne);
 
      /*for (list<Noeud>::const_iterator it = N4.retournerNodesFils().begin() ; it != N4.retournerNodesFils().end(); ++it){
        cout << (*it) << endl;
@@ -311,21 +359,21 @@ int main(){
     //*****************
 
     //Constructeur par défaut
-    Buffer b1;
+     // Buffer b1;
     //Affichage
-    cout<<"Affichage de Buffer"<<endl<<"------------------------------"<<endl;
+     /*  cout<<"Affichage de Buffer"<<endl<<"------------------------------"<<endl;
     cout<<"Affichage du premier buffer:"<<endl;
     cout<<b1<<endl;
-
+     */
     //Constructeur paramétré avec le chemin vers un fichier
-    string str3("testinput.txt");
+     /* string str3("testinput.txt");
     char *cstr3 = new char[str3.length()+1];
     strcpy(cstr3, str3.c_str());
     cout<<cstr3<<endl;
     Buffer b2(cstr3);
     cout<<"Affichage du deuxième buffer:"<<endl;
     cout<<b2<<endl;
-
+     */
 
     //getDom
     //b1.getDom();
