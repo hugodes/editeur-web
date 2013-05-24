@@ -122,11 +122,14 @@ int main(){
 
 
 
+     cout<<endl<<endl<<endl;
      /*********************/
     /*  Test sur Noeud   */
    /*********************/
+     cout<<endl<<endl<<endl;
 
     /* Création de facteurs */
+    cout<<"Affichage de Noeud et DOM"<<endl<<"------------------------------"<<endl;
 
     /* Mise en commentaire car les tests ne marchent pas*/
     string s = "hello";  
@@ -354,9 +357,11 @@ int main(){
     fin du commentaire temporaire*/
 
 
+     cout<<endl<<endl<<endl;
     //*****************
     //Tests sur Buffer
     //*****************
+     cout<<endl<<endl<<endl;
 
     //Constructeur par défaut
     Buffer b1;
