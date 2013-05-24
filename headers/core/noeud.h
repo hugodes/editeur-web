@@ -51,7 +51,7 @@ class Noeud{
   /* Méthodes pour modifier le noeud */
   virtual void ajoutAttribut(string);
   virtual void ajoutfils(Noeud);
-  virtual void ajoutFils(vector< Noeud >&);
+  //virtual void ajoutfils(vector< Noeud >&);
   virtual bool presentfils(const Noeud&) const;    // vérifie si un noeud est présent dans la liste des fils du noeud courant
   virtual bool supprimeAttribut(string&);
 

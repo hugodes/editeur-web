@@ -91,7 +91,18 @@ Dom::Dom(list<Ligne> l){
        }
      }*/
 
-    racine.ajoutFils(Arbre);
+    //Création de l'arbre
+    for (int i=0; i<Arbre.size()-1;i++){
+        int indentation = Arbre[i].getIndent();
+        for (int j=i+1;j<Arbre.size();j++){
+            if(Arbre[j].getIndent()==indentation+1){
+                Arbre[i].ajoutfils(Arbre[j]);
+            }
+            else if (Arbre[j].getIndent()==indentation){
+                break;
+            }
+        }
+    }
   }
 }	     
   
