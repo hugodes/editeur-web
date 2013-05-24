@@ -69,54 +69,54 @@ void Buffer::setLignes(char cheminFichier[]){
       int jeton;
       Facteur *F;
       while((i = yylex()) != 0){
-	switch(i){
-	case ATTRIBUT :
-	  if(jeton == 331){
-	    F = new Facteur(yytext, i);
-	    L.push_back(F);
-	  }
-	  else{
-	    int k = STRING;
-	    F = new Facteur(yytext, k);
-	    L.push_back(F);
-	    jeton = i;
-	  }
-	  break;
-	
-	case SPACE :
-	  if(jeton == 331){
-	    F = new Facteur(yytext, i);
-	    L.push_back(F);
-	  }
-	  else{
-	    F = new Facteur(yytext, i);
-	    L.push_back(F);
-	    jeton = i;
-	  }
-	  break;
+            switch(i){
+                case ATTRIBUT :
+                  if(jeton == 331){
+                    F = new Facteur(yytext, i);
+                    L.push_back(F);
+                  }
+                  else{
+                    int k = STRING;
+                    F = new Facteur(yytext, k);
+                    L.push_back(F);
+                    jeton = i;
+                  }
+                  break;
 
-	case BALISEFERMANTE :
-	  F = new Facteur(yytext, i);
-	  L.push_back(F);
-	  jeton = i;
-	  break;
-	  
+                case SPACE :
+                  if(jeton == 331){
+                    F = new Facteur(yytext, i);
+                    L.push_back(F);
+                  }
+                  else{
+                    F = new Facteur(yytext, i);
+                    L.push_back(F);
+                    jeton = i;
+                  }
+                  break;
 
-	case ENDL : 
-	  F = new Facteur(yytext, i);
-	  L.push_back(F);
-	  lignes.push_back(L);
-	  L.clear();
-	  jeton = i;
-	  break;
-		
-	default :
-          F = new Facteur(yytext, i);
-          L.push_back(F);
-	  jeton = i;
-	  break;
-	}
-	delete F;
+                case BALISEFERMANTE :
+                  F = new Facteur(yytext, i);
+                  L.push_back(F);
+                  jeton = i;
+                  break;
+
+
+                case ENDL :
+                  F = new Facteur(yytext, i);
+                  L.push_back(F);
+                  lignes.push_back(L);
+                  L.clear();
+                  jeton = i;
+                  break;
+
+                default :
+                      F = new Facteur(yytext, i);
+                      L.push_back(F);
+                  jeton = i;
+                  break;
+            }
+	    //delete F;
       }
     }
     fclose(pFichier);
@@ -131,7 +131,6 @@ void Buffer::affiche(ostream & os)const{
     cout<<"taille de lignes: "<<lignes.size()<<endl;
     for (il=lignes.begin(); il!=lignes.end(); il++){
         for(iv=(*il).begin(); iv!=(*il).end(); iv++){
-            cout<<(**iv).getTexte()<<endl;
             os<<(**iv).getTexteFormate();
         }
     }
