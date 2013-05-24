@@ -1,4 +1,4 @@
-#include "leedit.h"
+#include "headers/gui/leedit.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

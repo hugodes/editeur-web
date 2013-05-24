@@ -1,6 +1,6 @@
 CC=g++
-OBJECTS= facteur.o buffer.o dom.o leedit.o main.o noeud.o noeudtexte.o test.o
-OBJTEST= facteur.o buffer.o dom.o noeud.o test.o noeudtexte.o
+OBJECTS= .tmp/facteur.o .tmp/buffer.o .tmp/dom.o .tmp/leedit.o .tmp/main.o .tmp/noeud.o .tmp/noeudtexte.o .tmp/test.o
+OBJTEST= .tmp/facteur.o .tmp/buffer.o .tmp/dom.o .tmp/noeud.o .tmp/test.o .tmp/noeudtexte.o
 
 
 
@@ -10,26 +10,26 @@ leedit	: $(OBJECTS)
 test : $(OBJTEST)
 	$(CC) -o test $(OBJTEST)
 
-lex.yy.c : analyse.lex
-	flex analyse.lex
+.tmp/lex.yy.c : scripts/analyse.lex
+	flex -o .tmp/lex.yy.c scripts/analyse.lex
 
-test.o : test.cc
-	$(CC) -c test.cc
+.tmp/test.o : tests/test.cc
+	$(CC) -c tests/test.cc -o .tmp/test.o
 
-facteur.o : facteur.cc facteur.h
-	$(CC) -c facteur.cc
+.tmp/facteur.o : source/core/facteur.cc headers/core/facteur.h
+	$(CC) -c source/core/facteur.cc -o .tmp/facteur.o
 
-buffer.o : buffer.cc buffer.h lex.yy.c
-	$(CC) -c buffer.cc
+.tmp/buffer.o : source/core/buffer.cc headers/core/buffer.h .tmp/lex.yy.c
+	$(CC) -c source/core/buffer.cc -o .tmp/buffer.o
 
-dom.o : dom.cc dom.h
-	$(CC) -c dom.cc
+.tmp/dom.o : source/core/dom.cc headers/core/dom.h
+	$(CC) -c source/core/dom.cc -o .tmp/dom.o
 
-noeud.o : noeud.cc noeud.h
-	$(CC) -c noeud.cc
+.tmp/noeud.o : source/core/noeud.cc headers/core/noeud.h
+	$(CC) -c source/core/noeud.cc -o .tmp/noeud.o
 
-noeudtexte.o : noeudtexte.cc noeudtexte.h
-	$(CC) -c noeudtexte.cc
+.tmp/noeudtexte.o : source/core/noeudtexte.cc headers/core/noeudtexte.h
+	$(CC) -c source/core/noeudtexte.cc -o .tmp/noeudtexte.o
 
 clean :
-	rm -f *~ *.o \#*# leedit test
+	rm -f .tmp/*
