@@ -108,8 +108,8 @@ void Noeud::ajoutfils(Noeud N){
 void Noeud::ajoutFils(vector< Noeud >& arbre){
   //  cout << "test ajout" << endl;
   // cout << "je suis là" << endl;
-    if(!arbre.empty()){
-      for(vector<Noeud>::const_iterator it = arbre.begin()+1 ; it != arbre.end(); ++it){
+  /*  if(arbre.size() > 2){
+      for(vector<Noeud>::const_iterator it = arbre.begin()+1 ; it != arbre.end(); it++){
 	cout << (*it).getNom() << " => " << (*it).getIndent() << endl;
 	cout << "Noeud courant : " << (*this).getNom() << endl;
 	if((*it).getIndent() == indentation + 1){
@@ -141,6 +141,11 @@ void Noeud::ajoutFils(vector< Noeud >& arbre){
       }
     }
     else cout << " arbre vide" << endl;
+  */
+
+  if(!arbre.empty()){
+     for(vector<Noeud>::const_iterator it = arbre.begin()+1 ; it != arbre.end(); it++){
+        for(vector<Noeud>::const_iterator it1 = it ; it1 != arbre.end(); it1++){
 }
 
 bool Noeud::presentfils(const Noeud& N) const{   
