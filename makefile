@@ -19,7 +19,7 @@ test.o : test.cc
 facteur.o : facteur.cc facteur.h
 	$(CC) -c facteur.cc
 
-buffer.o : buffer.cc buffer.h
+buffer.o : buffer.cc buffer.h lex.yy.c
 	$(CC) -c buffer.cc
 
 dom.o : dom.cc dom.h
