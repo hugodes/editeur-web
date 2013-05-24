@@ -359,21 +359,20 @@ int main(){
     //*****************
 
     //Constructeur par défaut
-     // Buffer b1;
+    Buffer b1;
     //Affichage
-     /*  cout<<"Affichage de Buffer"<<endl<<"------------------------------"<<endl;
+    cout<<"Affichage de Buffer"<<endl<<"------------------------------"<<endl;
     cout<<"Affichage du premier buffer:"<<endl;
     cout<<b1<<endl;
-     */
+    
     //Constructeur paramétré avec le chemin vers un fichier
-     /* string str3("testinput.txt");
+    string str3("tests/testinput.txt");
     char *cstr3 = new char[str3.length()+1];
     strcpy(cstr3, str3.c_str());
-    cout<<cstr3<<endl;
     Buffer b2(cstr3);
     cout<<"Affichage du deuxième buffer:"<<endl;
     cout<<b2<<endl;
-     */
+
 
     //getDom
     //b1.getDom();
