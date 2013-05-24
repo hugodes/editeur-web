@@ -102,23 +102,45 @@ void Noeud::ajoutfils(Noeud N){
   descendant.push_back(N);
   N.setPere(this);
   N.setIndent(indentation + 1);
-  cout<< (*this).nom << " pere de " << N.nom << endl;
+  cout<< N.getPere().getNom() << " pere de " << N.getNom() << endl;
 }
 
-void Noeud::ajoutFils(vector< Noeud >& arbre, int& j){
-  for(vector<Noeud>::const_iterator it = arbre.begin()+j ; it != arbre.end(); ++it){
-    if((*it).getIndent() == indentation + 1){
-      Noeud N(*it);
-      ajoutfils(N);
-      N.ajoutFils(arbre, j);
-    }
-    else if((*it).getIndent()== indentation){
-      while(it != arbre.end()){
-	++it;
+void Noeud::ajoutFils(vector< Noeud >& arbre){
+  //  cout << "test ajout" << endl;
+  // cout << "je suis là" << endl;
+    if(!arbre.empty()){
+      for(vector<Noeud>::const_iterator it = arbre.begin()+1 ; it != arbre.end(); ++it){
+	cout << (*it).getNom() << " => " << (*it).getIndent() << endl;
+	cout << "Noeud courant : " << (*this).getNom() << endl;
+	if((*it).getIndent() == indentation + 1){
+	  cout << "je suis là" << (*it).getNom() << " => " << (*it).getIndent() << endl;
+	  ajoutfils(*it);
+	  if(arbre.size() > 2){
+	    vector<Noeud>arbrecpy;
+	    Noeud N = (*it);
+	    for(vector<Noeud>::const_iterator it1 = it ; it1 != arbre.end(); ++it1){
+	      arbrecpy.push_back(*it);
+	      ++it;
+	    }
+	    for(vector<Noeud>::const_iterator it = arbre.begin() ; it != arbre.end(); ++it){
+	      cout << (*it).getNom() << "\t";
+	    }
+	    cout << endl;
+	    for(vector<Noeud>::const_iterator it1 = arbrecpy.begin() ; it1 != arbrecpy.end(); ++it1){
+	      cout << (*it1).getNom() << "\t";
+	    }
+	    cout << endl;
+	    N.ajoutFils(arbrecpy);
+	  }
+	}
+	else if((*it).getIndent()== indentation){
+	  while(it != arbre.end()){
+	    ++it;
+	    }
+	}
       }
     }
-    j++;
-  } 
+    else cout << " arbre vide" << endl;
 }
 
 bool Noeud::presentfils(const Noeud& N) const{   
