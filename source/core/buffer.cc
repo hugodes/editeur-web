@@ -16,6 +16,7 @@ Buffer::Buffer(){
 }
 
 Buffer::Buffer(char cheminFichier[]){
+    chemFichTemp=new char[256];
     strcpy(chemFichTemp, ".");
     strcat(chemFichTemp, cheminFichier);
     strcat(chemFichTemp, ".tmp");
@@ -59,7 +60,6 @@ void Buffer::setLignes(char cheminFichier[]){
     //  char *buffer=new char[sizeof(char)*1024];
     Ligne L;
     pFichier =  fopen(cheminFichier, "r");
-    cout<<"Chemin du fichier: "<<cheminFichier<<endl;
     if (!pFichier){
         cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
     }
@@ -67,61 +67,60 @@ void Buffer::setLignes(char cheminFichier[]){
       yyin = pFichier;
       int i;
       int jeton;
-      Facteur (*F);
+      Facteur *F;
       while((i = yylex()) != 0){
-      cout<<"Ahmed est un BG"<<endl;
-	switch(i){
-	case ATTRIBUT :
-	  if(jeton == 331){
-	    F = new Facteur(yytext, i);
-	    L.push_back(F);
-	  }
-	  else{
-	    int k = STRING;
-	    F = new Facteur(yytext, k);
-	    L.push_back(F);
-	    jeton = i;
-	  }
-	  break;
-	
-	case SPACE :
-	  if(jeton == 331){
-	    F = new Facteur(yytext, i);
-	    L.push_back(F);
-	  }
-	  else{
-	    F = new Facteur(yytext, i);
-	    L.push_back(F);
-	    jeton = i;
-	  }
-	  break;
+            switch(i){
+                case ATTRIBUT :
+                  if(jeton == 331){
+                    F = new Facteur(yytext, i);
+                    L.push_back(F);
+                  }
+                  else{
+                    int k = STRING;
+                    F = new Facteur(yytext, k);
+                    L.push_back(F);
+                    jeton = i;
+                  }
+                  break;
 
-	case BALISEFERMANTE :
-	  F = new Facteur(yytext, i);
-	  L.push_back(F);
-	  jeton = i;
-	  break;
-	  
+                case SPACE :
+                  if(jeton == 331){
+                    F = new Facteur(yytext, i);
+                    L.push_back(F);
+                  }
+                  else{
+                    F = new Facteur(yytext, i);
+                    L.push_back(F);
+                    jeton = i;
+                  }
+                  break;
 
-	case ENDL : 
-	  F = new Facteur(yytext, i);
-	  L.push_back(F);
-	  lignes.push_back(L);
-	  L.clear();
-	  jeton = i;
-	  break;
-		
-	default :
-          F = new Facteur(yytext, i);
-          L.push_back(F);
-	  jeton = i;
-	  break;
-	}
-	delete F;
+                case BALISEFERMANTE :
+                  F = new Facteur(yytext, i);
+                  L.push_back(F);
+                  jeton = i;
+                  break;
+
+
+                case ENDL :
+                  F = new Facteur(yytext, i);
+                  L.push_back(F);
+                  lignes.push_back(L);
+                  L.clear();
+                  jeton = i;
+                  break;
+
+                default :
+                      F = new Facteur(yytext, i);
+                      L.push_back(F);
+                  jeton = i;
+                  break;
+            }
+	    //delete F;
       }
     }
     fclose(pFichier);
-    sauvTemp();
+    //sauvTemp();
     //majDom();
 }
 
@@ -131,7 +130,7 @@ void Buffer::affiche(ostream & os)const{
     vector<Facteur*>::const_iterator iv;
     cout<<"taille de lignes: "<<lignes.size()<<endl;
     for (il=lignes.begin(); il!=lignes.end(); il++){
-        for(iv=(*il).begin(); iv!=(*il).end(); il++){
+        for(iv=(*il).begin(); iv!=(*il).end(); iv++){
             os<<(**iv).getTexteFormate();
         }
     }
