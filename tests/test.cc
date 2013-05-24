@@ -5,8 +5,8 @@
 
 using namespace std;
 
-#include "headers/core/buffer.h"
-#include "headers/core/facteur.h"
+#include "../headers/core/buffer.h"
+#include "../headers/core/facteur.h"
 
 int main(){
    

@@ -39,7 +39,7 @@ Facteur::Facteur(char* &text, int &flag) {
 * @return la couleur associé
 */
 const char* Facteur::chercherConfCouleur(int flag){
-    ifstream fichier("couleur.conf");
+    ifstream fichier("conf/couleur.conf");
     string ligne;
     if(fichier) {
         int j=0;

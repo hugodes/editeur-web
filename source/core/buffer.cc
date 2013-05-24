@@ -6,7 +6,7 @@
  */
 
 #include "../../headers/core/buffer.h"
-#include "../../lex.yy.c"
+#include "../../.tmp/lex.yy.c"
 
 Buffer::Buffer(){
     lignes = list<Ligne>();
@@ -16,10 +16,9 @@ Buffer::Buffer(){
 }
 
 Buffer::Buffer(char cheminFichier[]){
-    char *s=new char[sizeof(char)*256];
-    strcpy(s, ".");
-    chemFichTemp = strcat(s, cheminFichier);
-    chemFichTemp = strcat(cheminFichier, ".tmp");
+    strcpy(chemFichTemp, ".");
+    strcat(chemFichTemp, cheminFichier);
+    strcat(chemFichTemp, ".tmp");
     lignes = list<Ligne>();
     //dom = Dom(lignes);
     setLignes(cheminFichier);
@@ -60,6 +59,7 @@ void Buffer::setLignes(char cheminFichier[]){
     //  char *buffer=new char[sizeof(char)*1024];
     Ligne L;
     pFichier =  fopen(cheminFichier, "r");
+    cout<<"Chemin du fichier: "<<cheminFichier<<endl;
     if (!pFichier){
         cout<<"Le fichier avec lequel vous essayez de remplir les lignes du buffer n'existe pas"<<endl;
     }
@@ -69,7 +69,7 @@ void Buffer::setLignes(char cheminFichier[]){
       int jeton;
       Facteur (*F);
       while((i = yylex()) != 0){
-        cout<<"xxxxxxxxx"<<endl;
+      cout<<"Ahmed est un BG"<<endl;
 	switch(i){
 	case ATTRIBUT :
 	  if(jeton == 331){
