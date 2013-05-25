@@ -12,6 +12,7 @@
 #include <list>
 #include <iterator>
 #include <vector>
+#include <string>
 using namespace std;
 #include "facteur.h"
 #include "dom.h"
@@ -25,6 +26,7 @@ class Buffer{
         Dom dom;
         list<Ligne> lignes;
         char *chemFichTemp;
+        char *chemFichier;
 
     public:
 
@@ -90,6 +92,14 @@ class Buffer{
          * @brief Mise à jour du Dom
          */
         void majDom();
+        /**
+         * @brief Sauvegarde dans le fichier originel
+         */
+        void sauvegarde();
+        /**
+         * @brief renvoi l'entierete du texte formate sous forme de chaine
+         */
+        string toStringFormate();
 };
 
 /**

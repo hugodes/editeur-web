@@ -376,7 +376,8 @@ int main(){
     strcpy(cstr3, str3.c_str());
     Buffer b2(cstr3);
     cout<<"Affichage du deuxième buffer:"<<endl;
-    cout<<b2<<endl;
+    //cout<<b2<<endl;
+    cout<<b2.toStringFormate()<<endl;
 
 
     //getDom
