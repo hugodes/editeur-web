@@ -16,6 +16,8 @@ Buffer::Buffer(){
 }
 
 Buffer::Buffer(char cheminFichier[]){
+    chemFichier=new char[256];
+    strcpy(chemFichier, cheminFichier);
     chemFichTemp=new char[256];
     //strcpy(chemFichTemp, ".");
     strcat(chemFichTemp, cheminFichier);
@@ -145,7 +147,6 @@ void Buffer::saisie(istream &is){
 void Buffer::sauvTemp(){
     ofstream fichierTemp;
     fichierTemp.open(chemFichTemp);
-    cout<<chemFichTemp<<endl;
     list<Ligne>::const_iterator il;
     vector<Facteur*>::const_iterator iv;
     for (il=lignes.begin(); il!=lignes.end(); il++){
@@ -156,8 +157,34 @@ void Buffer::sauvTemp(){
     fichierTemp.close();
 }
 
+void Buffer::sauvegarde(){
+    ofstream fichier;
+    fichier.open(chemFichier);
+    list<Ligne>::const_iterator il;
+    vector<Facteur*>::const_iterator iv;
+    for (il=lignes.begin(); il!=lignes.end(); il++){
+        for(iv=(*il).begin(); iv!=(*il).end(); iv++){
+            fichier<<(**iv).getTexte();
+        }
+    }
+    fichier.close();
+}
+
 void Buffer::majDom(){
     dom = Dom(lignes);
+}
+
+string Buffer::toStringFormate(){
+    string s;
+    list<Ligne>::const_iterator il;
+    vector<Facteur*>::const_iterator iv;
+    for (il=lignes.begin(); il!=lignes.end(); il++){
+        for(iv=(*il).begin(); iv!=(*il).end(); iv++){
+            string s2((**iv).getTexteFormate());
+            s.append(s2);
+        }
+    }
+    return s;
 }
 
 ostream& operator<<(ostream &os, const Buffer &b){
