@@ -1,29 +1,7 @@
 /**
  * @file buffer.cc
  * @author Hugo des Longchamps
- * @class Buffer
- * @details Surcharge des operateurs << & >>
- */
-
-#include "../../headers/core/buffer.h"
-#include "../../.tmp/lex.yy.c"
-
-Buffer::Buffer(){
-    lignes = list<Ligne>();
-    string s = ".nouveau_fichier.tmp";
-    chemFichTemp=new char[s.length()+1];
-    strcpy(chemFichTemp, s.c_str());
-}
-
-Buffer::Buffer(char cheminFichier[]){
-    chemFichTemp=new char[256];
-    //strcpy(chemFichTemp, ".");
-    strcat(chemFichTemp, cheminFichier);
-    strcat(chemFichTemp, ".tmp");
-    lignes = list<Ligne>();
-    //dom = Dom(lignes);
-    setLignes(cheminFichier);
-}
+ * @class Buffer}
 
 Buffer::~Buffer(){
     delete chemFichTemp;

@@ -1,7 +1,10 @@
-#include <iostream>
-#include <string>
-#include <list>
-
+/**
+ * @file dom.cc
+ * @author Ahmed Rafik
+ * @class Dom
+ * @details Surcharge des operateurs <<
+ */
+ 
 #include "../../headers/core/dom.h"
 
 using namespace std;
@@ -15,7 +18,7 @@ Dom::Dom(Noeud &r):racine(r){}
 
 Dom::Dom(list<Ligne> l){
   int prof = 0;
-  vector< Noeud > Arbre;
+  vector< Noeud* > Arbre;
   //  cout << "test" << endl;
   if(l.empty()){
     cout << "Liste vide !!" <<endl;
@@ -32,7 +35,7 @@ Dom::Dom(list<Ligne> l){
 	     //cout << (**it1).getTexte() << endl;
 	     string nomNoeud = (**it1).getTexte();
 	     Facteur fact = (**it1);
-	     Noeud N(nomNoeud, prof , fact, fact);
+	     Noeud *N = new Noeud(nomNoeud, prof , fact, fact);
 	     Arbre.push_back(N);
 	     prof++;
 	   }
@@ -51,7 +54,7 @@ Dom::Dom(list<Ligne> l){
 
 	     Facteur F(stmp, balisejeton);
 	     string nomNoeud = F.getTexte();	     
-	     Noeud N(nomNoeud, prof , F, F);
+	     Noeud *N = new Noeud(nomNoeud, prof , F, F);
 	     Arbre.push_back(N);
 	     prof++;
 	   } 
@@ -62,48 +65,25 @@ Dom::Dom(list<Ligne> l){
 	 }
        }
     }
-    //  cout << "fin list" << endl;
-    /*   for(vector<Noeud >::const_iterator it = Arbre.begin()++ ; it != Arbre.end(); ++it){
-      cout << (*it).getNom() << " => " << (*it).getIndent() << endl;
-      }
-    */
-    Noeud R(*Arbre.begin());
+ 
+    Noeud R(**(Arbre.begin()));
     R.setPere(&R);
     racine = R;
-    /* cout<< "Pere de R : " << R.getPere().getNom()<<endl;
-     cout << " racine : " << endl;
-       cout << racine << endl;
-     for(vector<Noeud>::const_iterator it = Arbre.begin()+1 ; it != Arbre.end(); ++it){
-     
-       cout << (*it).getNom() << endl;
-       if((*it).getIndent() == 1){
-	 Noeud N(*it);
-	 cout << N.getNom() << endl;
-	 racine.ajoutfils(N);
-	 cout << N.getNom()<< " => " << N.getPere().getNom() << endl;
-	 cout << "c'est fini" << endl;
-	 N.ajoutFils(Arbre);
-       }
-       else if((*it).getIndent()== 0){
-	 while(it != Arbre.end()){
-	   ++it;
-	 }
-       }
-     }*/
-
+  
     //Création de l'arbre
     for (int i=0; i<Arbre.size()-1;i++){
-        int indentation = Arbre[i].getIndent();
+      int indentation = (*Arbre[i]).getIndent();
         for (int j=i+1;j<Arbre.size();j++){
-            if(Arbre[j].getIndent()==indentation+1){
-                Arbre[i].ajoutfils(Arbre[j]);
-            }
-            else if (Arbre[j].getIndent()==indentation){
+	  if((*Arbre[j]).getIndent()==indentation+1){
+	      (*Arbre[i]).ajoutfils(Arbre[j]);
+	  }
+            else if ((*Arbre[j]).getIndent()==indentation){
                 break;
             }
         }
     }
   }
+  cout << "Affichage du dom : \n" << (*this) << endl;
 }	     
   
 
@@ -112,11 +92,18 @@ Dom::Dom(list<Ligne> l){
   
 Dom::~Dom(){}
 
+  /* Accesseur */
+
+Noeud Dom::getRacine()const{
+  cout << "racine = " << racine.getNom() << endl;
+  return racine;
+}
+
   /* Méthodes pour modifier le DOM */
 
-bool Dom::ajoutNoeud(Noeud pere, Noeud fils){
+/*bool Dom::ajoutNoeud(Noeud pere, Noeud fils){
   if(noeudPresent(pere)){
-    pere.ajoutfils(fils);
+    pere.ajoutfils(&fils);
     return true;
   }
   else{
@@ -124,7 +111,7 @@ bool Dom::ajoutNoeud(Noeud pere, Noeud fils){
     return false;
   }
 }
-
+*/
 /*
 bool Dom::supprimeNoeud(Noeud& n){
   if(n == racine){

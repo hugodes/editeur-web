@@ -1,3 +1,10 @@
+/**
+ * @file noeud.cc
+ * @author Ahmed Rafik
+ * @class Noeud
+ * @details Surcharge des operateurs << & ==
+ */
+
 #include <iostream>
 #include <map>
 #include <typeinfo>
@@ -26,7 +33,7 @@ Noeud::Noeud(string& name, int ind, Facteur &FD,  Facteur &FF){
 Noeud::Noeud(string& name, int ind, Noeud &father, Facteur &FD,  Facteur &FF){
   nom= name;
   indentation = ind;
-  father.ajoutfils(*this);
+  father.ajoutfils(this);
   facteurDeb = &FD;
   facteurFin = &FF;
 }
@@ -98,64 +105,15 @@ void Noeud::ajoutAttribut(string att){
   listeAttributs.push_back(att);
 }
 
-void Noeud::ajoutfils(Noeud N){
-  descendant.push_back(N);
-  N.setPere(this);
-  N.setIndent(indentation + 1);
-  cout<< N.getPere().getNom() << " pere de " << N.getNom() << endl;
+void Noeud::ajoutfils(Noeud* N){
+  (*N).setPere(this);
+  (*N).setIndent(indentation + 1);
+  descendant.push_back(*N);
+  cout<< (*N).getPere().getNom() << " pere de " << (*N).getNom() << endl;
+  /* for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){
+    cout << (*it).getNom() << endl;
+    }*/
 }
-
-/*void Noeud::ajoutFils(vector< Noeud >& arbre){
-  //  cout << "test ajout" << endl;
-  // cout << "je suis là" << endl;
-    if(arbre.size() > 2){
-      for(vector<Noeud>::const_iterator it = arbre.begin()+1 ; it != arbre.end(); it++){
-	cout << (*it).getNom() << " => " << (*it).getIndent() << endl;
-	cout << "Noeud courant : " << (*this).getNom() << endl;
-	if((*it).getIndent() == indentation + 1){
-	  cout << "je suis là" << (*it).getNom() << " => " << (*it).getIndent() << endl;
-	  ajoutfils(*it);
-	  if(arbre.size() > 2){
-	    vector<Noeud>arbrecpy;
-	    Noeud N = (*it);
-	    for(vector<Noeud>::const_iterator it1 = it ; it1 != arbre.end(); ++it1){
-	      arbrecpy.push_back(*it);
-	      ++it;
-	    }
-	    for(vector<Noeud>::const_iterator it = arbre.begin() ; it != arbre.end(); ++it){
-	      cout << (*it).getNom() << "\t";
-	    }
-	    cout << endl;
-	    for(vector<Noeud>::const_iterator it1 = arbrecpy.begin() ; it1 != arbrecpy.end(); ++it1){
-	      cout << (*it1).getNom() << "\t";
-	    }
-	    cout << endl;
-	    N.ajoutFils(arbrecpy);
-	  }
-	}
-	else if((*it).getIndent()== indentation){
-	  while(it != arbre.end()){
-	    ++it;
-	    }
-	}
-      }
-    }
-    else cout << " arbre vide" << endl;
-
-
-  if(!arbre.empty()){
-     for(vector<Noeud>::const_iterator it = arbre.begin() ; it != arbre.end(); it++){
-        for(vector<Noeud>::const_iterator it1 = it ; it1 != arbre.end(); it1++){
-	  if((*it1).getIndent() == indentation + 1){
-	    (*it).ajoutfils(*it1);
-	  }
-	  else if((*it1).getIndent() == indentation + 1){
-	    while(it1!=arbre.end()){
-	      it1++;
-	    }
-	  }
-	  else
-}*/
 
 bool Noeud::presentfils(const Noeud& N) const{   
   if(descendant.empty()){
@@ -196,11 +154,12 @@ ostream& Noeud::affiche(ostream &os) const{
     os << '\t';
   }
   os << nom << endl;
-  if(!descendant.empty()){
-    for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){
-      (*it).affiche(os);
+    if(!descendant.empty()){
+      for (list<Noeud>::const_iterator it = descendant.begin() ; it != descendant.end(); ++it){
+	cout << (*it).nom << endl;
+	(*it).affiche(os);
+      }
     }
-  }
   return os;
 }
 
@@ -220,13 +179,11 @@ int Noeud::nbFils() const{
   return descendant.size();
 }
 
-int Noeud::indent() const{
-  return indentation;
-}
 
   /* Méthode d'accès au fils */
 
 list<Noeud> Noeud::retournerNodesFils(){
+  // cout << "nb fils = " << descendant.size() << endl;
   return descendant;
 }
 

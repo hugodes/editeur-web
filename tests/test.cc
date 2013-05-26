@@ -334,11 +334,17 @@ int main(){
     /* Mise en commentaire car les tests ne marchent pas*/
      Dom D(ligne);
 
+     cout << "nb fils de la racine de D = " << D.getRacine().retournerNodesFils().size() << endl;
+
+     /*   for (list<Noeud>::const_iterator it = D.getRacine().retournerNodesFils().begin() ; it != D.getRacine().retournerNodesFils().end(); ++it){
+       cout << (*it).getNom() << endl;
+       }*/
+
      /*for (list<Noeud>::const_iterator it = N4.retournerNodesFils().begin() ; it != N4.retournerNodesFils().end(); ++it){
        cout << (*it) << endl;
        }
      */
-     // cout << D << endl;
+     cout << D << endl;
     /*    fin du commentaire temporaire*/
 
     /* Modification du DOM */
