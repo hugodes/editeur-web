@@ -27,7 +27,14 @@ Facteur::Facteur(char* &text, int &flag) {
     couleur = new char[256];
 	this->jeton=flag;
     strcpy(this->couleur,chercherConfCouleur(flag));
-	this->formate();
+    if(flag==329){
+        texteFormate = new char[16];
+	    strcpy(texteFormate, "<br/>");
+    }
+    else {
+        formate();
+    }
+
 
 	/* test */ //cout << texte << jeton << endl;
 }
