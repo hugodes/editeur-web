@@ -1,6 +1,6 @@
 /**
  * @file noeud.cc
- * @author Ahmed Rafik
+ * @author Hugo des Longchamps & Ahmed Rafik
  * @class Noeud
  * @details Surcharge des operateurs << & ==
  */

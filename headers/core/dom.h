@@ -1,6 +1,6 @@
 /*
  * @file dom.h
- * @author Ahmed Rafik
+ * @author Hugo des Longchamps & Ahmed Rafik 
  * @details surcharge des operateurs <<
  */
 

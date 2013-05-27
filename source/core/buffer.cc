@@ -1,6 +1,6 @@
 /**
  * @file buffer.cc
- * @author Hugo des Longchamps
+ * @author Hugo des Longchamps & Ahmed Rafik
  * @class Buffer
  * @details Surcharge des operateurs << & >>
  */

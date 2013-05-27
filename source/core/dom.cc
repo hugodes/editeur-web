@@ -1,6 +1,6 @@
 /**
  * @file dom.cc
- * @author Ahmed Rafik
+ * @author Hugo des Longchamps & Ahmed Rafik
  * @class Dom
  * @details Surcharge des operateurs <<
  */
