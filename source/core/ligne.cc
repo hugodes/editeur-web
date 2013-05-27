@@ -47,7 +47,7 @@ Ligne::Ligne(vector<Facteur> v){
     tab=new char[2];
     strcpy(tab, "\t");
      
-
+	
     while ((strcmp ((*i).getTexte(),tab)==0)&&(i<v.end()))
     {
         (this->indentUtil)++;
@@ -63,7 +63,7 @@ Ligne::Ligne(vector<Facteur> v){
 Ligne::Ligne(char*& t){
 	Facteur fact;
 	int i=0;
-	char f[100];
+	char f[100];  // un tableau qui va contenir les caractères pour former un Facteur
 	char caractere[2];
 	caractere[0]=' ';
 	caractere[1]='\0';
@@ -71,7 +71,7 @@ Ligne::Ligne(char*& t){
 	char* espace;
 	espace=new char[2];
 	strcpy(espace," ");
-
+	
 	char* f_ligne;  
 	f_ligne=new char[3];
 	strcpy(f_ligne, "\0");
@@ -79,8 +79,8 @@ Ligne::Ligne(char*& t){
 	char* tab;
 	tab=new char[3];
 	strcpy(tab, "\t");
-
-
+	
+	
 	this->indentUtil=0;
 
 	if (t[i]=='\0'){
@@ -170,7 +170,7 @@ char* Ligne::toCString(){
 		strcat(l, ((*iter).getTexte()));
 	}
 return l;
-
+	
 }
 
 /**
