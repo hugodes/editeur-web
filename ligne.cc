@@ -57,7 +57,7 @@ Ligne::Ligne(vector<Facteur> v){
 }
 
 /**
-* @brief Constructeur de ligne
+* @brief Constructeur de ligne // à supprimer lors de l'implementation de l'analyseur
 */
 
 Ligne::Ligne(char*& t){
