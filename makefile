@@ -31,5 +31,8 @@ test : $(OBJTEST)
 .tmp/noeudtexte.o : source/core/noeudtexte.cc headers/core/noeudtexte.h
 	$(CC) -c source/core/noeudtexte.cc -o .tmp/noeudtexte.o
 
+doc : scripts/Doxyfile
+	doxygen scripts/Doxyfile
+
 clean :
 	rm -f .tmp/*
