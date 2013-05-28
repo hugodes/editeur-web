@@ -1,3 +1,11 @@
+/**
+ * @file analyse.lex
+ * @author Ahmed Rafik
+ * @class Analyseur lexicale
+ * @details Reconnaissance des différents facteurs
+ */
+
+
 %{
   //#include <iostream>
 #define BALISE 320
